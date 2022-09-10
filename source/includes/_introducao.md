@@ -31,7 +31,7 @@ CÓDIGO | DESCRIÇÃO                | SITUAÇÃO
 422    | *Unprocessable Entity*   | Quando ocorrer erros de validação, como, um campo obrigatório não informado
 429    | *Too Many Requests*      | Excedeu o seu limite de requisições por minuto
 500    | *Internal Server Error*  | Quando ocorrer um erro interno no recurso da API
-502    | *Bad Gateway*            | Sistema em atualização, voltaremos em poucos segundos
+502    | *Bad Gateway*            | Sistema em manutenção, voltaremos em poucos minutos
 503    | *Service Unavailable*    | No momento estamos offline para manutenção no sistema, tente mais tarde
 
 # Token de Acesso
