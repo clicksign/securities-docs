@@ -1,6 +1,6 @@
 # Introdução
 
-Disponibilizamos essa API com o intuito de fornecer acesso aos recursos da Securities por meio da arquitetura JSON API, dessa forma, você poderá fazer uso dos recursos do nosso sistema fora do nosso ambiente UI, e com isso, contextualizar melhor as funcionalidades dentro da sua necessidade.
+Disponibilizamos essa API com o intuito de fornecer acesso aos recursos da Securities por meio da arquitetura REST, dessa forma, você poderá fazer uso dos recursos do nosso sistema fora do nosso ambiente UI, e com isso, contextualizar melhor as funcionalidades dentro da sua necessidade.
 
 # Visão geral
 
