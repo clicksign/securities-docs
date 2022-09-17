@@ -7,7 +7,7 @@
 > Request:
 
 ```shell
-curl -X GET https://app.securities.com.br/api/v1/proposals
+curl -X GET https://app.securities.com.br/api/v1/proposals \
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -41,7 +41,7 @@ Esse endpoint lista todas as propostas
 > Request:
 
 ```shell
-curl -X GET https://app.securities.com.br/api/v1/proposals/:id
+curl -X GET https://app.securities.com.br/api/v1/proposals/:id \
      -H "Authorization: Bearer $TOKEN"
 ```
 
