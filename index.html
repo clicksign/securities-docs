@@ -607,7 +607,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/signers <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/proposals/:proposal_id/signers <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -638,12 +638,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint lista todos os signatários</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.securities.com.br/api/v1/signers</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/proposals/:proposal_id/signers</code></p>
 <h2 id='obter-signatario'>Obter signatário</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/signers/:id <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/proposals/:proposal_id/signers/:id <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -672,12 +672,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um signatário</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://app.securities.com.br/api/v1/signers/:id</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/proposals/:proposal_id/signers/:id</code></p>
 <h2 id='criar-signatario'>Criar signatário</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/v1/proposals/1/signers <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/v1/proposals/:proposal_id/signers <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      <span class="nt">-d</span> <span class="s1">'{
@@ -720,7 +720,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint cria um signatário</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://app.securities.com.br/api/v1/signers</code></p>
+<p><code>POST https://app.securities.com.br/api/v1/proposals/:proposal_id/signers</code></p>
 <h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
 <table><thead>
 <tr>
