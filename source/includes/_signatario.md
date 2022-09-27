@@ -154,7 +154,7 @@ Parâmetro          | Obrigatório | Tipo        | Descrição
 document_type      | sim         | string      | Tipo de documento que o signatário será vinculado
 document_id        | sim         | string      | ID do documento que o signatário será vinculado
 full_name          | sim         | string      | Nome completo
-has_documentation  | sim         | boolean     | Tem documentação, como CPF, CNPJ ou Passaporte
+has_documentation  | não         | boolean     | Tem documentação, como CPF, CNPJ ou Passaporte. Padrão é TRUE
 documentation      | condicional | string      | CPF, CNPJ ou Passaporte
 birthday           | condicional | string      | Data de nascimento
 email              | condicional | string      | E-mail
