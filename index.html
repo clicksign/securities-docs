@@ -365,6 +365,17 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#arranjo" class="toc-h1 toc-link" data-title="Arranjo">Arranjo</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#listar-arranjos" class="toc-h2 toc-link" data-title="Listar Arranjos">Listar Arranjos</a>
+                  </li>
+                  <li>
+                    <a href="#obter-arranjo" class="toc-h2 toc-link" data-title="Obter Arranjo">Obter Arranjo</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -865,6 +876,117 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <p>Esse endpoint obtem todos os dados de um título</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/securities/:id</code></p>
+<h1 id='arranjo'>Arranjo</h1>
+<p><strong>TODO:</strong> O Arranjo é utilizada para....</p>
+<h2 id='listar-arranjos'>Listar Arranjos</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/arrangements <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint lista todos os Arranjos</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/arrangements</code></p>
+<h2 id='obter-arranjo'>Obter Arranjo</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/arrangements/:id <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Latia Pouros Roberts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"062.231.968-06"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rufus@quitzon.co"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1964-10-22"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(52) 91647-1229"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9429903a-ba8d-4eca-be62-d5d034bd0f52"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f122bf00-f6d8-4567-b305-d7163f4fda89"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b751793-59b2-40a0-b421-758632ce28fe"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pres. Edgar Nolan O'Reilly"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"422.420.114-30"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abdul@goodwin.name"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1998-05-09"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(70) 95512-3125"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.014-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.014-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"89a2a6d1-86d2-4c0e-ad0c-9fffa31668d9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d4902434-9298-4aa0-8b63-4033272519f0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43c64e4d-ac90-4698-a523-17f6225ae709"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">222</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rep. Zachary Borer Feest"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"559.451.638-72"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fleta_bahringer@parisian.org"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1976-12-06"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(48) 95809-7877"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.021-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.021-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9c96c6aa-28fd-42d3-83b0-b20f46150c75"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a0864d19-eac4-4172-91be-5f4a2fbeaa65"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51af2753-0a4e-4e05-8bd3-230cb94c41c6"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Esse endpoint obtem todos os dados de um Arranjo</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/arrangements/:id</code></p>
  
       </div>
       <div class="dark-box">
