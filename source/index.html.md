@@ -9,6 +9,7 @@ includes:
   - proposta
   - signatario
   - titulo
+  - arranjo
 
 search: true
 
