@@ -10,6 +10,7 @@ includes:
   - signatario
   - titulo
   - arranjo
+  - cessao
 
 search: true
 
