@@ -112,7 +112,6 @@ Content-Type: application/json; charset=utf-8
   "issuer_document": "525.403.396-61",
   "installments": 48,
   "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-  "document_key": "534e7c3c-2b04-11ed-a261-0242ac120002",
   "document_data": {
     "bank_account_number": "32938-1",
     "bank_agency_number": "2384",
