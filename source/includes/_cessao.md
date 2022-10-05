@@ -141,9 +141,9 @@ assignee_id              | sim         | integer  | ID da conta da cessionária
 endorser_id              | sim         | integer  | ID da conta do endossatário
 number                   | sim         | string   | Número do termo de cessão
 issue_date               | sim         | boolean  | Data de emissão
-full_amount              | não         | float    | Valor do termo (soma de todos os títulos). Padrão é ZERO
-batch.quantity           | não         | integer  | Quantidade de títulos no lote. Padrão é ZERO
-batch.securities.number  | não         | string   | Títulos que irão compor no lote
+full_amount              | sim         | float    | Valor do termo (soma de todos os títulos)
+batch.quantity           | sim         | integer  | Quantidade de títulos no lote. Padrão é ZERO
+batch.securities.number  | sim         | string   | Títulos que irão compor no lote
 
 ### Validações
 
