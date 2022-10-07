@@ -143,6 +143,7 @@ number                   | sim         | string   | Número do termo de cessão
 issue_date               | sim         | boolean  | Data de emissão
 full_amount              | sim         | float    | Valor do termo (soma de todos os títulos)
 batch.quantity           | sim         | integer  | Quantidade de títulos no lote. Padrão é ZERO
+batch.number             | sim         | integer  | Número do lote
 batch.securities.number  | sim         | string   | Títulos que irão compor no lote
 
 ### Validações
