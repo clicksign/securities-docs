@@ -95,6 +95,7 @@ curl -X POST https://app.securities.com.br/api/v1/assignments \
             "full_amount": 100.0,
             "batch": {
               "quantity": 1,
+              "number": "123456",
               "securities": [
                 {
                   "number": "123456"
