@@ -24,8 +24,7 @@ Content-Type: application/json; charset=utf-8
     "number": "1234567",
     "issuer_document": "525.403.396-61",
     "installments": 48,
-    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-    "document_key": "534e7c3c-2b04-11ed-a261-0242ac120002",
+    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13"
   }
 ]
 ```
@@ -58,7 +57,6 @@ Content-Type: application/json; charset=utf-8
   "issuer_document": "525.403.396-61",
   "installments": 48,
   "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-  "document_key": "534e7c3c-2b04-11ed-a261-0242ac120002",
   "document_data": {
     "bank_account_number": "32938-1",
     "bank_agency_number": "2384",
@@ -88,7 +86,6 @@ curl -X POST https://app.securities.com.br/api/v1/proposals \
           "issuer_document": "525.403.396-61",
           "installments": 48,
           "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-          "document_key": "534e7c3c-2b04-11ed-a261-0242ac120002",
           "document_data": {
             "bank_account_number": "32938-1",
             "bank_agency_number": "2384",
@@ -135,5 +132,4 @@ number           | sim         | string      | Número da proposta
 issuer_document  | sim         | string      | Documento do emitente
 installments     | sim         | integer     | Quantidade de parcelas
 template_key     | sim         | string      | Chave do template no assinador
-document_key     | não         | string      | Chave do documento no assinador
 document_data    | sim         | json        | Dados do documento para compor o título
