@@ -1,4 +1,4 @@
-# Lotes
+# Lote
 
 **TODO:** O lote é utilizado para....
 
