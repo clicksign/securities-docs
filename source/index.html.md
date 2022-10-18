@@ -11,6 +11,7 @@ includes:
   - titulo
   - arranjo
   - cessao
+  - lote
 
 search: true
 
