@@ -12,6 +12,7 @@ includes:
   - arranjo
   - cessao
   - lote
+  - lote_titulo
 
 search: true
 

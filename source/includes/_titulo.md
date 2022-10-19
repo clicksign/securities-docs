@@ -37,6 +37,12 @@ Esse endpoint lista todos os títulos
 
 `GET https://app.securities.com.br/api/v1/securities`
 
+### Parâmetros de consulta
+
+Parâmetro          | Tipo        | Descrição
+------------------ | ----------- | -----------
+number             | string      | Número do título
+
 ## Obter título
 
 > Request:
