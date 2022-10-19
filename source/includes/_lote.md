@@ -87,7 +87,7 @@ curl -X POST https://app.securities.com.br/api/v1/batches \
      -d '{
           "batch": {
             "number": "123",
-            "quantity": 1,
+            "quantity": 1
           }
         }'
 ```
