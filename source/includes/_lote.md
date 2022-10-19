@@ -25,6 +25,9 @@ Content-Type: application/json; charset=utf-8
     "status": "pending",
     "number": "123",
     "quantity": 1,
+    "quantity_added": 1,
+    "quantity_approved": 1,
+    "quantity_signed": 1,
     "created_at": "2022-10-06T16:46:40.705-03:00",
     "updated_at": "2022-10-06T16:46:40.889-03:00"
   }
@@ -59,6 +62,9 @@ Content-Type: application/json; charset=utf-8
   "status": "pending",
   "number": "123",
   "quantity": 1,
+  "quantity_added": 1,
+  "quantity_approved": 1,
+  "quantity_signed": 1,
   "created_at": "2022-10-06T16:46:40.705-03:00",
   "updated_at": "2022-10-06T16:46:40.889-03:00"
 }
@@ -99,6 +105,9 @@ Content-Type: application/json; charset=utf-8
   "status": "pending",
   "number": "123",
   "quantity": 1,
+  "quantity_added": 0,
+  "quantity_approved": 0,
+  "quantity_signed": 0,
   "created_at": "2022-10-06T16:46:40.705-03:00",
   "updated_at": "2022-10-06T16:46:40.889-03:00"
 }
@@ -123,4 +132,6 @@ Enquanto `quantity` não for equivalente a quantidade total de títulos do lote,
 o status iniciará em `pending`, irá para `checking` após adicionar o primeiro título no lote e, até que todos os
 títulos sejam enviados, permanecerá nesse status.
 
-Não será permitido enviar uma quantidade de títulos maior que `quantity`.
+<aside class="warning">
+  Não será permitido enviar uma quantidade de títulos maior que <code>batch.quantity</code>.
+</aside>
