@@ -125,5 +125,5 @@ Não será permitido enviar uma quantidade de títulos maior que `quantity`.
 
 <aside class="warning">
   <strong>Atenção</strong><br>
-  Para obter o <code>security_id</code> será necessário <a href="#listar-titulos">consultar pelo o título</a> no respectivo endpoint.
+  Para obter o <code>security_id</code> será necessário <a href="#listar-titulos">consultar pelo título</a> no respectivo endpoint.
 </aside>
