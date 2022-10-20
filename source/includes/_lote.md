@@ -124,7 +124,7 @@ Esse endpoint cria um lote
 | Parâmetro | Obrigatório | Tipo    | Descrição                     |
 | --------- | ----------- | ------- | ----------------------------- |
 | quantity  | sim         | integer | Quantidade de títulos no lote |
-| number    | sim         | integer | Número do lote                |
+| number    | sim         | string  | Número do lote                |
 
 ### Validações
 
