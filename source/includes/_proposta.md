@@ -19,14 +19,24 @@ Content-Type: application/json; charset=utf-8
 ```
 
 ```json
-[
-  {
-    "number": "1234567",
-    "issuer_document": "525.403.396-61",
-    "installments": 48,
-    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13"
+{
+  "proposals": [
+    {
+      "number": "1234567",
+      "issuer_document": "525.403.396-61",
+      "installments": 48,
+      "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13"
+    }
+  ],
+  "page_infos": {
+    "total_pages": 3,
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": null,
+    "first_page?": true,
+    "last_page?": false
   }
-]
+}
 ```
 
 Esse endpoint lista todas as propostas
@@ -34,6 +44,12 @@ Esse endpoint lista todas as propostas
 ### HTTP Request
 
 `GET https://app.securities.com.br/api/v1/proposals`
+
+### Parâmetros de consulta
+
+| Parâmetro | Tipo    | Descrição |
+| --------- | ------- | --------- |
+| page      | integer | Paginação |
 
 ## Obter proposta
 
@@ -53,15 +69,17 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "number": "1234567",
-  "issuer_document": "525.403.396-61",
-  "installments": 48,
-  "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-  "document_data": {
-    "bank_account_number": "32938-1",
-    "bank_agency_number": "2384",
-    "bank_name": "Itau",
-    ...
+  "proposal": {
+    "number": "1234567",
+    "issuer_document": "525.403.396-61",
+    "installments": 48,
+    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
+    "document_data": {
+      "bank_account_number": "32938-1",
+      "bank_agency_number": "2384",
+      "bank_name": "Itau",
+      ...
+    }
   }
 }
 ```
@@ -105,15 +123,17 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "number": "1234567",
-  "issuer_document": "525.403.396-61",
-  "installments": 48,
-  "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-  "document_data": {
-    "bank_account_number": "32938-1",
-    "bank_agency_number": "2384",
-    "bank_name": "Itau",
-    ...
+  "proposal": {
+    "number": "1234567",
+    "issuer_document": "525.403.396-61",
+    "installments": 48,
+    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
+    "document_data": {
+      "bank_account_number": "32938-1",
+      "bank_agency_number": "2384",
+      "bank_name": "Itau",
+      ...
+    }
   }
 }
 ```
@@ -126,10 +146,10 @@ Esse endpoint cria uma proposta
 
 ### Parâmetros da requisição
 
-Parâmetro        | Obrigatório | Tipo        | Descrição
----------------- | ----------- | ----------- | -----------
-number           | sim         | string      | Número da proposta
-issuer_document  | sim         | string      | Documento do emitente
-installments     | sim         | integer     | Quantidade de parcelas
-template_key     | sim         | string      | Chave do template no assinador
-document_data    | sim         | json        | Dados do documento para compor o título
+| Parâmetro       | Obrigatório | Tipo    | Descrição                               |
+| --------------- | ----------- | ------- | --------------------------------------- |
+| number          | sim         | string  | Número da proposta                      |
+| issuer_document | sim         | string  | Documento do emitente                   |
+| installments    | sim         | integer | Quantidade de parcelas                  |
+| template_key    | sim         | string  | Chave do template no assinador          |
+| document_data   | sim         | json    | Dados do documento para compor o título |
