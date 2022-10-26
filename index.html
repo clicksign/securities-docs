@@ -418,6 +418,20 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#signatario-do-documento" class="toc-h1 toc-link" data-title="Signatário do documento">Signatário do documento</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#listar-signatarios-do-documento" class="toc-h2 toc-link" data-title="Listar signatários do documento">Listar signatários do documento</a>
+                  </li>
+                  <li>
+                    <a href="#obter-um-lote" class="toc-h2 toc-link" data-title="Obter um lote">Obter um lote</a>
+                  </li>
+                  <li>
+                    <a href="#criar-lote" class="toc-h2 toc-link" data-title="Criar lote">Criar lote</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -678,7 +692,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/documents/:document_id/signers <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/signers <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/documents/:document_id/signers <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -716,6 +732,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint lista todos os signatários</p>
 <h3 id='http-request'>HTTP Request</h3>
+<p>Todos os signatários</p>
+
+<p><code>GET https://app.securities.com.br/api/v1/signers</code></p>
+
+<p><br>Signatários por documento</p>
+
 <p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers</code></p>
 <h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
 <table><thead>
@@ -736,6 +758,8 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <p>Request:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/signers/:id <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -763,6 +787,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um signatário</p>
 <h3 id='http-request-2'>HTTP Request</h3>
+<p>Obter signatário</p>
+
+<p><code>GET https://app.securities.com.br/api/v1/signers/:id</code></p>
+
+<p><br>Obter signatário de um documento</p>
+
 <p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id</code></p>
 <h2 id='criar-signatario'>Criar signatário</h2>
 <blockquote>
@@ -810,6 +840,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint cria um signatário</p>
 <h3 id='http-request-3'>HTTP Request</h3>
+<p>Criar signatário avulso</p>
+
+<p><code>POST https://app.securities.com.br/api/v1/signers</code></p>
+
+<p><br>Criar signatário vinculado a um documento</p>
+
 <p><code>POST https://app.securities.com.br/api/v1/documents/:document_id/signers</code></p>
 <h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
 <table><thead>
@@ -1535,6 +1571,145 @@ títulos sejam enviados, permanecerá nesse status.</p>
   <strong>Atenção</strong><br>
   Para obter o <code>security_id</code> será necessário <a href="#listar-titulos">consultar pelo título</a> no respectivo endpoint.
 </aside>
+<h1 id='signatario-do-documento'>Signatário do documento</h1>
+<p><strong>TODO:</strong> Signatários do documento...</p>
+<h2 id='listar-signatarios-do-documento'>Listar signatários do documento</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/lists <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">113</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"signer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14fb4ce9-f28e-4954-a884-ad125931181b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"request_signature_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1243577-73f5-4071-9ba4-59d5a2f13ee7"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-26T15:53:18.825-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-26T15:55:51.010-03:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint lista todos signatários de um documento e vice-versa</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/lists</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
+<h2 id='obter-um-lote'>Obter um lote</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/lists/:id <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">113</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14fb4ce9-f28e-4954-a884-ad125931181b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_signature_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1243577-73f5-4071-9ba4-59d5a2f13ee7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-26T15:53:18.825-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-26T15:55:51.010-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint obtém todos signatários de um documento e vice-versa</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/lists/:id</code></p>
+<h2 id='criar-lote'>Criar lote</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/v1/lists <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'{
+          "list": {
+            "signer_id": 1,
+            "document_id": 2
+          }
+        }'</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">113</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14fb4ce9-f28e-4954-a884-ad125931181b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_signature_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1243577-73f5-4071-9ba4-59d5a2f13ee7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-26T15:53:18.825-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-26T15:55:51.010-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint associa o signatário a um documento e vice-versa</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.securities.com.br/api/v1/lists</code></p>
+<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signer_id</td>
+<td>sim</td>
+<td>integer</td>
+<td>ID do signatário</td>
+</tr>
+<tr>
+<td>document_id</td>
+<td>sim</td>
+<td>string</td>
+<td>ID do documento</td>
+</tr>
+</tbody></table>
  
       </div>
       <div class="dark-box">
