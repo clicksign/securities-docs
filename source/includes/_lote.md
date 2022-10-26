@@ -19,19 +19,29 @@ Content-Type: application/json; charset=utf-8
 ```
 
 ```json
-[
-  {
-    "id": 1,
-    "status": "pending",
-    "number": "123",
-    "quantity": 1,
-    "quantity_added": 1,
-    "quantity_approved": 1,
-    "quantity_signed": 1,
-    "created_at": "2022-10-06T16:46:40.705-03:00",
-    "updated_at": "2022-10-06T16:46:40.889-03:00"
+{
+  "batches": [
+    {
+      "id": 1,
+      "status": "pending",
+      "number": "123",
+      "quantity": 1,
+      "quantity_added": 1,
+      "quantity_approved": 1,
+      "quantity_signed": 1,
+      "created_at": "2022-10-06T16:46:40.705-03:00",
+      "updated_at": "2022-10-06T16:46:40.889-03:00"
+    }
+  ],
+  "page_infos": {
+    "total_pages": 3,
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": null,
+    "first_page?": true,
+    "last_page?": false
   }
-]
+}
 ```
 
 Esse endpoint lista todos os lotes
@@ -39,6 +49,12 @@ Esse endpoint lista todos os lotes
 ### HTTP Request
 
 `GET https://app.securities.com.br/api/v1/batches`
+
+### Parâmetros de consulta
+
+| Parâmetro | Tipo    | Descrição |
+| --------- | ------- | --------- |
+| page      | integer | Paginação |
 
 ## Obter um lote
 
@@ -58,15 +74,17 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "id": 1,
-  "status": "pending",
-  "number": "123",
-  "quantity": 1,
-  "quantity_added": 1,
-  "quantity_approved": 1,
-  "quantity_signed": 1,
-  "created_at": "2022-10-06T16:46:40.705-03:00",
-  "updated_at": "2022-10-06T16:46:40.889-03:00"
+  "batch": {
+    "id": 1,
+    "status": "pending",
+    "number": "123",
+    "quantity": 1,
+    "quantity_added": 1,
+    "quantity_approved": 1,
+    "quantity_signed": 1,
+    "created_at": "2022-10-06T16:46:40.705-03:00",
+    "updated_at": "2022-10-06T16:46:40.889-03:00"
+  }
 }
 ```
 
@@ -101,15 +119,17 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "id": 1,
-  "status": "pending",
-  "number": "123",
-  "quantity": 1,
-  "quantity_added": 0,
-  "quantity_approved": 0,
-  "quantity_signed": 0,
-  "created_at": "2022-10-06T16:46:40.705-03:00",
-  "updated_at": "2022-10-06T16:46:40.889-03:00"
+  "batch": {
+    "id": 1,
+    "status": "pending",
+    "number": "123",
+    "quantity": 1,
+    "quantity_added": 0,
+    "quantity_approved": 0,
+    "quantity_signed": 0,
+    "created_at": "2022-10-06T16:46:40.705-03:00",
+    "updated_at": "2022-10-06T16:46:40.889-03:00"
+  }
 }
 ```
 

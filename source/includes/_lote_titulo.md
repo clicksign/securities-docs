@@ -19,16 +19,26 @@ Content-Type: application/json; charset=utf-8
 ```
 
 ```json
-[
-  {
-    "id": 1,
-    "security_id": 1,
-    "batch_id": 1,
-    "status": "pending",
-    "created_at": "2022-10-06T16:46:40.705-03:00",
-    "updated_at": "2022-10-06T16:46:40.889-03:00"
+{
+  "security_batches": [
+    {
+      "id": 1,
+      "security_id": 1,
+      "batch_id": 1,
+      "status": "pending",
+      "created_at": "2022-10-06T16:46:40.705-03:00",
+      "updated_at": "2022-10-06T16:46:40.889-03:00"
+    }
+  ],
+  "page_infos": {
+    "total_pages": 3,
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": null,
+    "first_page?": true,
+    "last_page?": false
   }
-]
+}
 ```
 
 Esse endpoint lista todos os títulos do lote
@@ -36,6 +46,12 @@ Esse endpoint lista todos os títulos do lote
 ### HTTP Request
 
 `GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches`
+
+### Parâmetros de consulta
+
+| Parâmetro | Tipo    | Descrição |
+| --------- | ------- | --------- |
+| page      | integer | Paginação |
 
 ## Obter um título do lote
 
@@ -55,12 +71,14 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "id": 1,
-  "security_id": 1,
-  "batch_id": 1,
-  "status": "pending",
-  "created_at": "2022-10-06T16:46:40.705-03:00",
-  "updated_at": "2022-10-06T16:46:40.889-03:00"
+  "security_batch": {
+    "id": 1,
+    "security_id": 1,
+    "batch_id": 1,
+    "status": "pending",
+    "created_at": "2022-10-06T16:46:40.705-03:00",
+    "updated_at": "2022-10-06T16:46:40.889-03:00"
+  }
 }
 ```
 
@@ -94,12 +112,14 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "id": 1,
-  "security_id": 1,
-  "batch_id": 1,
-  "status": "pending",
-  "created_at": "2022-10-06T16:46:40.705-03:00",
-  "updated_at": "2022-10-06T16:46:40.889-03:00"
+  "security_batch": {
+    "id": 1,
+    "security_id": 1,
+    "batch_id": 1,
+    "status": "pending",
+    "created_at": "2022-10-06T16:46:40.705-03:00",
+    "updated_at": "2022-10-06T16:46:40.889-03:00"
+  }
 }
 ```
 
@@ -111,9 +131,9 @@ Esse endpoint adiciona um título no lote
 
 ### Parâmetros da requisição
 
-| Parâmetro    | Obrigatório | Tipo    | Descrição                     |
-| ------------ | ----------- | ------- | ----------------------------- |
-| security_id  | sim         | integer | ID do título                  |
+| Parâmetro   | Obrigatório | Tipo    | Descrição    |
+| ----------- | ----------- | ------- | ------------ |
+| security_id | sim         | integer | ID do título |
 
 ### Validações
 
