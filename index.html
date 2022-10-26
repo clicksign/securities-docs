@@ -521,18 +521,42 @@
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"525.403.396-61"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"proposals"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"525.403.396-61"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todas as propostas</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/proposals</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
 <h2 id='obter-proposta'>Obter proposta</h2>
 <blockquote>
 <p>Request:</p>
@@ -546,15 +570,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"525.403.396-61"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"bank_account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32938-1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_agency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2384"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Itau"</span><span class="p">,</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"proposal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"525.403.396-61"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bank_account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32938-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bank_agency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2384"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Itau"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -589,15 +615,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"525.403.396-61"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"bank_account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32938-1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_agency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2384"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Itau"</span><span class="p">,</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"proposal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"525.403.396-61"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bank_account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32938-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bank_agency_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2384"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Itau"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -658,27 +686,51 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Carter"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signer@example.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-09-09"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(16) 98234-3045"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690e1c32-7edd-48e4-b083-a738f05b4d7e"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T15:37:05.189-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="p">,</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Carter"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signer@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-09-09"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(16) 98234-3045"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690e1c32-7edd-48e4-b083-a738f05b4d7e"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T15:37:05.189-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os signatários</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
 <h2 id='obter-signatario'>Obter signatário</h2>
 <blockquote>
 <p>Request:</p>
@@ -692,19 +744,21 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Carter"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signer@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-09-09"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(16) 98234-3045"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690e1c32-7edd-48e4-b083-a738f05b4d7e"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T15:37:05.189-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"signer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Carter"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signer@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-09-09"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(16) 98234-3045"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690e1c32-7edd-48e4-b083-a738f05b4d7e"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T15:37:05.189-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um signatário</p>
@@ -737,19 +791,21 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marcos Zumba"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123.321.123-40"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fulano@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1983-03-31"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11999999999"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-16T18:41:00.079-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-16T18:41:00.079-03:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"signer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marcos Zumba"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123.321.123-40"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fulano@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1983-03-31"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11999999999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-16T18:41:00.079-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-16T18:41:00.079-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um signatário</p>
@@ -833,16 +889,26 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630.427.604-48"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"securities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630.427.604-48"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os títulos</p>
 <h3 id='http-request'>HTTP Request</h3>
@@ -860,6 +926,11 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>string</td>
 <td>Número do título</td>
 </tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
 </tbody></table>
 <h2 id='obter-titulo'>Obter título</h2>
 <blockquote>
@@ -874,26 +945,28 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630.427.604-48"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto_close"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"occurred_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.361-03:00"</span><span class="w">
+  </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630.427.604-48"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto_close"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"occurred_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.361-03:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e646a204-6e57-4e94-b799-fca7f1002c6a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/Proposals/Proposta 123456.docx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e646a204-6e57-4e94-b799-fca7f1002c6a"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/Proposals/Proposta 123456.docx"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um título</p>
@@ -913,18 +986,42 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"arrangements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os Arranjos</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/arrangements</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
 <h2 id='obter-arranjo'>Obter Arranjo</h2>
 <blockquote>
 <p>Request:</p>
@@ -938,74 +1035,36 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Latia Pouros Roberts"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"062.231.968-06"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rufus@quitzon.co"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1964-10-22"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(52) 91647-1229"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9429903a-ba8d-4eca-be62-d5d034bd0f52"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f122bf00-f6d8-4567-b305-d7163f4fda89"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b751793-59b2-40a0-b421-758632ce28fe"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pres. Edgar Nolan O'Reilly"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"422.420.114-30"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abdul@goodwin.name"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1998-05-09"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(70) 95512-3125"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.014-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.014-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"89a2a6d1-86d2-4c0e-ad0c-9fffa31668d9"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d4902434-9298-4aa0-8b63-4033272519f0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43c64e4d-ac90-4698-a523-17f6225ae709"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">222</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rep. Zachary Borer Feest"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"559.451.638-72"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fleta_bahringer@parisian.org"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1976-12-06"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(48) 95809-7877"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.021-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.021-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9c96c6aa-28fd-42d3-83b0-b20f46150c75"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a0864d19-eac4-4172-91be-5f4a2fbeaa65"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51af2753-0a4e-4e05-8bd3-230cb94c41c6"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"arrangement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proposal"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Latia Pouros Roberts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"062.231.968-06"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rufus@quitzon.co"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1964-10-22"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(52) 91647-1229"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9429903a-ba8d-4eca-be62-d5d034bd0f52"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"link_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f122bf00-f6d8-4567-b305-d7163f4fda89"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"batch_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b751793-59b2-40a0-b421-758632ce28fe"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um Arranjo</p>
 <h3 id='http-request-2'>HTTP Request</h3>
@@ -1203,23 +1262,47 @@ o operador do sistema terá acesso a um relatório de erros para saber os motivo
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quantity_added"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quantity_approved"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quantity_signed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"batches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity_added"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity_approved"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity_signed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os lotes</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/batches</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
 <h2 id='obter-um-lote'>Obter um lote</h2>
 <blockquote>
 <p>Request:</p>
@@ -1233,15 +1316,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity_added"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity_approved"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity_signed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="nl">"batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_added"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_approved"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_signed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um lote</p>
@@ -1267,15 +1352,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity_added"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity_approved"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quantity_signed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="nl">"batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_added"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_approved"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity_signed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um lote</p>
@@ -1325,20 +1412,44 @@ títulos sejam enviados, permanecerá nesse status.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"security_batches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os títulos do lote</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
 <h2 id='obter-um-titulo-do-lote'>Obter um título do lote</h2>
 <blockquote>
 <p>Request:</p>
@@ -1352,12 +1463,14 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="nl">"security_batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um título de um lote</p>
@@ -1382,12 +1495,14 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="nl">"security_batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint adiciona um título no lote</p>
