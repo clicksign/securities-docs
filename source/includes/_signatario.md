@@ -196,6 +196,6 @@ Criar signatário avulso
 | birthday          | condicional | string  | Data de nascimento                                            |
 | email             | condicional | string  | E-mail                                                        |
 | phone_number      | sim         | string  | Numero de telefone                                            |
-| auth              | sim         | string  | Tipo de autenticação: "email"                                 |
+| auth              | sim         | string  | Tipo de autenticação: "email" ou "api"                        |
 | communicate_by    | sim         | string  | Por onde será notificado: "email"                             |
 | sign_as           | sim         | string  | Assinar como: sign, party, witness, contractor, contractee... |
