@@ -13,6 +13,7 @@ includes:
   - cessao
   - lote
   - lote_titulo
+  - documento_signatario
 
 search: true
 

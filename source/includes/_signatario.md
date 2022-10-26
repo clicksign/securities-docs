@@ -7,6 +7,11 @@
 > Request:
 
 ```shell
+curl -X GET https://app.securities.com.br/api/v1/signers \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+```shell
 curl -X GET https://app.securities.com.br/api/v1/documents/:document_id/signers \
      -H "Authorization: Bearer $TOKEN"
 ```
@@ -52,6 +57,12 @@ Esse endpoint lista todos os signatários
 
 ### HTTP Request
 
+Todos os signatários
+
+`GET https://app.securities.com.br/api/v1/signers`
+
+<br>Signatários por documento
+
 `GET https://app.securities.com.br/api/v1/documents/:document_id/signers`
 
 ### Parâmetros de consulta
@@ -66,6 +77,11 @@ Esse endpoint lista todos os signatários
 
 ```shell
 curl -X GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+```shell
+curl -X GET https://app.securities.com.br/api/v1/signers/:id \
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -99,6 +115,12 @@ Content-Type: application/json; charset=utf-8
 Esse endpoint obtem todos os dados de um signatário
 
 ### HTTP Request
+
+Obter signatário
+
+`GET https://app.securities.com.br/api/v1/signers/:id`
+
+<br>Obter signatário de um documento
 
 `GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id`
 
@@ -155,6 +177,12 @@ Content-Type: application/json; charset=utf-8
 Esse endpoint cria um signatário
 
 ### HTTP Request
+
+Criar signatário avulso
+
+`POST https://app.securities.com.br/api/v1/signers`
+
+<br>Criar signatário vinculado a um documento
 
 `POST https://app.securities.com.br/api/v1/documents/:document_id/signers`
 
