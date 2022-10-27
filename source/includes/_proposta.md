@@ -22,10 +22,12 @@ Content-Type: application/json; charset=utf-8
 {
   "proposals": [
     {
-      "number": "1234567",
-      "issuer_document": "525.403.396-61",
+      "id": 218,
+      "number": "123456",
+      "issuer_document": "882.793.334-44",
       "installments": 48,
-      "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13"
+      "created_at": "2022-10-07T12:00:33.571-03:00",
+      "updated_at": "2022-10-07T12:00:33.571-03:00"
     }
   ],
   "page_infos": {
@@ -70,15 +72,25 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
   "proposal": {
-    "number": "1234567",
-    "issuer_document": "525.403.396-61",
+    "id": 3073,
+    "number": "123321",
+    "issuer_document": "882.793.334-44",
     "installments": 48,
-    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
+    "created_at": "2022-10-27T09:44:50.772-03:00",
+    "updated_at": "2022-10-27T09:44:50.772-03:00",
     "document_data": {
       "bank_account_number": "32938-1",
       "bank_agency_number": "2384",
       "bank_name": "Itau",
       ...
+    },
+    "document": {
+      "id": 2955,
+      "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+      "status": "created",
+      "created_at": "2022-10-27T09:44:50.800-03:00",
+      "updated_at": "2022-10-27T09:46:45.968-03:00",
+      "file": null
     }
   }
 }
@@ -124,15 +136,25 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
   "proposal": {
-    "number": "1234567",
-    "issuer_document": "525.403.396-61",
+    "id": 3073,
+    "number": "123321",
+    "issuer_document": "882.793.334-44",
     "installments": 48,
-    "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
+    "created_at": "2022-10-27T09:44:50.772-03:00",
+    "updated_at": "2022-10-27T09:44:50.772-03:00",
     "document_data": {
       "bank_account_number": "32938-1",
       "bank_agency_number": "2384",
       "bank_name": "Itau",
       ...
+    },
+    "document": {
+      "id": 2955,
+      "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+      "status": "created",
+      "created_at": "2022-10-27T09:44:50.800-03:00",
+      "updated_at": "2022-10-27T09:46:45.968-03:00",
+      "file": null
     }
   }
 }
