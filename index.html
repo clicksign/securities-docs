@@ -1196,15 +1196,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
             "number": "123456",
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
-            "batch": {
-              "quantity": 1,
-              "number": "123456",
-              "securities": [
-                {
-                  "number": "123456"
-                }
-              ]
-            }
+            "batch_id": 3
           }
         }'</span>
 </code></pre></div>
@@ -1269,38 +1261,16 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Valor do termo (soma de todos os títulos)</td>
 </tr>
 <tr>
-<td>batch.quantity</td>
+<td>batch_id</td>
 <td>sim</td>
 <td>integer</td>
-<td>Quantidade de títulos no lote. Padrão é ZERO</td>
-</tr>
-<tr>
-<td>batch.number</td>
-<td>sim</td>
-<td>integer</td>
-<td>Número do lote</td>
-</tr>
-<tr>
-<td>batch.securities.number</td>
-<td>sim</td>
-<td>string</td>
-<td>Títulos que irão compor no lote</td>
+<td>ID do Lote de CCBs</td>
 </tr>
 </tbody></table>
 <h3 id='validacoes'>Validações</h3>
 <p>O valor inserido em <code>full_amount</code> não é validado, ou seja, se inserir um valor diferente da soma dos valores dos títulos
 poderá ter divergências. O motivo da não validação é porque o valor negociado pode ser menor que o valor da soma dos títulos,
 sendo assim, não há com que comparar os valores inseridos, sendo esperado, em alguns casos, alguma divergência.</p>
-
-<p>Se <code>batch.quantity</code> não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado.</p>
-
-<p>Em <code>batch.securities.number</code> será feito uma validação de unicidade do título. Num primeiro momento, será permitido inserir
-um título usado em outro lote, o mesmo ficará com status <code>pending</code> e será adicionado a uma fila de validação de unicidade.
-Após ser colocado na fila, o status será alterado para <code>checking</code>, após a validação, o status será alterado para <code>checked</code>
-se for único ou para <code>failed</code> se estiver sendo usado em outro lote.</p>
-
-<p>Sempre que um título for reprovado, com status <code>failed</code>, será gravado um log do motivo, e no final do todos os processamentos,
-o operador do sistema terá acesso a um relatório de erros para saber os motivos e tomar as ações necessárias.</p>
 <h1 id='lote'>Lote</h1>
 <p><strong>TODO:</strong> O lote é utilizado para....</p>
 <h2 id='listar-lotes'>Listar lotes</h2>
@@ -1578,11 +1548,15 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </tr>
 </tbody></table>
 <h3 id='validacoes'>Validações</h3>
+<p>Não será permitido enviar um título se não for criada uma cessão associada ao lote.</p>
+
 <p>Enquanto <code>quantity</code> não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado,
 o status iniciará em <code>pending</code>, irá para <code>checking</code> após adicionar o primeiro título no lote e, até que todos os
 títulos sejam enviados, permanecerá nesse status.</p>
 
 <p>Não será permitido enviar uma quantidade de títulos maior que <code>quantity</code>.</p>
+
+<p>Não será permitido enviar um título que já esteja no lote.</p>
 
 <aside class="warning">
   <strong>Atenção</strong><br>
