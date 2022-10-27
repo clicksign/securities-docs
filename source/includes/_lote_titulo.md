@@ -137,11 +137,16 @@ Esse endpoint adiciona um título no lote
 
 ### Validações
 
+Não será permitido enviar um título se não for criada uma cessão associada ao lote.
+
 Enquanto `quantity` não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado,
 o status iniciará em `pending`, irá para `checking` após adicionar o primeiro título no lote e, até que todos os
 títulos sejam enviados, permanecerá nesse status.
 
 Não será permitido enviar uma quantidade de títulos maior que `quantity`.
+
+Não será permitido enviar um título que já esteja no lote.
+
 
 <aside class="warning">
   <strong>Atenção</strong><br>
