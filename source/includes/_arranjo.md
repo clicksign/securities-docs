@@ -77,9 +77,6 @@ Content-Type: application/json; charset=utf-8
     "signers": [
       {
         "id": 100,
-        "account_id": 218,
-        "document_type": "Proposal",
-        "document_id": 99,
         "full_name": "Latia Pouros Roberts",
         "has_documentation": true,
         "documentation": "062.231.968-06",
@@ -91,9 +88,7 @@ Content-Type: application/json; charset=utf-8
         "created_at": "2022-09-29T14:18:21.007-03:00",
         "updated_at": "2022-09-29T14:18:21.007-03:00",
         "key": "9429903a-ba8d-4eca-be62-d5d034bd0f52",
-        "sign_as": "sign",
-        "link_key": "f122bf00-f6d8-4567-b305-d7163f4fda89",
-        "batch_key": "3b751793-59b2-40a0-b421-758632ce28fe"
+        "sign_as": "sign"
       },
       ...
     ]
