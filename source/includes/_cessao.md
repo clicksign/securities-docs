@@ -93,15 +93,7 @@ curl -X POST https://app.securities.com.br/api/v1/assignments \
             "number": "123456",
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
-            "batch": {
-              "quantity": 1,
-              "number": "123456",
-              "securities": [
-                {
-                  "number": "123456"
-                }
-              ]
-            }
+            "batch_id": 3
           }
         }'
 ```
@@ -143,9 +135,7 @@ endorser_id              | sim         | integer  | ID da conta do endossatário
 number                   | sim         | string   | Número do termo de cessão
 issue_date               | sim         | boolean  | Data de emissão
 full_amount              | sim         | float    | Valor do termo (soma de todos os títulos)
-batch.quantity           | sim         | integer  | Quantidade de títulos no lote. Padrão é ZERO
-batch.number             | sim         | integer  | Número do lote
-batch.securities.number  | sim         | string   | Títulos que irão compor no lote
+batch_id                 | sim         | integer  | ID do Lote de CCBs
 
 ### Validações
 
@@ -153,12 +143,3 @@ O valor inserido em `full_amount` não é validado, ou seja, se inserir um valor
 poderá ter divergências. O motivo da não validação é porque o valor negociado pode ser menor que o valor da soma dos títulos,
 sendo assim, não há com que comparar os valores inseridos, sendo esperado, em alguns casos, alguma divergência.
 
-Se `batch.quantity` não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado.
-
-Em `batch.securities.number` será feito uma validação de unicidade do título. Num primeiro momento, será permitido inserir
-um título usado em outro lote, o mesmo ficará com status `pending` e será adicionado a uma fila de validação de unicidade.
-Após ser colocado na fila, o status será alterado para `checking`, após a validação, o status será alterado para `checked`
-se for único ou para `failed` se estiver sendo usado em outro lote.
-
-Sempre que um título for reprovado, com status `failed`, será gravado um log do motivo, e no final do todos os processamentos,
-o operador do sistema terá acesso a um relatório de erros para saber os motivos e tomar as ações necessárias.
