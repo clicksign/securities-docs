@@ -55,7 +55,7 @@ Esse endpoint lista todos signatários de um documento e vice-versa
 | --------- | ------- | --------- |
 | page      | integer | Paginação |
 
-## Obter um lote
+## Obter signatário do documento
 
 > Request:
 
@@ -92,7 +92,7 @@ Esse endpoint obtém todos signatários de um documento e vice-versa
 
 `GET https://app.securities.com.br/api/v1/lists/:id`
 
-## Criar lote
+## Adicionar signatários no documento
 
 > Request:
 
