@@ -135,7 +135,7 @@ curl -X POST https://app.securities.com.br/api/v1/documents/:document_id/signers
      -d '{
         "signer": {
           "email": "fulano@example.com",
-          "auths": ["email"],
+          "auth": "email",
           "full_name": "Marcos Zumba",
           "has_documentation": true,
           "documentation": "123.321.123-40",
