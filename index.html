@@ -327,6 +327,14 @@
             <a href="#token-de-acesso" class="toc-h1 toc-link" data-title="Token de Acesso">Token de Acesso</a>
           </li>
           <li>
+            <a href="#api-legada" class="toc-h1 toc-link" data-title="API Legada">API Legada</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#criar-proposta" class="toc-h2 toc-link" data-title="Criar proposta">Criar proposta</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#proposta" class="toc-h1 toc-link" data-title="Proposta">Proposta</a>
               <ul class="toc-list-h2">
                   <li>
@@ -521,6 +529,77 @@
 <p>Para obter o token de acesso às nossas APIs, solicite pelo e-mail <a href="mailto:suporte@securities.com.br">suporte@securities.com.br</a>.</p>
 
 <aside class="notice">O token de acesso é liberado somente para contas cadastradas na Securities</aside>
+<h1 id='api-legada'>API Legada</h1>
+<aside class="notice">
+Os endpoint descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
+</aside>
+<h2 id='criar-proposta'>Criar proposta</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/legacy/proposals <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+        "proposal": {
+          "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
+          "document_data": {
+            "number": 231387,
+            "issuer_full_name": "Hugo Fonseca",
+            "issuer_full_address": "Setor M QNM 03 Conjunto Z - 72200-000, Brasília - DF",
+            "issuer_cpf": "657.565.000-73",
+            "issuer_rg": "47.825.277-8",
+            "issuer_cnh": "81457959115",
+            "issuer_email": "hugo@email.com",
+          }
+        }
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"proposal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"template_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7c3534c-2b04-11ed-a261-02422b00ac13"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">231387</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Fonseca"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_full_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setor M QNM 03 Conjunto Z - 72200-000, Brasília - DF"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_cpf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"657.565.000-73"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_rg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47.825.277-8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_cnh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"81457959115"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issuer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hugo@email.com"</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint cria uma proposta</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://app.securities.com.br/api/legacy/proposals</code></p>
+<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>template_key</td>
+<td>sim</td>
+<td>string</td>
+<td>Chave do template no assinador</td>
+</tr>
+<tr>
+<td>document_data</td>
+<td>sim</td>
+<td>json</td>
+<td>Dados do documento para compor o título</td>
+</tr>
+</tbody></table>
 <h1 id='proposta'>Proposta</h1>
 <p><strong>TODO:</strong> A proposta é utilizada para....</p>
 <h2 id='listar-propostas'>Listar propostas</h2>
