@@ -332,6 +332,9 @@
                   <li>
                     <a href="#criar-proposta" class="toc-h2 toc-link" data-title="Criar proposta">Criar proposta</a>
                   </li>
+                  <li>
+                    <a href="#buscar-contrato-ccb-existente" class="toc-h2 toc-link" data-title="Buscar contrato (CCB) existente">Buscar contrato (CCB) existente</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -598,6 +601,55 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>sim</td>
 <td>json</td>
 <td>Dados do documento para compor o título</td>
+</tr>
+</tbody></table>
+<h2 id='buscar-contrato-ccb-existente'>Buscar contrato (CCB) existente</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/legacy/securities/:id <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"process"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">231387</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"issuer_cpf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"657.565.000-73"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"issuer_full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Fonseca"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parcels"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"first_installment_due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last_installment_due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-12-01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parcels_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">200.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"today_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">160.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"leasing_total_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">192.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cession_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">180.00</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Todos</span><span class="w"> </span><span class="err">os</span><span class="w"> </span><span class="err">dados</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">modelo</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint obtém todos os dados de uma CCB</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/legacy/securities/:id</code></p>
+<h3 id='parametros-da-requisicao-2'>Parâmetros da requisição</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>sim</td>
+<td>integer</td>
+<td>Chave da security (CCB)</td>
 </tr>
 </tbody></table>
 <h1 id='proposta'>Proposta</h1>
