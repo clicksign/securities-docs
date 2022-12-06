@@ -64,3 +64,51 @@ Esse endpoint cria uma proposta
 | --------------- | ----------- | ------- | --------------------------------------- |
 | template_key    | sim         | string  | Chave do template no assinador          |
 | document_data   | sim         | json    | Dados do documento para compor o título |
+
+## Buscar contrato (CCB) existente
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/legacy/securities/:id \
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "process": 3,
+  "number": 231387,
+  "issuer_cpf": "657.565.000-73",
+  "issuer_full_name": "Hugo Fonseca",
+  "parcels": 5,
+  "first_installment_due_date": "2022-12-01",
+  "last_installment_due_date": "2023-12-01",
+  "parcels_value": 200.00,
+  "today_value": 160.00,
+  "leasing_total_value": 192.00,
+  "cession_value": 180.00,
+  "metadata": {
+    // Todos os dados do modelo
+  }
+}
+```
+
+Esse endpoint obtém todos os dados de uma CCB
+
+### HTTP Request
+
+`GET https://app.securities.com.br/api/legacy/securities/:id`
+
+### Parâmetros da requisição
+
+| Parâmetro       | Obrigatório | Tipo    | Descrição                               |
+| --------------- | ----------- | ------- | --------------------------------------- |
+| id              | sim         | integer | Chave da security (CCB)                 |
