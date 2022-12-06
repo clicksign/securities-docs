@@ -113,3 +113,88 @@ Esse endpoint obtém todos os dados de uma CCB
 | Parâmetro       | Obrigatório | Tipo    | Descrição                               |
 | --------------- | ----------- | ------- | --------------------------------------- |
 | id              | sim         | integer | Chave da security (CCB)                 |
+
+## Criar Signatário
+
+> Request:
+
+```shell
+curl -X POST https://app.securities.com.br/api/legacy/signers \
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json" \
+    -d '{
+        "signer": {
+          "email": "fulano@example.com",
+          "auth": "email",
+          "full_name": "Marcos Zumba",
+          "has_documentation": true,
+          "documentation": "123.321.123-40",
+          "birthday": "1983-03-31",
+          "phone_number": "11999999999",
+          "sign_as": "sign",
+          "communicate_by": "email",
+          "selfie_enabled": false,
+          "facial_biometrics_enabled": false,
+          "handwritten_enabled": false,
+          "official_document_enabled": false,
+          "liveness_enabled": false
+        }
+      }'
+```
+
+> Response:
+
+```shell
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "signer": {
+    "id": 4,
+    "full_name": "Marcos Zumba",
+    "has_documentation": true,
+    "documentation": "123.321.123-40",
+    "email": "fulano@example.com",
+    "birthday": "1983-03-31",
+    "phone_number": "11999999999",
+    "auth": "email",
+    "communicate_by": "email",
+    "key": null,
+    "sign_as": "sign",
+    "created_at": "2022-09-16T18:41:00.079-03:00",
+    "updated_at": "2022-09-16T18:41:00.079-03:00",
+    "selfie_enabled": false,
+    "facial_biometrics_enabled": false,
+    "handwritten_enabled": false,
+    "official_document_enabled": false,
+    "liveness_enabled": false
+  }
+}
+```
+
+Esse endpoint cria um signatário
+
+### HTTP Request
+
+`POST https://app.securities.com.br/api/legacy/signers`
+
+### Parâmetros da requisição
+
+| Parâmetro                 | Obrigatório | Tipo    | Descrição                                                     |
+|---------------------------| ----------- | ------- | ------------------------------------------------------------- |
+| full_name                 | sim         | string  | Nome completo                                                 |
+| has_documentation         | não         | boolean | Tem documentação, como CPF, CNPJ ou Passaporte. Padrão é TRUE |
+| documentation             | condicional | string  | CPF, CNPJ ou Passaporte                                       |
+| birthday                  | condicional | string  | Data de nascimento                                            |
+| email                     | condicional | string  | E-mail                                                        |
+| phone_number              | sim         | string  | Numero de telefone                                            |
+| auth                      | sim         | string  | Tipo de autenticação: "email" ou "api"                        |
+| communicate_by            | sim         | string  | Por onde será notificado: "email"                             |
+| sign_as                   | sim         | string  | Assinar como: sign, party, witness, contractor, contractee... |
+| selfie_enabled            | não         | boolean | Padrão é FALSE                                                |
+| facial_biometrics_enabled | não         | boolean | Padrão é FALSE                                                |
+| handwritten_enabled       | não         | boolean | Padrão é FALSE                                                |
+| official_document_enabled | não         | boolean | Padrão é FALSE                                                |
+| liveness_enabled          | não         | boolean | Padrão é FALSE                                                |
