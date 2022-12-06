@@ -84,6 +84,7 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
+  "id": 2,
   "process": 3,
   "number": 231387,
   "issuer_cpf": "657.565.000-73",
