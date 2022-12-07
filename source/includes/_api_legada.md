@@ -198,3 +198,59 @@ Esse endpoint cria um signatário
 | handwritten_enabled       | não         | boolean | Padrão é FALSE                                                |
 | official_document_enabled | não         | boolean | Padrão é FALSE                                                |
 | liveness_enabled          | não         | boolean | Padrão é FALSE                                                |
+
+
+## Vincular Signatário ao documento
+
+> Request:
+
+```shell
+curl -X POST https://app.securities.com.br/api/legacy/signers/signer_id:/lists \
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json" \
+    -d '{
+        "list": {
+          "document_id": 1,
+          "group": "nil",
+          "message": "nil",
+          "refusable": false,
+        }
+      }'
+```
+
+> Response:
+
+```shell
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "list": {
+    "id": 4,
+    "document_id": 1,
+    "signer_id": 4,
+    "created_at": "2022-09-16T18:41:00.079-03:00",
+    "updated_at": "2022-09-16T18:41:00.079-03:00",
+    "group": "nil",
+    "message": "nil",
+    "refusable": false
+  }
+}
+```
+
+Esse endpoint cria um signatário
+
+### HTTP Request
+
+`POST https://app.securities.com.br/api/legacy/signers/:signer_id/lists`
+
+### Parâmetros da requisição
+
+| Parâmetro   | Obrigatório | Tipo     | Descrição                                                                                                                                                                          |
+|-------------| ----------- |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| document_id | sim         | integer  | Chave única do documento dentro do Securities                                                                                                                                      |
+| group       | não         | string   | Determina o grupo que o signatário deve ser vinculado. Deve ser número, inteiro e maior que 0.           Não adicione esse parâmetro caso não deseje uma ordenação de assinaturas. |
+| message     | não         | string   | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários. O parâmetro funciona com sequence_enabledcomo true e group é obrigatório                                                                                         |
+| refusable   | não         | boolean  | Padrão é FALSE                                                                                                                                                                     |
