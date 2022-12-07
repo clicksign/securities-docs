@@ -24,6 +24,7 @@ Content-Type: application/json; charset=utf-8
     {
       "id": 2,
       "number": "123456",
+      "issuer_full_name": "Hugo Fonseca",
       "issuer_document": "630.427.604-48",
       "installments": 1,
       "created_at": "2022-09-15T15:27:00.691-03:00",
@@ -75,6 +76,7 @@ Content-Type: application/json; charset=utf-8
   "security": {
     "id": 2,
     "number": "123456",
+    "issuer_full_name": "Hugo Fonseca",
     "issuer_document": "630.427.604-48",
     "installments": 1,
     "document_data": {

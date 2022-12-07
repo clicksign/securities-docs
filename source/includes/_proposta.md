@@ -24,6 +24,7 @@ Content-Type: application/json; charset=utf-8
     {
       "id": 218,
       "number": "123456",
+      "issuer_full_name": "Hugo Fonseca",
       "issuer_document": "882.793.334-44",
       "installments": 48,
       "created_at": "2022-10-07T12:00:33.571-03:00",
@@ -74,6 +75,7 @@ Content-Type: application/json; charset=utf-8
   "proposal": {
     "id": 3073,
     "number": "123321",
+    "issuer_full_name": "Hugo Fonseca",
     "issuer_document": "882.793.334-44",
     "installments": 48,
     "created_at": "2022-10-27T09:44:50.772-03:00",
@@ -136,6 +138,7 @@ curl -X POST https://app.securities.com.br/api/v1/proposals \
    -d '{
         "proposal": {
           "number": "1234567",
+          "issuer_full_name": "Hugo Fonseca",
           "issuer_document": "525.403.396-61",
           "installments": 48,
           "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
@@ -184,6 +187,7 @@ Content-Type: application/json; charset=utf-8
   "proposal": {
     "id": 3073,
     "number": "123321",
+    "issuer_full_name": "Hugo Fonseca",
     "issuer_document": "882.793.334-44",
     "installments": 48,
     "created_at": "2022-10-27T09:44:50.772-03:00",

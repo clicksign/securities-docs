@@ -4,7 +4,7 @@
 Os endpoint descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
 </aside>
 
-## Criar proposta
+## Criar proposta (Legado)
 
 > Request:
 
@@ -46,7 +46,7 @@ Content-Type: application/json; charset=utf-8
       "issuer_cpf": "657.565.000-73",
       "issuer_rg": "47.825.277-8",
       "issuer_cnh": "81457959115",
-      "issuer_email": "hugo@email.com",
+      "issuer_email": "hugo@email.com"
     }
   }
 }
@@ -60,10 +60,10 @@ Esse endpoint cria uma proposta
 
 ### Parâmetros da requisição
 
-| Parâmetro       | Obrigatório | Tipo    | Descrição                               |
-| --------------- | ----------- | ------- | --------------------------------------- |
-| template_key    | sim         | string  | Chave do template no assinador          |
-| document_data   | sim         | json    | Dados do documento para compor o título |
+| Parâmetro     | Obrigatório | Tipo   | Descrição                               |
+| ------------- | ----------- | ------ | --------------------------------------- |
+| template_key  | sim         | string | Chave do template no assinador          |
+| document_data | sim         | json   | Dados do documento para compor o título |
 
 ## Buscar contrato (CCB) existente
 
@@ -92,10 +92,10 @@ Content-Type: application/json; charset=utf-8
   "parcels": 5,
   "first_installment_due_date": "2022-12-01",
   "last_installment_due_date": "2023-12-01",
-  "parcels_value": 200.00,
-  "today_value": 160.00,
-  "leasing_total_value": 192.00,
-  "cession_value": 180.00,
+  "parcels_value": 200.0,
+  "today_value": 160.0,
+  "leasing_total_value": 192.0,
+  "cession_value": 180.0,
   "metadata": {
     // Todos os dados do modelo
   }
@@ -110,9 +110,9 @@ Esse endpoint obtém todos os dados de uma CCB
 
 ### Parâmetros da requisição
 
-| Parâmetro       | Obrigatório | Tipo    | Descrição                               |
-| --------------- | ----------- | ------- | --------------------------------------- |
-| id              | sim         | integer | Chave da security (CCB)                 |
+| Parâmetro | Obrigatório | Tipo    | Descrição               |
+| --------- | ----------- | ------- | ----------------------- |
+| id        | sim         | integer | Chave da security (CCB) |
 
 ## Criar Signatário
 
@@ -183,7 +183,7 @@ Esse endpoint cria um signatário
 ### Parâmetros da requisição
 
 | Parâmetro                 | Obrigatório | Tipo    | Descrição                                                     |
-|---------------------------| ----------- | ------- | ------------------------------------------------------------- |
+| ------------------------- | ----------- | ------- | ------------------------------------------------------------- |
 | full_name                 | sim         | string  | Nome completo                                                 |
 | has_documentation         | não         | boolean | Tem documentação, como CPF, CNPJ ou Passaporte. Padrão é TRUE |
 | documentation             | condicional | string  | CPF, CNPJ ou Passaporte                                       |
@@ -198,7 +198,6 @@ Esse endpoint cria um signatário
 | handwritten_enabled       | não         | boolean | Padrão é FALSE                                                |
 | official_document_enabled | não         | boolean | Padrão é FALSE                                                |
 | liveness_enabled          | não         | boolean | Padrão é FALSE                                                |
-
 
 ## Vincular Signatário ao documento
 
@@ -248,9 +247,9 @@ Esse endpoint cria um signatário
 
 ### Parâmetros da requisição
 
-| Parâmetro   | Obrigatório | Tipo     | Descrição                                                                                                                                                                          |
-|-------------| ----------- |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| document_id | sim         | integer  | Chave única do documento dentro do Securities                                                                                                                                      |
-| group       | não         | string   | Determina o grupo que o signatário deve ser vinculado. Deve ser número, inteiro e maior que 0.           Não adicione esse parâmetro caso não deseje uma ordenação de assinaturas. |
-| message     | não         | string   | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários. O parâmetro funciona com sequence_enabledcomo true e group é obrigatório                                                                                         |
-| refusable   | não         | boolean  | Padrão é FALSE                                                                                                                                                                     |
+| Parâmetro   | Obrigatório | Tipo    | Descrição                                                                                                                                                                |
+| ----------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| document_id | sim         | integer | Chave única do documento dentro do Securities                                                                                                                            |
+| group       | não         | string  | Determina o grupo que o signatário deve ser vinculado. Deve ser número, inteiro e maior que 0. Não adicione esse parâmetro caso não deseje uma ordenação de assinaturas. |
+| message     | não         | string  | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários. O parâmetro funciona com sequence_enabledcomo true e group é obrigatório       |
+| refusable   | não         | boolean | Padrão é FALSE                                                                                                                                                           |
