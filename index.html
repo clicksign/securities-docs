@@ -339,7 +339,7 @@
                     <a href="#buscar-lote-existente-assignments" class="toc-h2 toc-link" data-title="Buscar lote existente (assignments)">Buscar lote existente (assignments)</a>
                   </li>
                   <li>
-                    <a href="#criar-signatario" class="toc-h2 toc-link" data-title="Criar Signatário">Criar Signatário</a>
+                    <a href="#criar-signatario-legado" class="toc-h2 toc-link" data-title="Criar Signatário (Legado)">Criar Signatário (Legado)</a>
                   </li>
                   <li>
                     <a href="#vincular-signatario-ao-documento" class="toc-h2 toc-link" data-title="Vincular Signatário ao documento">Vincular Signatário ao documento</a>
@@ -542,8 +542,8 @@
 
 <aside class="notice">O token de acesso é liberado somente para contas cadastradas na Securities</aside>
 <h1 id='api-legada'>API Legada</h1>
-<aside class="notice">
-Os endpoint descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
+<aside class="warning">
+Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
 </aside>
 <h2 id='criar-proposta-legado'>Criar proposta (Legado)</h2>
 <blockquote>
@@ -676,7 +676,6 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-
   </span><span class="nl">"process"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"cession_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">442142</span><span class="p">,</span><span class="w">
@@ -685,7 +684,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="nl">"cession_contracts"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nl">"assignor"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transferee"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">231387</span><span class="p">,</span><span class="w"> </span><span class="mi">231388</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">231387</span><span class="p">,</span><span class="w"> </span><span class="mi">231388</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de lote de CCB</p>
@@ -707,7 +706,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Chave do lote de CCBs (assignment)</td>
 </tr>
 </tbody></table>
-<h2 id='criar-signatario'>Criar Signatário</h2>
+<h2 id='criar-signatario-legado'>Criar Signatário (Legado)</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
