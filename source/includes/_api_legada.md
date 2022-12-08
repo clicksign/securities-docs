@@ -114,6 +114,49 @@ Esse endpoint obtém todos os dados de uma CCB
 | --------- | ----------- | ------- | ----------------------- |
 | id        | sim         | integer | Chave da security (CCB) |
 
+## Buscar lote existente (assignments)
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/legacy/assignments/:id \
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "process": 3,
+  "status": "pending",
+  "cession_number": 442142,
+  "cession_value": 1877.99,
+  "cession_parcels": 30,
+  "cession_contracts": 2,
+  "assignor": 7,
+  "transferee": 8,
+  "contracts": [231387, 231388]
+}
+```
+
+Esse endpoint obtém todos os dados de lote de CCB
+
+### HTTP Request
+
+`GET https://app.securities.com.br/api/legacy/assignments/:id`
+
+### Parâmetros da requisição
+
+| Parâmetro | Obrigatório | Tipo    | Descrição                          |
+| --------- | ----------- | ------- | ---------------------------------- |
+| id        | sim         | integer | Chave do lote de CCBs (assignment) |
+
 ## Criar Signatário (Legado)
 
 > Request:
