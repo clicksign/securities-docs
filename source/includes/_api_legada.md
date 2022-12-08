@@ -1,7 +1,7 @@
 # API Legada
 
-<aside class="notice">
-Os endpoint descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
+<aside class="warning">
+Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
 </aside>
 
 ## Criar proposta (Legado)
@@ -114,7 +114,7 @@ Esse endpoint obtém todos os dados de uma CCB
 | --------- | ----------- | ------- | ----------------------- |
 | id        | sim         | integer | Chave da security (CCB) |
 
-## Criar Signatário
+## Criar Signatário (Legado)
 
 > Request:
 
