@@ -329,7 +329,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint cria um signatário
+Esse endpoint Vincula um signatário a um documento
 
 ### HTTP Request
 
@@ -343,3 +343,64 @@ Esse endpoint cria um signatário
 | group       | não         | string  | Determina o grupo que o signatário deve ser vinculado. Deve ser número, inteiro e maior que 0. Não adicione esse parâmetro caso não deseje uma ordenação de assinaturas. |
 | message     | não         | string  | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários. O parâmetro funciona com sequence_enabledcomo true e group é obrigatório       |
 | refusable   | não         | boolean | Padrão é FALSE                                                                                                                                                           |
+
+
+## Criar um processo de cessão
+
+> Request:
+
+```shell
+curl -X POST https://app.securities.com.br/api/legacy/assignments\
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json" \
+    -d '{
+          "cession_number": "123456789",
+          "cession_value": 1000,
+          "cession_parcels": 1,
+          "cession_contracts": 30,
+          "issue_date": "2021-09-16",
+          "assignor": 1,
+          "transferee": 2,
+          "callback_url": "https://example.com/callback",
+          "template_data": {
+            "assignor_name": "Fulano",
+            "assignor_documentation": "123.321.123-40",
+            "assignor_email": "
+          }
+      }'
+```
+
+> Response:
+
+```shell
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "process": "123456789",
+  "status": "pending"
+}
+```
+
+Esse endpoint cria um processo de cessão
+
+### HTTP Request
+
+`POST https://app.securities.com.br/api/legacy/assignments`
+
+### Parâmetros da requisição
+
+| Parâmetro          | Obrigatório | Tipo    | Descrição                                   |
+|--------------------|-------------| ------- |---------------------------------------------|
+| cession_number     | sim         | string  | Número da cessão                            |
+| cession_value      | sim         | integer | Valor da cessão                             |
+| cession_parcels    | sim         | integer | Quantidade de parcelas negociadas na cessão |
+| cession_contracts  | sim         | integer | Quantidade de contratos negociados na cessão|
+| issue_date         | sim         | string  | Data de emissão da cessão                   |
+| assignor           | sim         | integer | ID da conta do endossatário                 |
+| transferee         | sim         | integer | ID da conta da cessionária                  |
+| callback_url       | não         | string  | URL de callback                             |
+| template_data      | sim         | object  | Dados para o template                       |
+
