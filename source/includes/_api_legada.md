@@ -157,6 +157,53 @@ Esse endpoint obtém todos os dados de lote de CCB
 | --------- | ----------- | ------- | ---------------------------------- |
 | id        | sim         | integer | Chave do lote de CCBs (assignment) |
 
+## Cancelar lote existente
+
+> Request:
+
+```shell
+curl -X POST https://app.securities.com.br/api/legacy/assignments/:id/cancel \
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "process": 3,
+  "status": "canceling",
+  "cession_number": 442142,
+  "cession_value": 1877.99,
+  "cession_parcels": 30,
+  "cession_contracts": 2,
+  "assignor": 7,
+  "transferee": 8,
+  "contracts": [231387, 231388]
+}
+```
+
+Esse endpoint cancela um lote de cessão de CCBs
+
+<aside class="notice">
+O cancelamento é permitido até 2 dias após a cessão
+</aside>
+
+### HTTP Request
+
+`POST https://app.securities.com.br/api/legacy/assignments/:id/cancel`
+
+### Parâmetros da requisição
+
+| Parâmetro | Obrigatório | Tipo    | Descrição                          |
+| --------- | ----------- | ------- | ---------------------------------- |
+| id        | sim         | integer | Chave do lote de CCBs (assignment) |
+
 ## Criar Signatário (Legado)
 
 > Request:
