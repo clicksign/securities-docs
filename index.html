@@ -347,6 +347,9 @@
                   <li>
                     <a href="#vincular-signatario-ao-documento" class="toc-h2 toc-link" data-title="Vincular Signatário ao documento">Vincular Signatário ao documento</a>
                   </li>
+                  <li>
+                    <a href="#criar-um-processo-de-cessao" class="toc-h2 toc-link" data-title="Criar um processo de cessão">Criar um processo de cessão</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -942,7 +945,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint cria um signatário</p>
+<p>Esse endpoint Vincula um signatário a um documento</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://app.securities.com.br/api/legacy/signers/:signer_id/lists</code></p>
 <h3 id='parametros-da-requisicao-6'>Parâmetros da requisição</h3>
@@ -977,6 +980,106 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>não</td>
 <td>boolean</td>
 <td>Padrão é FALSE</td>
+</tr>
+</tbody></table>
+<h2 id='criar-um-processo-de-cessao'>Criar um processo de cessão</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/legacy/assignments<span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+          "cession_number": "123456789",
+          "cession_value": 1000,
+          "cession_parcels": 1,
+          "cession_contracts": 30,
+          "issue_date": "2021-09-16",
+          "assignor": 1,
+          "transferee": 2,
+          "callback_url": "https://example.com/callback",
+          "template_data": {
+            "assignor_name": "Fulano",
+            "assignor_documentation": "123.321.123-40",
+            "assignor_email": "
+          }
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"process"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint cria um processo de cessão</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://app.securities.com.br/api/legacy/assignments</code></p>
+<h3 id='parametros-da-requisicao-7'>Parâmetros da requisição</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cession_number</td>
+<td>sim</td>
+<td>string</td>
+<td>Número da cessão</td>
+</tr>
+<tr>
+<td>cession_value</td>
+<td>sim</td>
+<td>integer</td>
+<td>Valor da cessão</td>
+</tr>
+<tr>
+<td>cession_parcels</td>
+<td>sim</td>
+<td>integer</td>
+<td>Quantidade de parcelas negociadas na cessão</td>
+</tr>
+<tr>
+<td>cession_contracts</td>
+<td>sim</td>
+<td>integer</td>
+<td>Quantidade de contratos negociados na cessão</td>
+</tr>
+<tr>
+<td>issue_date</td>
+<td>sim</td>
+<td>string</td>
+<td>Data de emissão da cessão</td>
+</tr>
+<tr>
+<td>assignor</td>
+<td>sim</td>
+<td>integer</td>
+<td>ID da conta do endossatário</td>
+</tr>
+<tr>
+<td>transferee</td>
+<td>sim</td>
+<td>integer</td>
+<td>ID da conta da cessionária</td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>não</td>
+<td>string</td>
+<td>URL de callback</td>
+</tr>
+<tr>
+<td>template_data</td>
+<td>sim</td>
+<td>object</td>
+<td>Dados para o template</td>
 </tr>
 </tbody></table>
 <h1 id='proposta'>Proposta</h1>
