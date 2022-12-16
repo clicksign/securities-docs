@@ -350,6 +350,9 @@
                   <li>
                     <a href="#criar-um-processo-de-cessao" class="toc-h2 toc-link" data-title="Criar um processo de cessão">Criar um processo de cessão</a>
                   </li>
+                  <li>
+                    <a href="#executar-um-processo-de-cessao" class="toc-h2 toc-link" data-title="Executar um processo de cessão">Executar um processo de cessão</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1080,6 +1083,55 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>sim</td>
 <td>object</td>
 <td>Dados para o template</td>
+</tr>
+</tbody></table>
+<h2 id='executar-um-processo-de-cessao'>Executar um processo de cessão</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/legacy/contracts<span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+          "process": "123",
+          "contracts": [
+          { number: "123456789" },
+          { number: "125468797" }
+          ]
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 202 Accepted
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">status:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint Executa um processo de cessão</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://app.securities.com.br/api/legacy/assignments</code></p>
+<h3 id='parametros-da-requisicao-8'>Parâmetros da requisição</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>process</td>
+<td>sim</td>
+<td>Integer</td>
+<td>ID do processo de cessão</td>
+</tr>
+<tr>
+<td>contracts</td>
+<td>sim</td>
+<td>Array</td>
+<td>Array de contratos</td>
 </tr>
 </tbody></table>
 <h1 id='proposta'>Proposta</h1>
