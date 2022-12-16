@@ -404,3 +404,45 @@ Esse endpoint cria um processo de cessão
 | callback_url       | não         | string  | URL de callback                             |
 | template_data      | sim         | object  | Dados para o template                       |
 
+## Executar um processo de cessão
+
+> Request:
+
+```shell
+curl -X POST https://app.securities.com.br/api/legacy/contracts\
+   -H "Authorization: Bearer $TOKEN" \
+   -H "Content-Type: application/json" \
+    -d '{
+          "process": "123",
+          "contracts": [
+          { number: "123456789" },
+          { number: "125468797" }
+          ]
+      }'
+```
+
+> Response:
+
+```shell
+HTTP/1.1 202 Accepted
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  status: "accepted"
+}
+```
+
+Esse endpoint Executa um processo de cessão
+
+### HTTP Request
+
+`POST https://app.securities.com.br/api/legacy/assignments`
+
+### Parâmetros da requisição
+
+| Parâmetro | Obrigatório | Tipo    | Descrição                |
+|-----------|-------------|---------|--------------------------|
+| process   | sim         | Integer | ID do processo de cessão |
+| contracts | sim         | Array   | Array de contratos       |
