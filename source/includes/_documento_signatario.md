@@ -28,6 +28,7 @@ Content-Type: application/json; charset=utf-8
       "key": "2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b",
       "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
       "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
+      "signed": false,
       "created_at": "2022-10-26T15:53:18.825-03:00",
       "updated_at": "2022-10-26T15:55:51.010-03:00"
     }
@@ -80,6 +81,7 @@ Content-Type: application/json; charset=utf-8
     "key": "2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b",
     "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
     "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
+    "signed": false,
     "created_at": "2022-10-26T15:53:18.825-03:00",
     "updated_at": "2022-10-26T15:55:51.010-03:00"
   }
