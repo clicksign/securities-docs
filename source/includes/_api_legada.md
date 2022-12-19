@@ -415,8 +415,8 @@ curl -X POST https://app.securities.com.br/api/legacy/contracts\
     -d '{
           "process": "123",
           "contracts": [
-          { number: "123456789" },
-          { number: "125468797" }
+          { "number": "123456789" },
+          { "number": "125468797" }
           ]
       }'
 ```
@@ -438,7 +438,7 @@ Esse endpoint Executa um processo de cessão
 
 ### HTTP Request
 
-`POST https://app.securities.com.br/api/legacy/assignments`
+`POST https://app.securities.com.br/api/legacy//contracts`
 
 ### Parâmetros da requisição
 
