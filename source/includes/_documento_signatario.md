@@ -29,6 +29,7 @@ Content-Type: application/json; charset=utf-8
       "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
       "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
       "signed": false,
+      "sign_as": "sign",
       "created_at": "2022-10-26T15:53:18.825-03:00",
       "updated_at": "2022-10-26T15:55:51.010-03:00"
     }
@@ -82,6 +83,7 @@ Content-Type: application/json; charset=utf-8
     "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
     "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
     "signed": false,
+    "sign_as": "sign",
     "created_at": "2022-10-26T15:53:18.825-03:00",
     "updated_at": "2022-10-26T15:55:51.010-03:00"
   }
@@ -105,7 +107,8 @@ curl -X POST https://app.securities.com.br/api/v1/lists \
      -d '{
           "list": {
             "signer_id": 1,
-            "document_id": 2
+            "document_id": 2,
+            "sign_as": "sign"
           }
         }'
 ```
@@ -126,6 +129,7 @@ Content-Type: application/json; charset=utf-8
     "key": "2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b",
     "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
     "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
+    "sign_as": "sign",
     "created_at": "2022-10-26T15:53:18.825-03:00",
     "updated_at": "2022-10-26T15:55:51.010-03:00"
   }
@@ -140,7 +144,8 @@ Esse endpoint associa o signatário a um documento e vice-versa
 
 ### Parâmetros da requisição
 
-| Parâmetro   | Obrigatório | Tipo    | Descrição        |
-| ----------- | ----------- | ------- | ---------------- |
-| signer_id   | sim         | integer | ID do signatário |
-| document_id | sim         | string  | ID do documento  |
+| Parâmetro   | Obrigatório | Tipo    | Descrição                                                  |
+| ----------- | ----------- | ------- | ---------------------------------------------------------- |
+| signer_id   | sim         | integer | ID do signatário                                           |
+| document_id | sim         | string  | ID do documento                                            |
+| sign_as     | não         | string  | Assinar como: sign (padrão), party, witness, contractor... |
