@@ -1,8 +1,10 @@
-# Título
+# CCB
 
-**TODO:** O título é utilizada para....
+CCB é a Cédula de crédito bancário: A Cédula de Crédito Bancário é título de crédito emitido por emissor-devedor em favor de instituição financeira, representando promessa de pagamento em dinheiro, decorrente de operação de crédito, de qualquer modalidade. Sobre a regulação da CCB, vide o art. 26 da Lei 10.931/2004.
 
-## Listar títulos
+Em outras palavras, a CCB é o que representará um crédito tomado e que foi assinado pelo tomador para que possa ser negociado como um título no mercado financeiro.
+
+## Listar CCBs
 
 > Request:
 
@@ -42,7 +44,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint lista todos os títulos
+Esse endpoint lista todas as CCBs
 
 ### HTTP Request
 
@@ -50,12 +52,12 @@ Esse endpoint lista todos os títulos
 
 ### Parâmetros de consulta
 
-| Parâmetro | Tipo    | Descrição        |
-| --------- | ------- | ---------------- |
-| number    | string  | Número do título |
-| page      | integer | Paginação        |
+| Parâmetro | Tipo    | Descrição     |
+| --------- | ------- | ------------- |
+| number    | string  | Número da CCB |
+| page      | integer | Paginação     |
 
-## Obter título
+## Obter CCB
 
 > Request:
 
@@ -99,7 +101,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtem todos os dados de um título
+Esse endpoint obtem todos os dados de uma CCB
 
 ### HTTP Request
 

@@ -1,8 +1,8 @@
-# Título em Lote
+# CCB em Lote
 
-**TODO:** O título no lote é utilizado para....
+Endpoint utilizado para vincular a CCB a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.
 
-## Listar títulos do lote
+## Listar CCBs do lote
 
 > Request:
 
@@ -41,7 +41,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint lista todos os títulos do lote
+Esse endpoint lista todas as CCBs do lote
 
 ### HTTP Request
 
@@ -53,7 +53,7 @@ Esse endpoint lista todos os títulos do lote
 | --------- | ------- | --------- |
 | page      | integer | Paginação |
 
-## Obter um título do lote
+## Obter uma CCB do lote
 
 > Request:
 
@@ -82,13 +82,13 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtem todos os dados de um título de um lote
+Esse endpoint obtem todos os dados de uma CCB de um lote
 
 ### HTTP Request
 
 `GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches/:id`
 
-## Adicionar título no lote
+## Adicionar CCB no lote
 
 > Request:
 
@@ -123,7 +123,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint adiciona um título no lote
+Esse endpoint adiciona uma CCB no lote
 
 ### HTTP Request
 
@@ -131,24 +131,23 @@ Esse endpoint adiciona um título no lote
 
 ### Parâmetros da requisição
 
-| Parâmetro   | Obrigatório | Tipo    | Descrição    |
-| ----------- | ----------- | ------- | ------------ |
-| security_id | sim         | integer | ID do título |
+| Parâmetro   | Obrigatório | Tipo    | Descrição |
+| ----------- | ----------- | ------- | --------- |
+| security_id | sim         | integer | ID da CCB |
 
 ### Validações
 
-Não será permitido enviar um título se não for criada uma cessão associada ao lote.
+Não será permitido enviar uma CCB se não for criada uma cessão associada ao lote.
 
-Enquanto `quantity` não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado,
-o status iniciará em `pending`, irá para `checking` após adicionar o primeiro título no lote e, até que todos os
-títulos sejam enviados, permanecerá nesse status.
+Enquanto `quantity` não for equivalente a quantidade total de CCBs do lote, o processamento não será finalizado,
+o status iniciará em `pending`, irá para `checking` após adicionar o primeiro CCB no lote e, até que todas as
+CCBs sejam enviadas, permanecerá nesse status.
 
-Não será permitido enviar uma quantidade de títulos maior que `quantity`.
+Não será permitido enviar uma quantidade de CCBs maior que `quantity`.
 
-Não será permitido enviar um título que já esteja no lote.
-
+Não será permitido enviar uma CCB que já esteja no lote.
 
 <aside class="warning">
   <strong>Atenção</strong><br>
-  Para obter o <code>security_id</code> será necessário <a href="#listar-titulos">consultar pelo título</a> no respectivo endpoint.
+  Para obter o <code>security_id</code> será necessário <a href="#listar-ccbs">consultar pela CCB</a> no respectivo endpoint.
 </aside>

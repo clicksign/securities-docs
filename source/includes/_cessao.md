@@ -1,6 +1,8 @@
 # Termos de Cessão
 
-**TODO:** O contrato de cessão é utilizado para....
+O termo de cessão é o instrumento através do qual se opera a transmissão de direitos sobre determinado bem. Por meio dela, o vendedor, conhecido como cedente, repassa ao comprador, denominado cessionário, os direitos sobre o bem objeto da Cessão.
+
+O termo de cessão é o documento que transcreve de forma resumida a operação que está sendo cedida naquele momento, com o resumo das CCBs que estão em operação no lote.
 
 ## Listar termos de cessão
 
@@ -148,19 +150,18 @@ Esse endpoint cria um termo de cessão
 
 ### Parâmetros da requisição
 
-Parâmetro                | Obrigatório | Tipo    | Descrição
-------------------       | ----------- |---------| -----------
-assignee_id              | sim         | integer | ID da conta da cessionária
-endorser_id              | sim         | integer | ID da conta do endossatário
-number                   | sim         | string  | Número do termo de cessão
-issue_date               | sim         | boolean | Data de emissão
-full_amount              | sim         | float   | Valor do termo (soma de todos os títulos)
-batch_id                 | sim         | integer | ID do Lote de CCBs
-template_data            | sim         | jsonb   | Dados do documento para compor o Termo de Cessão
+| Parâmetro     | Obrigatório | Tipo    | Descrição                                        |
+| ------------- | ----------- | ------- | ------------------------------------------------ |
+| assignee_id   | sim         | integer | ID da conta da cessionária                       |
+| endorser_id   | sim         | integer | ID da conta do endossatário                      |
+| number        | sim         | string  | Número do termo de cessão                        |
+| issue_date    | sim         | boolean | Data de emissão                                  |
+| full_amount   | sim         | float   | Valor do termo (soma de todos os títulos)        |
+| batch_id      | sim         | integer | ID do Lote de CCBs                               |
+| template_data | sim         | jsonb   | Dados do documento para compor o Termo de Cessão |
 
 ### Validações
 
 O valor inserido em `full_amount` não é validado, ou seja, se inserir um valor diferente da soma dos valores dos títulos
 poderá ter divergências. O motivo da não validação é porque o valor negociado pode ser menor que o valor da soma dos títulos,
 sendo assim, não há com que comparar os valores inseridos, sendo esperado, em alguns casos, alguma divergência.
-

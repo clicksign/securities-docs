@@ -1,6 +1,6 @@
 # Signatário
 
-**TODO:** O signatário é utilizada para....
+Os signatários são aqueles que irão assinar os documentos envolvidos no processo de securitização, desde o registro de uma proposta, sendo o signatário o tomador, até a cessão de uma ou mais CCBs num lote, sendo assinadas pelo originador do crédito e fundo de investimento, como signatários.
 
 ## Listar signatários
 

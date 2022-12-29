@@ -1,6 +1,6 @@
 # Lote
 
-**TODO:** O lote é utilizado para....
+O Lote de cessão é o conjunto de CCBs que estão agrupadas para a mesma finalidade: Serem cedidas numa negociação entre cedente e cessionário.
 
 ## Listar lotes
 

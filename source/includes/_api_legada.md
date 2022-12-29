@@ -1,5 +1,13 @@
 # API Legada
 
+Trata-se de uma API transitória, para que nossos atuais clientes Clicksign Securities possam se planejar para refazer a conexão de API atual, mesmo assim, usufruindo da nova plataforma Clicksign Securities com suas novas features, melhor performance e maior escalabilidade.
+
+Para os clientes atuais, essa API de compatibilidade vai funcionar como uma ponte para conectá-lo da API legada (atual deste cliente) até a Nova Clicksign Securities, realizando a conversão dos formatos que os dados são enviados para o formato que a Nova Securities espera receber.
+
+Para novos clientes, a conexão com a nova Securities deve se dar pela criação da conexão da Nova API. Para os atuais clientes, o uso da API de compatibilidade será uma aceleração para usufruir do novo produto, sem maiores esforços de desenvolvimento inicial.
+
+É importante ressaltar que novas features serão lançadas a partir de abril/2022 apenas para a nova API, o que nos leva a reforçar que após conectar a API de compatibilidade com esforço mínimo, o planejamento para conectar-se com a nova API é essencial para garantir que todos terão acesso aos lançamentos futuros.
+
 <aside class="warning">
 Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
 </aside>
@@ -344,7 +352,6 @@ Esse endpoint Vincula um signatário a um documento
 | message     | não         | string  | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários. O parâmetro funciona com sequence_enabledcomo true e group é obrigatório       |
 | refusable   | não         | boolean | Padrão é FALSE                                                                                                                                                           |
 
-
 ## Criar um processo de cessão
 
 > Request:
@@ -392,17 +399,17 @@ Esse endpoint cria um processo de cessão
 
 ### Parâmetros da requisição
 
-| Parâmetro          | Obrigatório | Tipo    | Descrição                                   |
-|--------------------|-------------| ------- |---------------------------------------------|
-| cession_number     | sim         | string  | Número da cessão                            |
-| cession_value      | sim         | integer | Valor da cessão                             |
-| cession_parcels    | sim         | integer | Quantidade de parcelas negociadas na cessão |
-| cession_contracts  | sim         | integer | Quantidade de contratos negociados na cessão|
-| issue_date         | sim         | string  | Data de emissão da cessão                   |
-| assignor           | sim         | integer | ID da conta do endossatário                 |
-| transferee         | sim         | integer | ID da conta da cessionária                  |
-| callback_url       | não         | string  | URL de callback                             |
-| template_data      | sim         | object  | Dados para o template                       |
+| Parâmetro         | Obrigatório | Tipo    | Descrição                                    |
+| ----------------- | ----------- | ------- | -------------------------------------------- |
+| cession_number    | sim         | string  | Número da cessão                             |
+| cession_value     | sim         | integer | Valor da cessão                              |
+| cession_parcels   | sim         | integer | Quantidade de parcelas negociadas na cessão  |
+| cession_contracts | sim         | integer | Quantidade de contratos negociados na cessão |
+| issue_date        | sim         | string  | Data de emissão da cessão                    |
+| assignor          | sim         | integer | ID da conta do endossatário                  |
+| transferee        | sim         | integer | ID da conta da cessionária                   |
+| callback_url      | não         | string  | URL de callback                              |
+| template_data     | sim         | object  | Dados para o template                        |
 
 ## Executar um processo de cessão
 
@@ -430,7 +437,7 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  status: "accepted"
+  "status": "accepted"
 }
 ```
 
@@ -443,6 +450,6 @@ Esse endpoint Executa um processo de cessão
 ### Parâmetros da requisição
 
 | Parâmetro | Obrigatório | Tipo    | Descrição                |
-|-----------|-------------|---------|--------------------------|
+| --------- | ----------- | ------- | ------------------------ |
 | process   | sim         | Integer | ID do processo de cessão |
 | contracts | sim         | Array   | Array de contratos       |

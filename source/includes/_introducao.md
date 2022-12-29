@@ -20,19 +20,19 @@ Disponibilizamos abaixo as urls de acesso aos nossos ambientes:
 
 No SECURITIES-API, os status de retorno das requisições devem ser esperados conforme especificado nas situações abaixo:
 
-CÓDIGO | DESCRIÇÃO                | SITUAÇÃO
--------|--------------------------|-----------------------------------------------
-200    | *OK*                     | Requisição atendida com sucesso
-201    | *Created*                | Registro criado (geralmente em método POST /recurso)
-204    | *No Content*             | Registro alterado ou excluído (geralmente em método PATCH ou DELETE /recurso)
-401    | *Unauthorized*           | Token ausente, expirado ou não autorizado
-403    | *Forbidden*              | Acesso proibido ao recurso requisitado (usuário sem permissão)
-404    | *Resource Not Found*     | Registro ou recurso não encontrado
-422    | *Unprocessable Entity*   | Quando ocorrer erros de validação, como, um campo obrigatório não informado
-429    | *Too Many Requests*      | Excedeu o seu limite de requisições por minuto
-500    | *Internal Server Error*  | Quando ocorrer um erro interno no recurso da API
-502    | *Bad Gateway*            | No momento estamos offline para manutenção no sistema, tente mais tarde
-503    | *Service Unavailable*    | No momento estamos offline para manutenção no sistema, tente mais tarde
+| CÓDIGO | DESCRIÇÃO               | SITUAÇÃO                                                                      |
+| ------ | ----------------------- | ----------------------------------------------------------------------------- |
+| 200    | _OK_                    | Requisição atendida com sucesso                                               |
+| 201    | _Created_               | Registro criado (geralmente em método POST /recurso)                          |
+| 204    | _No Content_            | Registro alterado ou excluído (geralmente em método PATCH ou DELETE /recurso) |
+| 401    | _Unauthorized_          | Token ausente, expirado ou não autorizado                                     |
+| 403    | _Forbidden_             | Acesso proibido ao recurso requisitado (usuário sem permissão)                |
+| 404    | _Resource Not Found_    | Registro ou recurso não encontrado                                            |
+| 422    | _Unprocessable Entity_  | Quando ocorrer erros de validação, como, um campo obrigatório não informado   |
+| 429    | _Too Many Requests_     | Excedeu o seu limite de requisições por minuto                                |
+| 500    | _Internal Server Error_ | Quando ocorrer um erro interno no recurso da API                              |
+| 502    | _Bad Gateway_           | No momento estamos offline para manutenção no sistema, tente mais tarde       |
+| 503    | _Service Unavailable_   | No momento estamos offline para manutenção no sistema, tente mais tarde       |
 
 # Token de Acesso
 

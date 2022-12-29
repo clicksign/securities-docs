@@ -1,6 +1,6 @@
 # Arranjo
 
-**TODO:** O Arranjo é utilizada para....
+Partes envolvidas no processo de compra e venda de uma operação financeira. São os stakeholders da operação de oferta e aceite de CCBs, que vão originar, enviar para assinatura do tomador e por fim, vender esses títulos aos fundos. Juntos, essas partes formam um arranjo que fazem negociações entre si e possuem contas de originação e destino dentro desse grupo.
 
 ## Listar Arranjos
 
