@@ -1,6 +1,6 @@
 # Signatário do documento
 
-**TODO:** Signatários do documento...
+Endpoint utilizado para adicionar um ou mais signatários a um documento que deverá ser assinado.
 
 ## Listar signatários do documento
 
