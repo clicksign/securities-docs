@@ -384,13 +384,13 @@
               </ul>
           </li>
           <li>
-            <a href="#titulo" class="toc-h1 toc-link" data-title="Título">Título</a>
+            <a href="#ccb" class="toc-h1 toc-link" data-title="CCB">CCB</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#listar-titulos" class="toc-h2 toc-link" data-title="Listar títulos">Listar títulos</a>
+                    <a href="#listar-ccbs" class="toc-h2 toc-link" data-title="Listar CCBs">Listar CCBs</a>
                   </li>
                   <li>
-                    <a href="#obter-titulo" class="toc-h2 toc-link" data-title="Obter título">Obter título</a>
+                    <a href="#obter-ccb" class="toc-h2 toc-link" data-title="Obter CCB">Obter CCB</a>
                   </li>
               </ul>
           </li>
@@ -434,16 +434,16 @@
               </ul>
           </li>
           <li>
-            <a href="#titulo-em-lote" class="toc-h1 toc-link" data-title="Título em Lote">Título em Lote</a>
+            <a href="#ccb-em-lote" class="toc-h1 toc-link" data-title="CCB em Lote">CCB em Lote</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#listar-titulos-do-lote" class="toc-h2 toc-link" data-title="Listar títulos do lote">Listar títulos do lote</a>
+                    <a href="#listar-ccbs-do-lote" class="toc-h2 toc-link" data-title="Listar CCBs do lote">Listar CCBs do lote</a>
                   </li>
                   <li>
-                    <a href="#obter-um-titulo-do-lote" class="toc-h2 toc-link" data-title="Obter um título do lote">Obter um título do lote</a>
+                    <a href="#obter-uma-ccb-do-lote" class="toc-h2 toc-link" data-title="Obter uma CCB do lote">Obter uma CCB do lote</a>
                   </li>
                   <li>
-                    <a href="#adicionar-titulo-no-lote" class="toc-h2 toc-link" data-title="Adicionar título no lote">Adicionar título no lote</a>
+                    <a href="#adicionar-ccb-no-lote" class="toc-h2 toc-link" data-title="Adicionar CCB no lote">Adicionar CCB no lote</a>
                   </li>
               </ul>
           </li>
@@ -551,6 +551,14 @@
 
 <aside class="notice">O token de acesso é liberado somente para contas cadastradas na Securities</aside>
 <h1 id='api-legada'>API Legada</h1>
+<p>Trata-se de uma API transitória, para que nossos atuais clientes Clicksign Securities possam se planejar para refazer a conexão de API atual, mesmo assim, usufruindo da nova plataforma Clicksign Securities com suas novas features, melhor performance e maior escalabilidade.</p>
+
+<p>Para os clientes atuais, essa API de compatibilidade vai funcionar como uma ponte para conectá-lo da API legada (atual deste cliente) até a Nova Clicksign Securities, realizando a conversão dos formatos que os dados são enviados para o formato que a Nova Securities espera receber.</p>
+
+<p>Para novos clientes, a conexão com a nova Securities deve se dar pela criação da conexão da Nova API. Para os atuais clientes, o uso da API de compatibilidade será uma aceleração para usufruir do novo produto, sem maiores esforços de desenvolvimento inicial.</p>
+
+<p>É importante ressaltar que novas features serão lançadas a partir de abril/2022 apenas para a nova API, o que nos leva a reforçar que após conectar a API de compatibilidade com esforço mínimo, o planejamento para conectar-se com a nova API é essencial para garantir que todos terão acesso aos lançamentos futuros.</p>
+
 <aside class="warning">
 Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
 </aside>
@@ -1106,7 +1114,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 202 Accepted
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">status:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint Executa um processo de cessão</p>
@@ -1135,7 +1143,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </tr>
 </tbody></table>
 <h1 id='proposta'>Proposta</h1>
-<p><strong>TODO:</strong> A proposta é utilizada para....</p>
+<p>A proposta é o documento que representa a CCB antes dela ser assinada pelo tomador. Enquanto o tomador não assina o documento, ele ainda não se tornou uma CCB para ser cedida, então esse documento é uma Proposta de se tornar uma CCB.</p>
+
+<p>A proposta conterá todos os dados de uma CCB, seguindo o modelo preconizado entre originador e fundo, entretanto, o que o diferencia de uma CCB é o fato de ainda não estar assinado pelo tomador.</p>
 <h2 id='listar-propostas'>Listar propostas</h2>
 <blockquote>
 <p>Request:</p>
@@ -1395,7 +1405,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </tr>
 </tbody></table>
 <h1 id='signatario'>Signatário</h1>
-<p><strong>TODO:</strong> O signatário é utilizada para....</p>
+<p>Os signatários são aqueles que irão assinar os documentos envolvidos no processo de securitização, desde o registro de uma proposta, sendo o signatário o tomador, até a cessão de uma ou mais CCBs num lote, sendo assinadas pelo originador do crédito e fundo de investimento, como signatários.</p>
 <h2 id='listar-signatarios'>Listar signatários</h2>
 <blockquote>
 <p>Request:</p>
@@ -1619,9 +1629,11 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Assinar como: sign, party, witness, contractor, contractee...</td>
 </tr>
 </tbody></table>
-<h1 id='titulo'>Título</h1>
-<p><strong>TODO:</strong> O título é utilizada para....</p>
-<h2 id='listar-titulos'>Listar títulos</h2>
+<h1 id='ccb'>CCB</h1>
+<p>CCB é a Cédula de crédito bancário: A Cédula de Crédito Bancário é título de crédito emitido por emissor-devedor em favor de instituição financeira, representando promessa de pagamento em dinheiro, decorrente de operação de crédito, de qualquer modalidade. Sobre a regulação da CCB, vide o art. 26 da Lei 10.931/2004.</p>
+
+<p>Em outras palavras, a CCB é o que representará um crédito tomado e que foi assinado pelo tomador para que possa ser negociado como um título no mercado financeiro.</p>
+<h2 id='listar-ccbs'>Listar CCBs</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1655,7 +1667,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint lista todos os títulos</p>
+<p>Esse endpoint lista todas as CCBs</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/securities</code></p>
 <h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
@@ -1669,7 +1681,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <tr>
 <td>number</td>
 <td>string</td>
-<td>Número do título</td>
+<td>Número da CCB</td>
 </tr>
 <tr>
 <td>page</td>
@@ -1677,7 +1689,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-titulo'>Obter título</h2>
+<h2 id='obter-ccb'>Obter CCB</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1715,11 +1727,11 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtem todos os dados de um título</p>
+<p>Esse endpoint obtem todos os dados de uma CCB</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/securities/:id</code></p>
 <h1 id='arranjo'>Arranjo</h1>
-<p><strong>TODO:</strong> O Arranjo é utilizada para....</p>
+<p>Partes envolvidas no processo de compra e venda de uma operação financeira. São os stakeholders da operação de oferta e aceite de CCBs, que vão originar, enviar para assinatura do tomador e por fim, vender esses títulos aos fundos. Juntos, essas partes formam um arranjo que fazem negociações entre si e possuem contas de originação e destino dentro desse grupo.</p>
 <h2 id='listar-arranjos'>Listar Arranjos</h2>
 <blockquote>
 <p>Request:</p>
@@ -1811,7 +1823,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/arrangements/:id</code></p>
 <h1 id='termos-de-cessao'>Termos de Cessão</h1>
-<p><strong>TODO:</strong> O contrato de cessão é utilizado para....</p>
+<p>O termo de cessão é o instrumento através do qual se opera a transmissão de direitos sobre determinado bem. Por meio dela, o vendedor, conhecido como cedente, repassa ao comprador, denominado cessionário, os direitos sobre o bem objeto da Cessão.</p>
+
+<p>O termo de cessão é o documento que transcreve de forma resumida a operação que está sendo cedida naquele momento, com o resumo das CCBs que estão em operação no lote.</p>
 <h2 id='listar-termos-de-cessao'>Listar termos de cessão</h2>
 <blockquote>
 <p>Request:</p>
@@ -1986,7 +2000,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 poderá ter divergências. O motivo da não validação é porque o valor negociado pode ser menor que o valor da soma dos títulos,
 sendo assim, não há com que comparar os valores inseridos, sendo esperado, em alguns casos, alguma divergência.</p>
 <h1 id='lote'>Lote</h1>
-<p><strong>TODO:</strong> O lote é utilizado para....</p>
+<p>O Lote de cessão é o conjunto de CCBs que estão agrupadas para a mesma finalidade: Serem cedidas numa negociação entre cedente e cessionário.</p>
 <h2 id='listar-lotes'>Listar lotes</h2>
 <blockquote>
 <p>Request:</p>
@@ -2135,9 +2149,9 @@ títulos sejam enviados, permanecerá nesse status.</p>
 <aside class="warning">
   Não será permitido enviar uma quantidade de títulos maior que <code>batch.quantity</code>.
 </aside>
-<h1 id='titulo-em-lote'>Título em Lote</h1>
-<p><strong>TODO:</strong> O título no lote é utilizado para....</p>
-<h2 id='listar-titulos-do-lote'>Listar títulos do lote</h2>
+<h1 id='ccb-em-lote'>CCB em Lote</h1>
+<p>Endpoint utilizado para vincular a CCB a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.</p>
+<h2 id='listar-ccbs-do-lote'>Listar CCBs do lote</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2170,7 +2184,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint lista todos os títulos do lote</p>
+<p>Esse endpoint lista todas as CCBs do lote</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches</code></p>
 <h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
@@ -2187,7 +2201,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-um-titulo-do-lote'>Obter um título do lote</h2>
+<h2 id='obter-uma-ccb-do-lote'>Obter uma CCB do lote</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2210,10 +2224,10 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtem todos os dados de um título de um lote</p>
+<p>Esse endpoint obtem todos os dados de uma CCB de um lote</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches/:id</code></p>
-<h2 id='adicionar-titulo-no-lote'>Adicionar título no lote</h2>
+<h2 id='adicionar-ccb-no-lote'>Adicionar CCB no lote</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2242,7 +2256,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint adiciona um título no lote</p>
+<p>Esse endpoint adiciona uma CCB no lote</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://app.securities.com.br/api/v1/batches/:batch_id/security_batches</code></p>
 <h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
@@ -2258,23 +2272,23 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>security_id</td>
 <td>sim</td>
 <td>integer</td>
-<td>ID do título</td>
+<td>ID da CCB</td>
 </tr>
 </tbody></table>
 <h3 id='validacoes'>Validações</h3>
-<p>Não será permitido enviar um título se não for criada uma cessão associada ao lote.</p>
+<p>Não será permitido enviar uma CCB se não for criada uma cessão associada ao lote.</p>
 
-<p>Enquanto <code>quantity</code> não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado,
-o status iniciará em <code>pending</code>, irá para <code>checking</code> após adicionar o primeiro título no lote e, até que todos os
-títulos sejam enviados, permanecerá nesse status.</p>
+<p>Enquanto <code>quantity</code> não for equivalente a quantidade total de CCBs do lote, o processamento não será finalizado,
+o status iniciará em <code>pending</code>, irá para <code>checking</code> após adicionar o primeiro CCB no lote e, até que todas as
+CCBs sejam enviadas, permanecerá nesse status.</p>
 
-<p>Não será permitido enviar uma quantidade de títulos maior que <code>quantity</code>.</p>
+<p>Não será permitido enviar uma quantidade de CCBs maior que <code>quantity</code>.</p>
 
-<p>Não será permitido enviar um título que já esteja no lote.</p>
+<p>Não será permitido enviar uma CCB que já esteja no lote.</p>
 
 <aside class="warning">
   <strong>Atenção</strong><br>
-  Para obter o <code>security_id</code> será necessário <a href="#listar-titulos">consultar pelo título</a> no respectivo endpoint.
+  Para obter o <code>security_id</code> será necessário <a href="#listar-ccbs">consultar pela CCB</a> no respectivo endpoint.
 </aside>
 <h1 id='signatario-do-documento'>Signatário do documento</h1>
 <p><strong>TODO:</strong> Signatários do documento...</p>
