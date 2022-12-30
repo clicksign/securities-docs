@@ -6,7 +6,15 @@ Para os clientes atuais, essa API de compatibilidade vai funcionar como uma pont
 
 Para novos clientes, a conexão com a nova Securities deve se dar pela criação da conexão da Nova API. Para os atuais clientes, o uso da API de compatibilidade será uma aceleração para usufruir do novo produto, sem maiores esforços de desenvolvimento inicial.
 
-É importante ressaltar que novas features serão lançadas a partir de abril/2022 apenas para a nova API, o que nos leva a reforçar que após conectar a API de compatibilidade com esforço mínimo, o planejamento para conectar-se com a nova API é essencial para garantir que todos terão acesso aos lançamentos futuros.
+É importante ressaltar que novas features serão lançadas a partir de abril/2023 apenas para a nova API, o que nos leva a reforçar que após conectar a API de compatibilidade com esforço mínimo, o planejamento para conectar-se com a nova API é essencial para garantir que todos terão acesso aos lançamentos futuros.
+
+### Mudanças importantes nas integrações
+
+Para os clientes que vierem do Securities Legado, provavelmente, os documentos de CCBs estão sendo criados diretamente na plataforma de assinatura da Clicksign através das API fornecidas pela plataforma de assinatura e não pela API do sistema de securitização.
+
+No novo Securities será diferente, disponibilizamos algumas APIs de compatibilidade para a criação das CCBs, dessa forma, toda a comunicação via API deverá ser com o novo sistema. Essa mudança foi feita porque todas as informações sobre os documentos, bem como as assinaturas pendentes e realizadas e o arquivo PDF estarão disponíveis nas novas APIs do novo Securities, portanto, não será necessário acessar a interface gráfica da plataforma de assinatura da Clicksign para localizar os documentos das CCBs, endossos referenciado ou dos termos de cessão.
+
+É importante ressaltar que, todos os documentos assinados serão baixados para o Securities e vinculados aos registros de cada operação, tornando possível a visualização de cada um desses documentos dentro de suas respectivas operações, ou seja, quando pesquisar por uma CCB utilizando as novas APIs, será possível obter todos os documentos relacionados a ela.
 
 <aside class="warning">
 Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
