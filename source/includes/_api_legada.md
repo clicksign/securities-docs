@@ -17,7 +17,7 @@ No novo Securities será diferente, disponibilizamos algumas APIs de compatibili
 É importante ressaltar que, todos os documentos assinados serão baixados para o Securities e vinculados aos registros de cada operação, tornando possível a visualização de cada um desses documentos dentro de suas respectivas operações, ou seja, quando pesquisar por uma CCB utilizando as novas APIs, será possível obter todos os documentos relacionados a ela.
 
 <aside class="warning">
-Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
+  Os endpoints descritos nessa seção tem o único intuito de manter compatibilidade com os sistemas de clientes antigos e não devem ser utilizados em novas integrações.
 </aside>
 
 ## Criar proposta (Legado)
