@@ -41,7 +41,7 @@ body:after {
   background: $nav-active-bg;
   content: "";
   position: fixed;
-  height: 4px;
+  height: 5px;
   left: 0;
   top: 0;
   display: block;
@@ -641,6 +641,26 @@ body:after {
 ////////////////////////////////////////////////////////////////////////////////
 // These are the styles for phones and tablets
 // There are also a couple styles disperesed
+
+@media (max-width: $default-width) and (min-width: $tablet-width + 1px) {
+  body {
+    font-size: 14px;
+  }
+
+  .content {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .toc-wrapper {
+    font-size: 14px;
+  }
+
+  .toc-wrapper .toc-h2 {
+    font-size: 13px;
+  }
+}
 
 @media (max-width: $tablet-width) {
   .toc-wrapper {
