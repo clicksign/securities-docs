@@ -29,19 +29,19 @@ curl -X POST https://app.securities.com.br/api/legacy/proposals \
    -H "Authorization: Bearer $TOKEN" \
    -H "Content-Type: application/json" \
    -d '{
-        "proposal": {
-          "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
-          "document_data": {
-            "number": 231387,
-            "issuer_full_name": "Hugo Fonseca",
-            "issuer_full_address": "Setor M QNM 03 Conjunto Z - 72200-000, Brasília - DF",
-            "issuer_cpf": "657.565.000-73",
-            "issuer_rg": "47.825.277-8",
-            "issuer_cnh": "81457959115",
-            "issuer_email": "hugo@email.com",
+          "proposal": {
+            "template_key": "e7c3534c-2b04-11ed-a261-02422b00ac13",
+            "document_data": {
+              "number": 231387,
+              "issuer_full_name": "Hugo Fonseca",
+              "issuer_full_address": "Setor M QNM 03 Conjunto Z - 72200-000, Brasília - DF",
+              "issuer_cpf": "657.565.000-73",
+              "issuer_rg": "47.825.277-8",
+              "issuer_cnh": "81457959115",
+              "issuer_email": "hugo@email.com",
+            }
           }
-        }
-      }'
+        }'
 ```
 
 > Response:
@@ -229,23 +229,23 @@ curl -X POST https://app.securities.com.br/api/legacy/signers \
    -H "Authorization: Bearer $TOKEN" \
    -H "Content-Type: application/json" \
     -d '{
-        "signer": {
-          "email": "fulano@example.com",
-          "auth": "email",
-          "full_name": "Marcos Zumba",
-          "has_documentation": true,
-          "documentation": "123.321.123-40",
-          "birthday": "1983-03-31",
-          "phone_number": "11999999999",
-          "sign_as": "sign",
-          "communicate_by": "email",
-          "selfie_enabled": false,
-          "facial_biometrics_enabled": false,
-          "handwritten_enabled": false,
-          "official_document_enabled": false,
-          "liveness_enabled": false
-        }
-      }'
+          "signer": {
+            "email": "fulano@example.com",
+            "auth": "email",
+            "full_name": "Marcos Zumba",
+            "has_documentation": true,
+            "documentation": "123.321.123-40",
+            "birthday": "1983-03-31",
+            "phone_number": "11999999999",
+            "sign_as": "sign",
+            "communicate_by": "email",
+            "selfie_enabled": false,
+            "facial_biometrics_enabled": false,
+            "handwritten_enabled": false,
+            "official_document_enabled": false,
+            "liveness_enabled": false
+          }
+        }'
 ```
 
 > Response:
@@ -314,13 +314,13 @@ curl -X POST https://app.securities.com.br/api/legacy/signers/signer_id:/lists \
    -H "Authorization: Bearer $TOKEN" \
    -H "Content-Type: application/json" \
     -d '{
-        "list": {
-          "document_id": 1,
-          "group": "nil",
-          "message": "nil",
-          "refusable": false,
-        }
-      }'
+          "list": {
+            "document_id": 1,
+            "group": "nil",
+            "message": "nil",
+            "refusable": false,
+          }
+        }'
 ```
 
 > Response:
@@ -382,7 +382,7 @@ curl -X POST https://app.securities.com.br/api/legacy/assignments\
             "assignor_documentation": "123.321.123-40",
             "assignor_email": "
           }
-      }'
+        }'
 ```
 
 > Response:
@@ -430,10 +430,10 @@ curl -X POST https://app.securities.com.br/api/legacy/contracts\
     -d '{
           "process": "123",
           "contracts": [
-          { "number": "123456789" },
-          { "number": "125468797" }
+            { "number": "123456789" },
+            { "number": "125468797" }
           ]
-      }'
+        }'
 ```
 
 > Response:
