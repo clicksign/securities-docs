@@ -466,6 +466,8 @@ body:after {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
+      font-size: 14px;
+
       code {
         white-space: nowrap;
       }
@@ -486,7 +488,7 @@ body:after {
     }
 
     tr:nth-child(odd) > td {
-      background-color: lighten($main-bg, 4.2%);
+      background-color: rgba(0, 0, 0, 0.05);
     }
 
     tr:nth-child(even) > td {

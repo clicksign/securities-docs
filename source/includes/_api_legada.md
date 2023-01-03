@@ -316,8 +316,8 @@ curl -X POST https://app.securities.com.br/api/legacy/signers/signer_id:/lists \
     -d '{
           "list": {
             "document_id": 1,
-            "group": "nil",
-            "message": "nil",
+            "group": null,
+            "message": null,
             "refusable": false,
           }
         }'
@@ -338,8 +338,8 @@ Content-Type: application/json; charset=utf-8
     "signer_id": 4,
     "created_at": "2022-09-16T18:41:00.079-03:00",
     "updated_at": "2022-09-16T18:41:00.079-03:00",
-    "group": "nil",
-    "message": "nil",
+    "group": null,
+    "message": null,
     "refusable": false
   }
 }
@@ -356,7 +356,7 @@ Esse endpoint Vincula um signatário a um documento
 | Parâmetro   | Obrigatório | Tipo    | Descrição                                                                                                                                                                |
 | ----------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | document_id | sim         | integer | Chave única do documento dentro do Securities                                                                                                                            |
-| group       | não         | string  | Determina o grupo que o signatário deve ser vinculado. Deve ser número, inteiro e maior que 0. Não adicione esse parâmetro caso não deseje uma ordenação de assinaturas. |
+| group       | não         | integer | Determina o grupo que o signatário deve ser vinculado. Deve ser número, inteiro e maior que 0. Não adicione esse parâmetro caso não deseje uma ordenação de assinaturas. |
 | message     | não         | string  | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários. O parâmetro funciona com sequence_enabledcomo true e group é obrigatório       |
 | refusable   | não         | boolean | Padrão é FALSE                                                                                                                                                           |
 
