@@ -22,14 +22,14 @@ under the License.
 // BACKGROUND COLORS
 ////////////////////
 $nav-bg: #fff !default;
-$examples-bg: #313e59 !default;
-$code-bg: #232d40 !default;
+$examples-bg: #18285a !default;
+$code-bg: #121f49 !default;
 $code-annotation-bg: #292d33 !default;
 $nav-subitem-bg: #fff !default;
 $nav-active-bg: #0056ff !default;
 $nav-active-parent-bg: #1e2224 !default; // parent links of the current section
 $lang-select-border: #000 !default;
-$lang-select-bg: #222a3c !default;
+$lang-select-bg: #121f49 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #fff !default;
@@ -41,7 +41,7 @@ $search-notice-bg: #c97a7e !default;
 // TEXT COLORS
 ////////////////////
 $main-text: #333 !default; // main content text color
-$nav-text: #0d3c67 !default;
+$nav-text: #18285a !default;
 $nav-active-text: #fff !default;
 $nav-active-parent-text: #fff !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text
@@ -74,7 +74,7 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 %header-font {
   @extend %default-font;
   font-weight: bold;
-  color: #0d3c67;
+  color: #18285a;
 }
 
 %code-font {
