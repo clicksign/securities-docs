@@ -12,9 +12,9 @@ Nesse manual você encontrará a referência sobre todas as operações disponí
 
 Disponibilizamos abaixo as urls de acesso aos nossos ambientes:
 
-**Ambiente Produção:** https://api.securities.com.br
+**Ambiente Produção:** https://app.securities.com.br/api
 
-**Ambiente Homologação:** https://api-staging.securities.com.br
+**Ambiente Homologação:** https://sandbox.securities.com.br/api
 
 # Códigos de status
 
