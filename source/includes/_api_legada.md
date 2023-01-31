@@ -63,6 +63,14 @@ Content-Type: application/json; charset=utf-8
       "issuer_rg": "47.825.277-8",
       "issuer_cnh": "81457959115",
       "issuer_email": "hugo@email.com"
+    },
+    "document": {
+      "id": 25,
+      "key": "f91e734e-ad1e-42f4-b12f-755e67178929",
+      "status": "validated",
+      "created_at": "2022-12-21T02:41:28.748Z",
+      "updated_at": "2022-12-21T02:41:28.748Z",
+      "file": "https://example.com/path/to/document.pdf"
     }
   }
 }

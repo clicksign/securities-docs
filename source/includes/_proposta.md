@@ -30,7 +30,8 @@ Content-Type: application/json; charset=utf-8
       "issuer_document": "882.793.334-44",
       "installments": 48,
       "created_at": "2022-10-07T12:00:33.571-03:00",
-      "updated_at": "2022-10-07T12:00:33.571-03:00"
+      "updated_at": "2022-10-07T12:00:33.571-03:00",
+      "url": "https://app.securities.com.br/api/v1/proposals/218"
     }
   ],
   "page_infos": {
@@ -111,14 +112,16 @@ Content-Type: application/json; charset=utf-8
       "cet_yearly_rate": 21.32,
       "cet_monthly_rate": 9.87
     },
-    "document": {
-      "id": 2955,
-      "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
-      "status": "created",
-      "created_at": "2022-10-27T09:44:50.800-03:00",
-      "updated_at": "2022-10-27T09:46:45.968-03:00",
-      "file": null
-    }
+    "documents": [
+      {
+        "id": 2955,
+        "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+        "status": "created",
+        "created_at": "2022-10-27T09:44:50.800-03:00",
+        "updated_at": "2022-10-27T09:46:45.968-03:00",
+        "file": null
+      }
+    ]
   }
 }
 ```
@@ -223,14 +226,16 @@ Content-Type: application/json; charset=utf-8
       "cet_yearly_rate": 21.32,
       "cet_monthly_rate": 9.87
     },
-    "document": {
-      "id": 2955,
-      "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
-      "status": "created",
-      "created_at": "2022-10-27T09:44:50.800-03:00",
-      "updated_at": "2022-10-27T09:46:45.968-03:00",
-      "file": null
-    }
+    "documents": [
+      {
+        "id": 2955,
+        "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+        "status": "created",
+        "created_at": "2022-10-27T09:44:50.800-03:00",
+        "updated_at": "2022-10-27T09:46:45.968-03:00",
+        "file": null
+      }
+    ]
   }
 }
 ```

@@ -32,7 +32,8 @@ Content-Type: application/json; charset=utf-8
     "status": "pending",
     "full_amount": "100.0",
     "created_at": "2022-09-30T18:13:53.140-03:00",
-    "updated_at": "2022-09-30T18:13:53.175-03:00"
+    "updated_at": "2022-09-30T18:13:53.175-03:00",
+    "url": "https://app.securities.com.br/api/v1/assignments/1"
   }
 ]
 ```

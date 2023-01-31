@@ -30,7 +30,8 @@ Content-Type: application/json; charset=utf-8
       "issuer_document": "630.427.604-48",
       "installments": 1,
       "created_at": "2022-09-15T15:27:00.691-03:00",
-      "updated_at": "2022-09-15T15:27:00.691-03:00"
+      "updated_at": "2022-09-15T15:27:00.691-03:00",
+      "url": "https://app.securities.com.br/api/v1/securities/2"
     }
   ],
   "page_infos": {
@@ -81,22 +82,19 @@ Content-Type: application/json; charset=utf-8
     "issuer_full_name": "Hugo Fonseca",
     "issuer_document": "630.427.604-48",
     "installments": 1,
-    "document_data": {
-      "event": {
-        "data": null,
-        "name": "auto_close",
-        "occurred_at": "2022-09-15T15:27:00.361-03:00"
-      },
-      "document": {
-        "key": "e646a204-6e57-4e94-b799-fca7f1002c6a",
-        "path": "/Proposals/Proposta 123456.docx",
-        "events": [
-          ...
-        ]
-      }
-    },
     "created_at": "2022-09-15T15:27:00.691-03:00",
     "updated_at": "2022-09-15T15:27:00.691-03:00",
+    "documents": [
+      {
+        "id": 23,
+        "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+        "status": "created",
+        "created_at": "2022-10-27T09:44:50.800-03:00",
+        "updated_at": "2022-10-27T09:46:45.968-03:00",
+        "file": null
+      }
+    ],
+    "url": "https://app.securities.com.br/api/v1/securities/2"
   }
 }
 ```
