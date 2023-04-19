@@ -82,6 +82,7 @@ Content-Type: application/json; charset=utf-8
     "issuer_full_name": "Hugo Fonseca",
     "issuer_document": "630.427.604-48",
     "installments": 1,
+    "signature_provider": "clicksign",
     "created_at": "2022-09-15T15:27:00.691-03:00",
     "updated_at": "2022-09-15T15:27:00.691-03:00",
     "documents": [
@@ -99,8 +100,127 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtem todos os dados de uma CCB
+Esse endpoint obtém todos os dados de uma CCB
 
 ### HTTP Request
 
 `GET https://app.securities.com.br/api/v1/securities/:id`
+
+## Criar CCB
+
+> Request:
+
+```shell
+curl -v POST https://app.securities.com.br/api/v1/securities \
+     -H "Authorization: Bearer $TOKEN"
+     -F "file=@file1.pdf"
+     -F "signed=true"
+     -F "signature_provider=govbr"
+     -F "number=37891673"
+     -F "installments=12"
+     -F "issuer_full_name=Hugo Fonseca"
+     -F "issuer_document=04218776143"
+     -F "document_data={\"car\": \"Volkswagen\"}"
+
+```
+
+> Response:
+
+```shell
+HTTP/1.1 201 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "security": {
+    "id": 2,
+    "number": "123456",
+    "issuer_full_name": "Hugo Fonseca",
+    "issuer_document": "630.427.604-48",
+    "installments": 1,
+    "signature_provider": "clicksign",
+    "created_at": "2022-09-15T15:27:00.691-03:00",
+    "updated_at": "2022-09-15T15:27:00.691-03:00",
+    "documents": [
+      {
+        "id": 23,
+        "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+        "status": "validated",
+        "created_at": "2022-10-27T09:44:50.800-03:00",
+        "updated_at": "2022-10-27T09:46:45.968-03:00",
+        "file": {
+          "url": "https://example.com/path/to/document.pdf"
+        }
+      }
+    ],
+    "url": "https://app.securities.com.br/api/v1/securities/2"
+  }
+}
+```
+
+Esse endpoint cria uma CCB a partir de um pdf previamente assinado
+
+<aside class="notice">
+Esse endpoint recebe apenas CCBs que já foram assinadas fora da Clicksign, caso deseje criar uma CCB e enviar para assinatura pela Clicksign, consulte a API de Proposta.
+</aside>
+
+### HTTP Request
+
+`POST https://app.securities.com.br/api/v1/securities`
+
+### Parâmetros
+
+Essa requisição deve ser um `multipart/form-data` com os seguintes parâmetros:
+
+| Parâmetro             | Tipo    | Descrição                                                                       |
+| --------------------- | --------| ------------------------------------------------------------------------------- |
+| file                  | File    | Upload do pdf que será anexado a CCB                                            |
+| signed                | boolean | Boolean indicando se o pdf fornecido está assinado                              |
+| signature_provider    | Enum    | String indicando qual assinador foi utilizado. Ver assinadores aceitos abaixo.  |
+| number                | string  | Número da CCB                                                                   |
+| issuer_full_name      | string  | Nome completo do emitente                                                       |
+| issuer_document       | string  | Documento do emitente                                                           |
+| installments          | integer | Número de parcelas                                                              |
+| document_data         | string  | Serialização do json com os dados do documento para compor a CCB                |
+
+### Assinadores suportados
+
+Lista de assinadores suportados no momento:
+
+| Parâmetro (utilizar na request) | Nome de exibição    |
+| ------------------------------- | --------------------|
+|d4sign | D4Sign |
+|zapsign | ZapSign |
+|docusign | Docusign |
+|totvs | Assinatura eletrônica TOTVS |
+|autentique | Autentique |
+|assinebem | Assine Bem |
+|contraktor | Contraktor |
+|juridoc | Juridoc |
+|santocontrato | Santo Contrato |
+|certisign | Certisign |
+|signnow | SignNow |
+|adobesign | Adobe Sign |
+|hellosign | Hello Sign |
+|webdox | Webdox |
+|sdocsafe | Sdoc Safe |
+|accesscorp | Access Corp |
+|ebox | eBox Digital |
+|arquivar | Arquivar |
+|unico | Unico |
+|formalizar | Formalizar e-Signature |
+|onedoc | 1Doc |
+|bry | Bry |
+|quicksoft | QuickSoft |
+|fepweb | FepWeb |
+|govbr | Gov.br |
+|flexdoc | Flexdoc |
+|brysigner | Bry Signer |
+|besign | Besign |
+|letssign | LetsSign |
+|assertiva | Assertiva |
+|optime | Optime |
+|digicert | Digicert |
+|qcertifica | Q Certifica |
+|fast4sign | Fast4Sign |
