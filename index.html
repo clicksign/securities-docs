@@ -396,7 +396,7 @@
                     <a href="#obter-ccb" class="toc-h2 toc-link" data-title="Obter CCB">Obter CCB</a>
                   </li>
                   <li>
-                    <a href="#criar-ccb" class="toc-h2 toc-link" data-title="Criar CCB">Criar CCB</a>
+                    <a href="#criar-ccb-ja-assinada-para-cessao" class="toc-h2 toc-link" data-title="Criar CCB já assinada para Cessão">Criar CCB já assinada para Cessão</a>
                   </li>
               </ul>
           </li>
@@ -1754,7 +1754,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <p>Esse endpoint obtém todos os dados de uma CCB</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/securities/:id</code></p>
-<h2 id='criar-ccb'>Criar CCB</h2>
+<h2 id='criar-ccb-ja-assinada-para-cessao'>Criar CCB já assinada para Cessão</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1801,10 +1801,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint cria uma CCB a partir de um pdf previamente assinado</p>
+<p>Endpoint que recebe títulos CCBs já assinados pelo tomador fora dos produtos Clicksign, mas que serão cedidos na Clicksign Securities.</p>
 
 <aside class="notice">
-Esse endpoint recebe apenas CCBs que já foram assinadas fora da Clicksign, caso deseje criar uma CCB e enviar para assinatura pela Clicksign, consulte a API de Proposta.
+Este endpoint tem como funcionalidade a recepção de CCBs que serão endossadas e cedidas pela Clicksign Securities, porém, o seu registro não ocorreu nos produtos Clicksign, ou seja, receberemos aqui uma CCB (.pdf) previamente registrada e assinada por produtos terceiros.
+
+Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities para então também ser cedida com nossos produtos, agora ou no momento oportuno de movimentação do estoque de títulos, consulte nossa API de Proposta (título antes de se tornar uma CCB assinada pelo tomador).
 </aside>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://app.securities.com.br/api/v1/securities</code></p>
