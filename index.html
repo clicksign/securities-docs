@@ -395,6 +395,9 @@
                   <li>
                     <a href="#obter-ccb" class="toc-h2 toc-link" data-title="Obter CCB">Obter CCB</a>
                   </li>
+                  <li>
+                    <a href="#criar-ccb" class="toc-h2 toc-link" data-title="Criar CCB">Criar CCB</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1731,6 +1734,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
     </span><span class="nl">"issuer_full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Fonseca"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630.427.604-48"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signature_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicksign"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1747,9 +1751,260 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtem todos os dados de uma CCB</p>
+<p>Esse endpoint obtém todos os dados de uma CCB</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://app.securities.com.br/api/v1/securities/:id</code></p>
+<h2 id='criar-ccb'>Criar CCB</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> POST https://app.securities.com.br/api/v1/securities <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+     <span class="nt">-F</span> <span class="s2">"file=@file1.pdf"</span>
+     <span class="nt">-F</span> <span class="s2">"signed=true"</span>
+     <span class="nt">-F</span> <span class="s2">"signature_provider=govbr"</span>
+     <span class="nt">-F</span> <span class="s2">"number=37891673"</span>
+     <span class="nt">-F</span> <span class="s2">"installments=12"</span>
+     <span class="nt">-F</span> <span class="s2">"issuer_full_name=Hugo Fonseca"</span>
+     <span class="nt">-F</span> <span class="s2">"issuer_document=04218776143"</span>
+     <span class="nt">-F</span> <span class="s2">"document_data={</span><span class="se">\"</span><span class="s2">car</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Volkswagen</span><span class="se">\"</span><span class="s2">}"</span>
+
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"issuer_full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Fonseca"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"issuer_document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"630.427.604-48"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signature_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicksign"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadef9ce-0f28-4792-bb3f-6d0bd5c6a055"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validated"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-27T09:44:50.800-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-27T09:46:45.968-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/path/to/document.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/securities/2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint cria uma CCB a partir de um pdf previamente assinado</p>
+
+<aside class="notice">
+Esse endpoint recebe apenas CCBs que já foram assinadas fora da Clicksign, caso deseje criar uma CCB e enviar para assinatura pela Clicksign, consulte a API de Proposta.
+</aside>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.securities.com.br/api/v1/securities</code></p>
+<h3 id='parametros'>Parâmetros</h3>
+<p>Essa requisição deve ser um <code>multipart/form-data</code> com os seguintes parâmetros:</p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>File</td>
+<td>Upload do pdf que será anexado a CCB</td>
+</tr>
+<tr>
+<td>signed</td>
+<td>boolean</td>
+<td>Boolean indicando se o pdf fornecido está assinado</td>
+</tr>
+<tr>
+<td>signature_provider</td>
+<td>Enum</td>
+<td>String indicando qual assinador foi utilizado. Ver assinadores aceitos abaixo.</td>
+</tr>
+<tr>
+<td>number</td>
+<td>string</td>
+<td>Número da CCB</td>
+</tr>
+<tr>
+<td>issuer_full_name</td>
+<td>string</td>
+<td>Nome completo do emitente</td>
+</tr>
+<tr>
+<td>issuer_document</td>
+<td>string</td>
+<td>Documento do emitente</td>
+</tr>
+<tr>
+<td>installments</td>
+<td>integer</td>
+<td>Número de parcelas</td>
+</tr>
+<tr>
+<td>document_data</td>
+<td>string</td>
+<td>Serialização do json com os dados do documento para compor a CCB</td>
+</tr>
+</tbody></table>
+<h3 id='assinadores-suportados'>Assinadores suportados</h3>
+<p>Lista de assinadores suportados no momento:</p>
+
+<table><thead>
+<tr>
+<th>Parâmetro (utilizar na request)</th>
+<th>Nome de exibição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>d4sign</td>
+<td>D4Sign</td>
+</tr>
+<tr>
+<td>zapsign</td>
+<td>ZapSign</td>
+</tr>
+<tr>
+<td>docusign</td>
+<td>Docusign</td>
+</tr>
+<tr>
+<td>totvs</td>
+<td>Assinatura eletrônica TOTVS</td>
+</tr>
+<tr>
+<td>autentique</td>
+<td>Autentique</td>
+</tr>
+<tr>
+<td>assinebem</td>
+<td>Assine Bem</td>
+</tr>
+<tr>
+<td>contraktor</td>
+<td>Contraktor</td>
+</tr>
+<tr>
+<td>juridoc</td>
+<td>Juridoc</td>
+</tr>
+<tr>
+<td>santocontrato</td>
+<td>Santo Contrato</td>
+</tr>
+<tr>
+<td>certisign</td>
+<td>Certisign</td>
+</tr>
+<tr>
+<td>signnow</td>
+<td>SignNow</td>
+</tr>
+<tr>
+<td>adobesign</td>
+<td>Adobe Sign</td>
+</tr>
+<tr>
+<td>hellosign</td>
+<td>Hello Sign</td>
+</tr>
+<tr>
+<td>webdox</td>
+<td>Webdox</td>
+</tr>
+<tr>
+<td>sdocsafe</td>
+<td>Sdoc Safe</td>
+</tr>
+<tr>
+<td>accesscorp</td>
+<td>Access Corp</td>
+</tr>
+<tr>
+<td>ebox</td>
+<td>eBox Digital</td>
+</tr>
+<tr>
+<td>arquivar</td>
+<td>Arquivar</td>
+</tr>
+<tr>
+<td>unico</td>
+<td>Unico</td>
+</tr>
+<tr>
+<td>formalizar</td>
+<td>Formalizar e-Signature</td>
+</tr>
+<tr>
+<td>onedoc</td>
+<td>1Doc</td>
+</tr>
+<tr>
+<td>bry</td>
+<td>Bry</td>
+</tr>
+<tr>
+<td>quicksoft</td>
+<td>QuickSoft</td>
+</tr>
+<tr>
+<td>fepweb</td>
+<td>FepWeb</td>
+</tr>
+<tr>
+<td>govbr</td>
+<td>Gov.br</td>
+</tr>
+<tr>
+<td>flexdoc</td>
+<td>Flexdoc</td>
+</tr>
+<tr>
+<td>brysigner</td>
+<td>Bry Signer</td>
+</tr>
+<tr>
+<td>besign</td>
+<td>Besign</td>
+</tr>
+<tr>
+<td>letssign</td>
+<td>LetsSign</td>
+</tr>
+<tr>
+<td>assertiva</td>
+<td>Assertiva</td>
+</tr>
+<tr>
+<td>optime</td>
+<td>Optime</td>
+</tr>
+<tr>
+<td>digicert</td>
+<td>Digicert</td>
+</tr>
+<tr>
+<td>qcertifica</td>
+<td>Q Certifica</td>
+</tr>
+<tr>
+<td>fast4sign</td>
+<td>Fast4Sign</td>
+</tr>
+</tbody></table>
 <h1 id='arranjo'>Arranjo</h1>
 <p>Partes envolvidas no processo de compra e venda de uma operação financeira. São os stakeholders da operação de oferta e aceite de CCBs, que vão originar, enviar para assinatura do tomador e por fim, vender esses títulos aos fundos. Juntos, essas partes formam um arranjo que fazem negociações entre si e possuem contas de originação e destino dentro desse grupo.</p>
 <h2 id='listar-arranjos'>Listar Arranjos</h2>
