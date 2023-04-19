@@ -106,7 +106,7 @@ Esse endpoint obtém todos os dados de uma CCB
 
 `GET https://app.securities.com.br/api/v1/securities/:id`
 
-## Criar CCB
+## Criar CCB já assinada para Cessão
 
 > Request:
 
@@ -159,10 +159,12 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint cria uma CCB a partir de um pdf previamente assinado
+Endpoint que recebe títulos CCBs já assinados pelo tomador fora dos produtos Clicksign, mas que serão cedidos na Clicksign Securities.
 
 <aside class="notice">
-Esse endpoint recebe apenas CCBs que já foram assinadas fora da Clicksign, caso deseje criar uma CCB e enviar para assinatura pela Clicksign, consulte a API de Proposta.
+Este endpoint tem como funcionalidade a recepção de CCBs que serão endossadas e cedidas pela Clicksign Securities, porém, o seu registro não ocorreu nos produtos Clicksign, ou seja, receberemos aqui uma CCB (.pdf) previamente registrada e assinada por produtos terceiros.
+
+Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities para então também ser cedida com nossos produtos, agora ou no momento oportuno de movimentação do estoque de títulos, consulte nossa API de Proposta (título antes de se tornar uma CCB assinada pelo tomador).
 </aside>
 
 ### HTTP Request
