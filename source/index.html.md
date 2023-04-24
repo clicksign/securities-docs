@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 includes:
   - introducao
-  - api_legada(compatibilidade)
+  - api_legada
   - proposta
   - signatario
   - titulo
