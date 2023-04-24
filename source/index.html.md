@@ -2,13 +2,19 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
+  - Shell
 
 includes:
   - introducao
+  - api_legada
   - proposta
   - signatario
   - titulo
+  - arranjo
+  - cessao
+  - lote
+  - lote_titulo
+  - documento_signatario
 
 search: true
 
