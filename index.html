@@ -1026,8 +1026,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
           "cession_parcels": 1,
           "cession_contracts": 30,
           "issue_date": "2021-09-16",
-          "assignor": 1,
-          "transferee": 2,
+          "arrangement": 1,
           "callback_url": "https://example.com/callback",
           "template_data": {
             "assignor_name": "Fulano",
@@ -1089,16 +1088,10 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Data de emissão da cessão</td>
 </tr>
 <tr>
-<td>assignor</td>
+<td>arrangement</td>
 <td>sim</td>
 <td>integer</td>
-<td>ID da conta do endossatário</td>
-</tr>
-<tr>
-<td>transferee</td>
-<td>sim</td>
-<td>integer</td>
-<td>ID da conta da cessionária</td>
+<td>ID do Arranjo</td>
 </tr>
 <tr>
 <td>callback_url</td>
