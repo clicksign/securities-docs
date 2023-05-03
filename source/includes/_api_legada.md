@@ -382,8 +382,7 @@ curl -X POST https://app.securities.com.br/api/legacy/assignments\
           "cession_parcels": 1,
           "cession_contracts": 30,
           "issue_date": "2021-09-16",
-          "assignor": 1,
-          "transferee": 2,
+          "arrangement": 1,
           "callback_url": "https://example.com/callback",
           "template_data": {
             "assignor_name": "Fulano",
@@ -415,17 +414,16 @@ Esse endpoint cria um processo de cessão
 
 ### Parâmetros da requisição
 
-| Parâmetro         | Obrigatório | Tipo    | Descrição                                    |
-| ----------------- | ----------- | ------- | -------------------------------------------- |
-| cession_number    | sim         | string  | Número da cessão                             |
-| cession_value     | sim         | integer | Valor da cessão                              |
-| cession_parcels   | sim         | integer | Quantidade de parcelas negociadas na cessão  |
+| Parâmetro        | Obrigatório | Tipo    | Descrição                                    |
+|------------------| ----------- | ------- |----------------------------------------------|
+| cession_number   | sim         | string  | Número da cessão                             |
+| cession_value    | sim         | integer | Valor da cessão                              |
+| cession_parcels  | sim         | integer | Quantidade de parcelas negociadas na cessão  |
 | cession_contracts | sim         | integer | Quantidade de contratos negociados na cessão |
-| issue_date        | sim         | string  | Data de emissão da cessão                    |
-| assignor          | sim         | integer | ID da conta do endossatário                  |
-| transferee        | sim         | integer | ID da conta da cessionária                   |
-| callback_url      | não         | string  | URL de callback                              |
-| template_data     | sim         | object  | Dados para o template                        |
+| issue_date       | sim         | string  | Data de emissão da cessão                    |
+| arrangement      | sim         | integer | ID do Arranjo                                |
+| callback_url     | não         | string  | URL de callback                              |
+| template_data    | sim         | object  | Dados para o template                        |
 
 ## Executar um processo de cessão
 
