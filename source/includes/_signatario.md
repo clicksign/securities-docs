@@ -27,7 +27,7 @@ Content-Type: application/json; charset=utf-8
 {
   "signers": [
     {
-      "id": 1,
+      "id": 3,
       "full_name": "John Carter",
       "has_documentation": false,
       "documentation": null,
@@ -38,8 +38,14 @@ Content-Type: application/json; charset=utf-8
       "communicate_by": "email",
       "key": "690e1c32-7edd-48e4-b083-a738f05b4d7e",
       "sign_as": "sign",
+      "selfie_enabled": false,
+      "official_document_enabled": false,
+      "liveness_enabled": false,
+      "handwritten_enabled": false,
+      "facial_biometrics_enabled": false,
       "created_at": "2022-09-08T15:37:05.189-03:00",
-      "updated_at": "2022-09-15T15:26:18.880-03:00"
+      "updated_at": "2022-09-15T15:26:18.880-03:00",
+      "url": "https://app.securities.com.br/api/v1/signers/3" 
     }
   ],
   "page_infos": {
@@ -106,13 +112,18 @@ Content-Type: application/json; charset=utf-8
     "communicate_by": "email",
     "key": "690e1c32-7edd-48e4-b083-a738f05b4d7e",
     "sign_as": "sign",
+    "selfie_enabled": false,
+    "official_document_enabled": false,
+    "liveness_enabled": false,
+    "handwritten_enabled": false,
+    "facial_biometrics_enabled": false,
     "created_at": "2022-09-08T15:37:05.189-03:00",
     "updated_at": "2022-09-15T15:26:18.880-03:00"
   }
 }
 ```
 
-Esse endpoint obtem todos os dados de um signatário
+Esse endpoint obtém todos os dados de um signatário
 
 ### HTTP Request
 
@@ -168,6 +179,11 @@ Content-Type: application/json; charset=utf-8
     "communicate_by": "email",
     "key": null,
     "sign_as": "sign",
+    "selfie_enabled": false,
+    "official_document_enabled": false,
+    "liveness_enabled": false,
+    "handwritten_enabled": false,
+    "facial_biometrics_enabled": false,
     "created_at": "2022-09-16T18:41:00.079-03:00",
     "updated_at": "2022-09-16T18:41:00.079-03:00"
   }
@@ -191,7 +207,7 @@ Criar signatário avulso
 | Parâmetro         | Obrigatório | Tipo    | Descrição                                                     |
 | ----------------- | ----------- | ------- | ------------------------------------------------------------- |
 | full_name         | sim         | string  | Nome completo                                                 |
-| has_documentation | não         | boolean | Tem documentação, como CPF, CNPJ ou Passaporte. Padrão é TRUE |
+| has_documentation | não         | boolean (default true) | Tem documentação, como CPF, CNPJ ou Passaporte.               |
 | documentation     | condicional | string  | CPF, CNPJ ou Passaporte                                       |
 | birthday          | condicional | string  | Data de nascimento                                            |
 | email             | condicional | string  | E-mail                                                        |
@@ -199,3 +215,8 @@ Criar signatário avulso
 | auth              | sim         | string  | Tipo de autenticação: "email" ou "api"                        |
 | communicate_by    | sim         | string  | Por onde será notificado: "email"                             |
 | sign_as           | sim         | string  | Assinar como: sign, party, witness, contractor, contractee... |
+| selfie_enabled    | não         | boolean (default false)  | Assinar como: sign, party, witness, contractor, contractee... |
+| handwritten_enabled       | não         | boolean (default false)  | Define a solicitação de assinatura manuscrita como ponto de autenticação para o signatário. |
+| official_document_enabled | não         | boolean (default false)  | Define a solicitação da foto (frente e verso) do documento oficial como ponto de autenticação para o signatário. |
+| liveness_enabled          | não         | boolean (default false)  | Define a solicitação de selfie dinâmica como ponto de autenticação para o signatário. |
+| facial_biometrics_enabled | não         | boolean (default false)  | Define a solicitação de biometria facial como ponto de autenticação para o signatário. |
