@@ -121,7 +121,8 @@ Content-Type: application/json; charset=utf-8
         "updated_at": "2022-10-27T09:46:45.968-03:00",
         "file": null
       }
-    ]
+    ],
+    "url": "https://app.securities.com.br/api/v1/proposals/3073"
   }
 }
 ```
@@ -235,7 +236,8 @@ Content-Type: application/json; charset=utf-8
         "updated_at": "2022-10-27T09:46:45.968-03:00",
         "file": null
       }
-    ]
+    ],
+    "url": "https://app.securities.com.br/api/v1/proposals/3073"
   }
 }
 ```
@@ -251,6 +253,7 @@ Esse endpoint cria uma proposta
 | Parâmetro       | Obrigatório | Tipo    | Descrição                               |
 | --------------- | ----------- | ------- | --------------------------------------- |
 | number          | sim         | string  | Número da proposta                      |
+| issuer_full_name| sim         | string  | Nome completo do emitente               |
 | issuer_document | sim         | string  | Documento do emitente                   |
 | installments    | sim         | integer | Quantidade de parcelas                  |
 | template_key    | sim         | string  | Chave do template no assinador          |
