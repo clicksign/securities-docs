@@ -22,11 +22,11 @@ Content-Type: application/json; charset=utf-8
 {
   "arrangements": [
     {
-      "id": 1,
-      "account_id": 1,
-      "member_id": 2,
-      "member_type": "endorser"
-    }
+      "id": 120,
+      "account_id": 7,
+      "name": "Arranjo 1",
+      "url": "https://app.securities.com.br/api/v1/arrangements/120"
+    },
   ],
   "page_infos": {
     "total_pages": 3,
@@ -70,27 +70,30 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
   "arrangement": {
-    "id": 1,
-    "account_id": 1,
-    "member_id": 2,
-    "member_type": "endorser",
+    "id": 120,
+    "account_id": 7,
+    "name": "Arranjo 1",
     "signers": [
       {
-        "id": 100,
-        "full_name": "Latia Pouros Roberts",
+        "id": 500,
+        "full_name": "Bilck Endorser",
         "has_documentation": true,
-        "documentation": "062.231.968-06",
-        "email": "rufus@quitzon.co",
-        "birthday": "1964-10-22",
-        "phone_number": "(52) 91647-1229",
+        "documentation": "304.336.560-77",
+        "email": "guilherme.bilck+endossante@clicksign.com",
+        "birthday": "1981-08-17",
+        "phone_number": "+5561999999999",
         "auth": "email",
         "communicate_by": "email",
-        "created_at": "2022-09-29T14:18:21.007-03:00",
-        "updated_at": "2022-09-29T14:18:21.007-03:00",
-        "key": "9429903a-ba8d-4eca-be62-d5d034bd0f52",
-        "sign_as": "sign"
-      },
-      ...
+        "key": "e19a0a2a-e245-45bc-a914-1c42c587cf45",
+        "sign_as": "endorser",
+        "selfie_enabled": false,
+        "official_document_enabled": false,
+        "liveness_enabled": false,
+        "handwritten_enabled": false,
+        "facial_biometrics_enabled": false,
+        "created_at": "2023-03-08T15:05:45.342-03:00",
+        "updated_at": "2023-03-08T15:05:45.499-03:00"
+      }
     ]
   }
 }

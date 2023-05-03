@@ -179,7 +179,7 @@ Essa requisição deve ser um `multipart/form-data` com os seguintes parâmetros
 | --------------------- | --------| ------------------------------------------------------------------------------- |
 | file                  | File    | Upload do pdf que será anexado a CCB                                            |
 | signed                | boolean | Boolean indicando se o pdf fornecido está assinado                              |
-| signature_provider    | Enum    | String indicando qual assinador foi utilizado. Ver assinadores aceitos abaixo.  |
+| signature_provider    | string  | String indicando qual assinador foi utilizado. Ver assinadores aceitos abaixo.  |
 | number                | string  | Número da CCB                                                                   |
 | issuer_full_name      | string  | Nome completo do emitente                                                       |
 | issuer_document       | string  | Documento do emitente                                                           |
