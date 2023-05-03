@@ -1272,7 +1272,8 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
         </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-27T09:46:45.968-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/proposals/3073"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1377,7 +1378,8 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
         </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-27T09:46:45.968-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/proposals/3073"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1398,6 +1400,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>sim</td>
 <td>string</td>
 <td>Número da proposta</td>
+</tr>
+<tr>
+<td>issuer_full_name</td>
+<td>sim</td>
+<td>string</td>
+<td>Nome completo do emitente</td>
 </tr>
 <tr>
 <td>issuer_document</td>
@@ -1443,7 +1451,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Carter"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1454,8 +1462,14 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
       </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690e1c32-7edd-48e4-b083-a738f05b4d7e"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"selfie_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"official_document_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"liveness_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"handwritten_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"facial_biometrics_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T15:37:05.189-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/signers/3"</span><span class="w"> 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1518,12 +1532,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
     </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"690e1c32-7edd-48e4-b083-a738f05b4d7e"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"selfie_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"official_document_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"liveness_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"handwritten_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"facial_biometrics_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-08T15:37:05.189-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:26:18.880-03:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtem todos os dados de um signatário</p>
+<p>Esse endpoint obtém todos os dados de um signatário</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p>Obter signatário</p>
 
@@ -1571,6 +1590,11 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
     </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"selfie_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"official_document_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"liveness_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"handwritten_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"facial_biometrics_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-16T18:41:00.079-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-16T18:41:00.079-03:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1603,8 +1627,8 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <tr>
 <td>has_documentation</td>
 <td>não</td>
-<td>boolean</td>
-<td>Tem documentação, como CPF, CNPJ ou Passaporte. Padrão é TRUE</td>
+<td>boolean (default true)</td>
+<td>Tem documentação, como CPF, CNPJ ou Passaporte.</td>
 </tr>
 <tr>
 <td>documentation</td>
@@ -1647,6 +1671,36 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>sim</td>
 <td>string</td>
 <td>Assinar como: sign, party, witness, contractor, contractee...</td>
+</tr>
+<tr>
+<td>selfie_enabled</td>
+<td>não</td>
+<td>boolean (default false)</td>
+<td>Assinar como: sign, party, witness, contractor, contractee...</td>
+</tr>
+<tr>
+<td>handwritten_enabled</td>
+<td>não</td>
+<td>boolean (default false)</td>
+<td>Define a solicitação de assinatura manuscrita como ponto de autenticação para o signatário.</td>
+</tr>
+<tr>
+<td>official_document_enabled</td>
+<td>não</td>
+<td>boolean (default false)</td>
+<td>Define a solicitação da foto (frente e verso) do documento oficial como ponto de autenticação para o signatário.</td>
+</tr>
+<tr>
+<td>liveness_enabled</td>
+<td>não</td>
+<td>boolean (default false)</td>
+<td>Define a solicitação de selfie dinâmica como ponto de autenticação para o signatário.</td>
+</tr>
+<tr>
+<td>facial_biometrics_enabled</td>
+<td>não</td>
+<td>boolean (default false)</td>
+<td>Define a solicitação de biometria facial como ponto de autenticação para o signatário.</td>
 </tr>
 </tbody></table>
 <h1 id='ccb'>CCB</h1>
@@ -1827,7 +1881,7 @@ Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities par
 </tr>
 <tr>
 <td>signature_provider</td>
-<td>Enum</td>
+<td>string</td>
 <td>String indicando qual assinador foi utilizado. Ver assinadores aceitos abaixo.</td>
 </tr>
 <tr>
@@ -2019,11 +2073,11 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"arrangements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arranjo 1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/arrangements/120"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -2066,27 +2120,30 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"arrangement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"member_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arranjo 1"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"signers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Latia Pouros Roberts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bilck Endorser"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"has_documentation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"062.231.968-06"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rufus@quitzon.co"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1964-10-22"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(52) 91647-1229"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"304.336.560-77"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilherme.bilck+endossante@clicksign.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1981-08-17"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5561999999999"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"communicate_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-29T14:18:21.007-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9429903a-ba8d-4eca-be62-d5d034bd0f52"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sign"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="err">...</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e19a0a2a-e245-45bc-a914-1c42c587cf45"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sign_as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endorser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"selfie_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"official_document_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"liveness_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"handwritten_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"facial_biometrics_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-08T15:05:45.342-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-08T15:05:45.499-03:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
