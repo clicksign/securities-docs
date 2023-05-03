@@ -461,7 +461,7 @@ Esse endpoint Executa um processo de cessão
 
 ### HTTP Request
 
-`POST https://app.securities.com.br/api/legacy//contracts`
+`POST https://app.securities.com.br/api/legacy/contracts`
 
 ### Parâmetros da requisição
 
