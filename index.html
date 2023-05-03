@@ -473,21 +473,23 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introducao'>Introdução</h1>
-<p>Disponibilizamos essa API com o intuito de fornecer acesso aos recursos da Securities por meio da arquitetura REST, dessa forma, você poderá fazer uso dos recursos do nosso sistema fora do nosso ambiente UI, e com isso, contextualizar melhor as funcionalidades dentro da sua necessidade.</p>
+<p>A Clicksign Securities é uma plataforma que permite gerar, endossar e assinar eletronicamente Cédulas de Crédito Bancário (CCB).</p>
+
+<p>Disponibilizamos essa API com o intuito de fornecer acesso aos recursos do produto Clicksign Securities, por meio da arquitetura REST. É possível fazer uso dos recursos do nosso sistema fora do nosso ambiente UI, e com isso, contextualizar melhor as funcionalidades dentro da sua necessidade.</p>
 <h1 id='visao-geral'>Visão geral</h1>
-<p>O objetivo desta documentação é orientar o desenvolvedor sobre como integrar com o SECURITIES-API, descrevendo as funcionalidades, os métodos a serem utilizados, listando informações a serem enviadas e recebidas, e provendo exemplos.</p>
+<p>O objetivo desta documentação é orientar o desenvolvedor sobre como integrar com a API da Clicksign Securities, descrevendo as funcionalidades, os métodos a serem utilizados, listando informações a serem enviadas e recebidas, e provendo exemplos.</p>
 
-<p>O mecanismo de integração com o SECURITIES-API é simples, de modo que apenas conhecimentos intermediários em linguagem de programação para Web, requisições HTTP/HTTPS e manipulação de arquivos JSON são necessários para integrar com o SECURITIES-API.</p>
+<p>O mecanismo de integração com o API da Clicksign Securities é simples, de modo que apenas conhecimentos intermediários em linguagem de programação para Web, requisições HTTP/HTTPS e manipulação de arquivos JSON são necessários para realizar a integração.</p>
 
-<p>Nesse manual você encontrará a referência sobre todas as operações disponíveis no SECURITIES-API. As operações devem ser executadas utilizando um token de acesso obtido através do recurso de autenticação. Esse token é gerado com base em uma organização ativa na Securities.</p>
+<p>Nesse documento você encontrará a referência sobre todas as operações disponíveis na API. As operações devem ser executadas utilizando um token de acesso obtido através do recurso de autenticação. Esse token é gerado com base em uma organização ativa na Clicksign Securities.</p>
 
 <p>Disponibilizamos abaixo as urls de acesso aos nossos ambientes:</p>
 
-<p><strong>Ambiente Produção:</strong> https://app.securities.com.br/api</p>
+<p><strong>Ambiente Produção:</strong> <a href="https://app.securities.com.br/api">https://app.securities.com.br/api</a></p>
 
-<p><strong>Ambiente Homologação:</strong> https://sandbox.securities.com.br/api</p>
+<p><strong>Ambiente Homologação:</strong> <a href="https://sandbox.securities.com.br/api">https://sandbox.securities.com.br/api</a></p>
 <h1 id='codigos-de-status'>Códigos de status</h1>
-<p>No SECURITIES-API, os status de retorno das requisições devem ser esperados conforme especificado nas situações abaixo:</p>
+<p>Na API da Clicksign Securities, os status de retorno das requisições devem ser esperados conforme especificado nas situações abaixo:</p>
 
 <table><thead>
 <tr>
@@ -1132,7 +1134,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint Executa um processo de cessão</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>POST https://app.securities.com.br/api/legacy//contracts</code></p>
+<p><code>POST https://app.securities.com.br/api/legacy/contracts</code></p>
 <h3 id='parametros-da-requisicao-8'>Parâmetros da requisição</h3>
 <table><thead>
 <tr>
