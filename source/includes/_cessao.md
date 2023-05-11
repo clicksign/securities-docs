@@ -24,8 +24,7 @@ Content-Type: application/json; charset=utf-8
 [
   {
     "id": 1,
-    "assignee_id": 1,
-    "endorser_id": 1,
+    "arrangement_id": 1,
     "batch_id": 3,
     "number": "123456",
     "issue_date": "2022-09-30",
@@ -63,22 +62,38 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
   "id": 1,
-  "assignee_id": 1,
-  "endorser_id": 1,
+  "arrangement_id": 1,
   "batch_id": 3,
   "number": "123456",
   "issue_date": "2022-09-30",
   "status": "pending",
   "full_amount": "100.0",
   "created_at": "2022-09-30T18:13:53.140-03:00",
-  "updated_at": "2022-09-30T18:13:53.175-03:00",
+  "updated_at": "2022-09-30T18:13:53.175-03:00",\
+  "template_data": {
+    "total_value": "1000,00",
+    "installments": "24",
+    "bank_name": "Itau",
+    ...
+  },
   "batch": {
     "id": 3,
     "status": "signing",
     "number": "508",
     "quantity": 1,
     "quantity_approved": 1
-  }
+  },
+  "documents": [
+    {
+      "id": 23,
+      "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+      "status": "created",
+      "created_at": "2022-10-27T09:44:50.800-03:00",
+      "updated_at": "2022-10-27T09:46:45.968-03:00",
+      "file": null
+    }
+  ],
+  "url": "https://app.securities.com.br/api/v1/assignments/1"
 }
 ```
 
@@ -98,8 +113,7 @@ curl -X POST https://app.securities.com.br/api/v1/assignments \
      -H "Content-Type: application/json" \
      -d '{
           "assignment": {
-            "assignee_id": 1,
-            "endorser_id": 1,
+            "arrangement_id": 1,
             "number": "123456",
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
@@ -124,22 +138,31 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
   "id": 1,
-  "assignee_id": 1,
-  "endorser_id": 1,
+  "arrangement_id": 1,
   "batch_id": 3,
   "number": "123456",
   "issue_date": "2022-09-30",
   "status": "pending",
   "full_amount": "100.0",
   "created_at": "2022-09-30T18:13:53.140-03:00",
-  "updated_at": "2022-09-30T18:13:53.175-03:00"
+  "updated_at": "2022-09-30T18:13:53.175-03:00",
+  "template_data": {
+    "total_value": "1000,00",
+    "installments": "24",
+    "bank_name": "Itau",
+    ...
+  },
   "batch": {
     "id": 3,
     "status": "signing",
     "number": "508",
     "quantity": 1,
-    "quantity_approved": 1
-  }
+    "quantity_approved": 0
+  },
+  "documents": [
+    {}
+  ],
+  "url": "https://app.securities.com.br/api/v1/assignments/1"
 }
 ```
 
@@ -151,15 +174,14 @@ Esse endpoint cria um termo de cessão
 
 ### Parâmetros da requisição
 
-| Parâmetro     | Obrigatório | Tipo    | Descrição                                        |
-| ------------- | ----------- | ------- | ------------------------------------------------ |
-| assignee_id   | sim         | integer | ID da conta da cessionária                       |
-| endorser_id   | sim         | integer | ID da conta do endossatário                      |
-| number        | sim         | string  | Número do termo de cessão                        |
-| issue_date    | sim         | boolean | Data de emissão                                  |
-| full_amount   | sim         | float   | Valor do termo (soma de todos os títulos)        |
-| batch_id      | sim         | integer | ID do Lote de CCBs                               |
-| template_data | sim         | jsonb   | Dados do documento para compor o Termo de Cessão |
+| Parâmetro      | Obrigatório | Tipo    | Descrição                                        |
+|----------------| ----------- | ------- |--------------------------------------------------|
+| arrangement_id | sim         | integer | ID do Arranjo da cessão                          |
+| number         | sim         | string  | Número do termo de cessão                        |
+| issue_date     | sim         | boolean | Data de emissão                                  |
+| full_amount    | sim         | float   | Valor do termo (soma de todos os títulos)        |
+| batch_id       | sim         | integer | ID do Lote de CCBs                               |
+| template_data  | sim         | jsonb   | Dados do documento para compor o Termo de Cessão |
 
 ### Validações
 
