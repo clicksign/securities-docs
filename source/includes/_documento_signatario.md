@@ -31,7 +31,8 @@ Content-Type: application/json; charset=utf-8
       "signed": false,
       "sign_as": "sign",
       "created_at": "2022-10-26T15:53:18.825-03:00",
-      "updated_at": "2022-10-26T15:55:51.010-03:00"
+      "updated_at": "2022-10-26T15:55:51.010-03:00",
+      "url": "https://app.securities.com.br/api/v1/lists/113"
     }
   ],
   "page_infos": {
@@ -108,7 +109,10 @@ curl -X POST https://app.securities.com.br/api/v1/lists \
           "list": {
             "signer_id": 1,
             "document_id": 2,
-            "sign_as": "sign"
+            "sign_as": "sign",
+            "group": null,
+            "message": null,
+            "refusable": false
           }
         }'
 ```
@@ -144,8 +148,11 @@ Esse endpoint associa o signatário a um documento e vice-versa
 
 ### Parâmetros da requisição
 
-| Parâmetro   | Obrigatório | Tipo    | Descrição                                                  |
-| ----------- | ----------- | ------- | ---------------------------------------------------------- |
-| signer_id   | sim         | integer | ID do signatário                                           |
-| document_id | sim         | string  | ID do documento                                            |
-| sign_as     | não         | string  | Assinar como: sign (padrão), party, witness, contractor... |
+| Parâmetro   | Obrigatório | Tipo    | Descrição                                                                                    |
+| ----------- | ----------- |---------|:---------------------------------------------------------------------------------------------|
+| signer_id   | sim         | integer | ID do signatário                                                                             |
+| document_id | sim         | string  | ID do documento                                                                              |
+| sign_as     | não         | string  | Assinar como: sign (padrão), party, witness, contractor...                                   |
+| group       | não         | integer | Determina o grupo que o signatário deve ser vinculado.Deve ser número, inteiro e maior que 0 |
+| message     | não         | string  | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários.    |
+| refusable   | não         | boolean | Determina se o signatário pode recusar ou não a assinatura do documento.                     |
