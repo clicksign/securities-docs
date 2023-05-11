@@ -30,7 +30,8 @@ Content-Type: application/json; charset=utf-8
       "quantity_approved": 1,
       "quantity_signed": 1,
       "created_at": "2022-10-06T16:46:40.705-03:00",
-      "updated_at": "2022-10-06T16:46:40.889-03:00"
+      "updated_at": "2022-10-06T16:46:40.889-03:00",
+      "url": "https://app.securities.com.br/api/v1/batches/1"
     }
   ],
   "page_infos": {
