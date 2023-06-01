@@ -1029,12 +1029,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
           "cession_contracts": 30,
           "issue_date": "2021-09-16",
           "arrangement": 1,
-          "callback_url": "https://example.com/callback",
-          "template_data": {
-            "assignor_name": "Fulano",
-            "assignor_documentation": "123.321.123-40",
-            "assignor_email": "
-          }
+          "callback_url": "https://example.com/callback"
         }'</span>
 </code></pre></div>
 <blockquote>
@@ -1100,12 +1095,6 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>não</td>
 <td>string</td>
 <td>URL de callback</td>
-</tr>
-<tr>
-<td>template_data</td>
-<td>sim</td>
-<td>object</td>
-<td>Dados para o template</td>
 </tr>
 </tbody></table>
 <h2 id='executar-um-processo-de-cessao'>Executar um processo de cessão</h2>
@@ -2249,14 +2238,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
             "number": "123456",
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
-            "batch_id": 3,
-            "template_data": {
-                "total_value": "1000,00",
-                "installments": "24",
-                "bank_name": "Itau",
-                ...
-              }
-          }
+            "batch_id": 3
         }'</span>
 </code></pre></div>
 <blockquote>
@@ -2274,12 +2256,6 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="nl">"full_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-30T18:13:53.140-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-30T18:13:53.175-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"template_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"total_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000,00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Itau"</span><span class="p">,</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"signing"</span><span class="p">,</span><span class="w">
@@ -2334,12 +2310,6 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>sim</td>
 <td>integer</td>
 <td>ID do Lote de CCBs</td>
-</tr>
-<tr>
-<td>template_data</td>
-<td>sim</td>
-<td>jsonb</td>
-<td>Dados do documento para compor o Termo de Cessão</td>
 </tr>
 </tbody></table>
 <h3 id='validacoes'>Validações</h3>
@@ -2585,8 +2555,12 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
      <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      <span class="nt">-d</span> <span class="s1">'{
           "security_batch": {
-            "security_id": 1
-          }
+            "security_id": 1,
+            "security_data": {
+              "assignor_name": "Fulano",
+              "cession_value": "2002.20",
+              "number": "12346"
+            }
         }'</span>
 </code></pre></div>
 <blockquote>
