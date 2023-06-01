@@ -99,8 +99,12 @@ curl -X POST https://app.securities.com.br/api/v1/batches/:batch_id/security_bat
      -H "Content-Type: application/json" \
      -d '{
           "security_batch": {
-            "security_id": 1
-          }
+            "security_id": 1,
+            "security_data": {
+              "assignor_name": "Fulano",
+              "cession_value": "2002.20",
+              "number": "12346"
+            }
         }'
 ```
 

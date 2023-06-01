@@ -117,14 +117,7 @@ curl -X POST https://app.securities.com.br/api/v1/assignments \
             "number": "123456",
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
-            "batch_id": 3,
-            "template_data": {
-                "total_value": "1000,00",
-                "installments": "24",
-                "bank_name": "Itau",
-                ...
-              }
-          }
+            "batch_id": 3
         }'
 ```
 
@@ -146,12 +139,6 @@ Content-Type: application/json; charset=utf-8
   "full_amount": "100.0",
   "created_at": "2022-09-30T18:13:53.140-03:00",
   "updated_at": "2022-09-30T18:13:53.175-03:00",
-  "template_data": {
-    "total_value": "1000,00",
-    "installments": "24",
-    "bank_name": "Itau",
-    ...
-  },
   "batch": {
     "id": 3,
     "status": "signing",
@@ -181,7 +168,6 @@ Esse endpoint cria um termo de cessão
 | issue_date     | sim         | boolean | Data de emissão                                  |
 | full_amount    | sim         | float   | Valor do termo (soma de todos os títulos)        |
 | batch_id       | sim         | integer | ID do Lote de CCBs                               |
-| template_data  | sim         | jsonb   | Dados do documento para compor o Termo de Cessão |
 
 ### Validações
 

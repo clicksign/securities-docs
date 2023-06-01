@@ -383,12 +383,7 @@ curl -X POST https://app.securities.com.br/api/legacy/assignments\
           "cession_contracts": 30,
           "issue_date": "2021-09-16",
           "arrangement": 1,
-          "callback_url": "https://example.com/callback",
-          "template_data": {
-            "assignor_name": "Fulano",
-            "assignor_documentation": "123.321.123-40",
-            "assignor_email": "
-          }
+          "callback_url": "https://example.com/callback"
         }'
 ```
 
@@ -423,7 +418,6 @@ Esse endpoint cria um processo de cessão
 | issue_date       | sim         | string  | Data de emissão da cessão                    |
 | arrangement      | sim         | integer | ID do Arranjo                                |
 | callback_url     | não         | string  | URL de callback                              |
-| template_data    | sim         | object  | Dados para o template                        |
 
 ## Executar um processo de cessão
 
