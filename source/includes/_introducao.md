@@ -16,7 +16,7 @@ Disponibilizamos abaixo as urls de acesso aos nossos ambientes:
 
 **Ambiente Produção:** <https://app.securities.com.br/api>
 
-**Ambiente Homologação:** <https://sandbox.securities.com.br/api>
+**Ambiente Homologação:** <https://app-sandbox.securities.com.br/api>
 
 # Códigos de status
 
