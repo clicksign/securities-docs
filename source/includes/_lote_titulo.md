@@ -105,6 +105,7 @@ curl -X POST https://app.securities.com.br/api/v1/batches/:batch_id/security_bat
               "cession_value": "2002.20",
               "number": "12346"
             }
+          }
         }'
 ```
 

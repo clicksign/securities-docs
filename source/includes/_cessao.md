@@ -118,6 +118,7 @@ curl -X POST https://app.securities.com.br/api/v1/assignments \
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
             "batch_id": 3
+          }
         }'
 ```
 

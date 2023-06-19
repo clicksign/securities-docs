@@ -430,8 +430,8 @@ curl -X POST https://app.securities.com.br/api/legacy/contracts\
     -d '{
           "process": "123",
           "contracts": [
-            { "number": "123456789" },
-            { "number": "125468797" }
+            { "number": "123456789", issuer_name: "Issuer Name"... },
+            { "number": "125468797", issuer_name: "Issuer Name"... }
           ]
         }'
 ```
