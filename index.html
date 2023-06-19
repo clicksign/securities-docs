@@ -1107,8 +1107,8 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
     <span class="nt">-d</span> <span class="s1">'{
           "process": "123",
           "contracts": [
-            { "number": "123456789" },
-            { "number": "125468797" }
+            { "number": "123456789", issuer_name: "Issuer Name"... },
+            { "number": "125468797", issuer_name: "Issuer Name"... }
           ]
         }'</span>
 </code></pre></div>
@@ -2239,6 +2239,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
             "issue_date": "2022-09-30",
             "full_amount": 100.0,
             "batch_id": 3
+          }
         }'</span>
 </code></pre></div>
 <blockquote>
@@ -2561,6 +2562,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
               "cession_value": "2002.20",
               "number": "12346"
             }
+          }
         }'</span>
 </code></pre></div>
 <blockquote>
