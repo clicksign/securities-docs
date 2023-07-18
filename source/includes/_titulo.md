@@ -63,7 +63,7 @@ Esse endpoint lista todas as CCBs
 > Request:
 
 ```shell
-curl -X GET https://app.securities.com.br/api/v1/securities/:id \
+curl -X GET https://app.securities.com.br/api/v1/securities/:number \
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -95,7 +95,7 @@ Content-Type: application/json; charset=utf-8
         "file": null
       }
     ],
-    "url": "https://app.securities.com.br/api/v1/securities/2"
+    "url": "https://app.securities.com.br/api/v1/securities/123456"
   }
 }
 ```
@@ -104,7 +104,7 @@ Esse endpoint obtém todos os dados de uma CCB
 
 ### HTTP Request
 
-`GET https://app.securities.com.br/api/v1/securities/:id`
+`GET https://app.securities.com.br/api/v1/securities/:number`
 
 ## Criar CCB já assinada para Cessão
 
