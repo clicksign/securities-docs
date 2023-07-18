@@ -1800,7 +1800,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/securities/:id <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/securities/:number <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -1828,13 +1828,13 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
         </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/securities/2"</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/securities/123456"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de uma CCB</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://app.securities.com.br/api/v1/securities/:id</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/securities/:number</code></p>
 <h2 id='criar-ccb-ja-assinada-para-cessao'>Criar CCB já assinada para Cessão</h2>
 <blockquote>
 <p>Request:</p>
