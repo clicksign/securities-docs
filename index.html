@@ -2599,8 +2599,8 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
      <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      <span class="nt">-d</span> <span class="s1">'{
           "security_batch": {
-            "security_id": 1,
             "security_data": {
+              "number": "123456",
               "assignor_name": "Fulano",
               "cession_value": "2002.20",
               "number": "12346"
@@ -2637,12 +2637,14 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </tr>
 </thead><tbody>
 <tr>
-<td>security_id</td>
+<td>security_data</td>
 <td>sim</td>
 <td>integer</td>
 <td>ID da CCB</td>
 </tr>
 </tbody></table>
+
+<p>OBS: O parâmetro <code>security_data</code> deve conter o attributo <code>number</code> com o número da CCB.</p>
 <h3 id='validacoes'>Validações</h3>
 <p>Não será permitido enviar uma CCB se não for criada uma cessão associada ao lote.</p>
 
