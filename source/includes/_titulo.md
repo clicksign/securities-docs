@@ -9,7 +9,7 @@ Em outras palavras, a CCB é o que representará um crédito tomado e que foi as
 > Request:
 
 ```shell
-curl -X GET https://app.securities.com.br/api/v1/securities \
+curl -X GET https://app.securities.com.br/api/v1/bank_credit_notes \
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -22,7 +22,7 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "securities": [
+  "bank_credit_notes": [
     {
       "id": 2,
       "number": "123456",
@@ -31,7 +31,7 @@ Content-Type: application/json; charset=utf-8
       "installments": 1,
       "created_at": "2022-09-15T15:27:00.691-03:00",
       "updated_at": "2022-09-15T15:27:00.691-03:00",
-      "url": "https://app.securities.com.br/api/v1/securities/2"
+      "url": "https://app.securities.com.br/api/v1/bank_credit_notes/2"
     }
   ],
   "page_infos": {
@@ -49,7 +49,7 @@ Esse endpoint lista todas as CCBs
 
 ### HTTP Request
 
-`GET https://app.securities.com.br/api/v1/securities`
+`GET https://app.securities.com.br/api/v1/bank_credit_notes`
 
 ### Parâmetros de consulta
 
@@ -63,7 +63,7 @@ Esse endpoint lista todas as CCBs
 > Request:
 
 ```shell
-curl -X GET https://app.securities.com.br/api/v1/securities/:number \
+curl -X GET https://app.securities.com.br/api/v1/bank_credit_notes/:number \
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -76,7 +76,7 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "security": {
+  "bank_credit_note": {
     "id": 2,
     "number": "123456",
     "issuer_full_name": "Hugo Fonseca",
@@ -95,7 +95,7 @@ Content-Type: application/json; charset=utf-8
         "file": null
       }
     ],
-    "url": "https://app.securities.com.br/api/v1/securities/123456"
+    "url": "https://app.securities.com.br/api/v1/bank_credit_notes/123456"
   }
 }
 ```
@@ -104,14 +104,14 @@ Esse endpoint obtém todos os dados de uma CCB
 
 ### HTTP Request
 
-`GET https://app.securities.com.br/api/v1/securities/:number`
+`GET https://app.securities.com.br/api/v1/bank_credit_notes/:number`
 
 ## Criar CCB já assinada para Cessão
 
 > Request:
 
 ```shell
-curl -v POST https://app.securities.com.br/api/v1/securities \
+curl -v POST https://app.securities.com.br/api/v1/bank_credit_notes \
      -H "Authorization: Bearer $TOKEN"
      -F "file=@file1.pdf"
      -F "signed=true"
@@ -133,7 +133,7 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-  "security": {
+  "bank_credit_note": {
     "id": 2,
     "number": "123456",
     "issuer_full_name": "Hugo Fonseca",
@@ -154,7 +154,7 @@ Content-Type: application/json; charset=utf-8
         }
       }
     ],
-    "url": "https://app.securities.com.br/api/v1/securities/2"
+    "url": "https://app.securities.com.br/api/v1/bank_credit_notes/2"
   }
 }
 ```
@@ -169,7 +169,7 @@ Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities par
 
 ### HTTP Request
 
-`POST https://app.securities.com.br/api/v1/securities`
+`POST https://app.securities.com.br/api/v1/bank_credit_notes`
 
 ### Parâmetros
 
