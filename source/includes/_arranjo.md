@@ -25,6 +25,7 @@ Content-Type: application/json; charset=utf-8
       "id": 120,
       "account_id": 7,
       "name": "Arranjo 1",
+      "operation_type": "duplicate",
       "url": "https://app.securities.com.br/api/v1/arrangements/120"
     },
   ],
@@ -39,7 +40,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint lista todos os Arranjos
+Esse endpoint lista todos os Arranjos nos quais a conta é cessionária
 
 ### HTTP Request
 
@@ -73,6 +74,7 @@ Content-Type: application/json; charset=utf-8
     "id": 120,
     "account_id": 7,
     "name": "Arranjo 1",
+    "operation_type": "duplicate",
     "signers": [
       {
         "id": 500,
@@ -99,7 +101,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtem todos os dados de um Arranjo
+Esse endpoint obtém todos os dados de um Arranjo
 
 ### HTTP Request
 
