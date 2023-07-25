@@ -1531,15 +1531,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtém todos os dados de um signatário</p>
+<p>Esse endpoint obtém todos os dados de um signatário. É possível obter o signatário pelo <code>:id</code> ou pela <code>:key</code></p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p>Obter signatário</p>
 
-<p><code>GET https://app.securities.com.br/api/v1/signers/:id</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/signers/:id</code><br>
+<code>GET https://app.securities.com.br/api/v1/signers/bykey/:key</code></p>
 
 <p><br>Obter signatário de um documento</p>
 
-<p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id</code><br>
+<code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers/bykey/:key</code></p>
 <h2 id='criar-signatario'>Criar signatário</h2>
 <blockquote>
 <p>Request:</p>
