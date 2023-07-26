@@ -1745,7 +1745,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/securities <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/bank_credit_notes <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -1754,7 +1754,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"securities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"bank_credit_notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
@@ -1763,7 +1763,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
       </span><span class="nl">"installments"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-15T15:27:00.691-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/securities/2"</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/bank_credit_notes/2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1778,7 +1778,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span></code></pre></div>
 <p>Esse endpoint lista todas as CCBs</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://app.securities.com.br/api/v1/securities</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/bank_credit_notes</code></p>
 <h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
 <table><thead>
 <tr>
@@ -1802,7 +1802,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/securities/:number <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/bank_credit_notes/:number <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -1811,7 +1811,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"bank_credit_note"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"issuer_full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Fonseca"</span><span class="p">,</span><span class="w">
@@ -1830,18 +1830,18 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
         </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/securities/123456"</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/bank_credit_notes/123456"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de uma CCB</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://app.securities.com.br/api/v1/securities/:number</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/bank_credit_notes/:number</code></p>
 <h2 id='criar-ccb-ja-assinada-para-cessao'>Criar CCB já assinada para Cessão</h2>
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> POST https://app.securities.com.br/api/v1/securities <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-v</span> POST https://app.securities.com.br/api/v1/bank_credit_notes <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
      <span class="nt">-F</span> <span class="s2">"file=@file1.pdf"</span>
      <span class="nt">-F</span> <span class="s2">"signed=true"</span>
@@ -1859,7 +1859,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 OK
 Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"bank_credit_note"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"issuer_full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Fonseca"</span><span class="p">,</span><span class="w">
@@ -1880,7 +1880,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/securities/2"</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/bank_credit_notes/2"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1892,7 +1892,7 @@ Este endpoint tem como funcionalidade a recepção de CCBs que serão endossadas
 Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities para então também ser cedida com nossos produtos, agora ou no momento oportuno de movimentação do estoque de títulos, consulte nossa API de Proposta (título antes de se tornar uma CCB assinada pelo tomador).
 </aside>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://app.securities.com.br/api/v1/securities</code></p>
+<p><code>POST https://app.securities.com.br/api/v1/bank_credit_notes</code></p>
 <h3 id='parametros'>Parâmetros</h3>
 <p>Essa requisição deve ser um <code>multipart/form-data</code> com os seguintes parâmetros:</p>
 
