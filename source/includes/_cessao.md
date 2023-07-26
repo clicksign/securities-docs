@@ -30,6 +30,7 @@ Content-Type: application/json; charset=utf-8
     "issue_date": "2022-09-30",
     "status": "pending",
     "full_amount": "100.0",
+    "operation_type": "duplicate",
     "created_at": "2022-09-30T18:13:53.140-03:00",
     "updated_at": "2022-09-30T18:13:53.175-03:00",
     "url": "https://app.securities.com.br/api/v1/assignments/1"
@@ -68,6 +69,7 @@ Content-Type: application/json; charset=utf-8
   "issue_date": "2022-09-30",
   "status": "pending",
   "full_amount": "100.0",
+  "operation_type": "duplicate",
   "created_at": "2022-09-30T18:13:53.140-03:00",
   "updated_at": "2022-09-30T18:13:53.175-03:00",\
   "template_data": {
@@ -138,6 +140,7 @@ Content-Type: application/json; charset=utf-8
   "issue_date": "2022-09-30",
   "status": "pending",
   "full_amount": "100.0",
+  "operation_type": "duplicate",
   "created_at": "2022-09-30T18:13:53.140-03:00",
   "updated_at": "2022-09-30T18:13:53.175-03:00",
   "batch": {

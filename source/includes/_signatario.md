@@ -123,17 +123,19 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtém todos os dados de um signatário
+Esse endpoint obtém todos os dados de um signatário. É possível obter o signatário pelo `:id` ou pela `:key`
 
 ### HTTP Request
 
 Obter signatário
 
-`GET https://app.securities.com.br/api/v1/signers/:id`
+`GET https://app.securities.com.br/api/v1/signers/:id`<br>
+`GET https://app.securities.com.br/api/v1/signers/bykey/:key`
 
 <br>Obter signatário de um documento
 
-`GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id`
+`GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id`<br>
+`GET https://app.securities.com.br/api/v1/documents/:document_id/signers/bykey/:key`
 
 ## Criar signatário
 
