@@ -4,6 +4,14 @@ CCB é a Cédula de crédito bancário: A Cédula de Crédito Bancário é títu
 
 Em outras palavras, a CCB é o que representará um crédito tomado e que foi assinado pelo tomador para que possa ser negociado como um título no mercado financeiro.
 
+
+### ATENCÃO ###
+Foram atualizadas a rotas das CCBs:
+
+Antes: `/api/v1/securities`
+
+Agora: `/api/v1/bank_credit_notes`
+
 ## Listar CCBs
 
 > Request:
