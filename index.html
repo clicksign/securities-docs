@@ -457,6 +457,14 @@
               </ul>
           </li>
           <li>
+            <a href="#documentos" class="toc-h1 toc-link" data-title="Documentos">Documentos</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#obter-um-documento-pela-key" class="toc-h2 toc-link" data-title="Obter um documento pela key">Obter um documento pela key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#signatario-do-documento" class="toc-h1 toc-link" data-title="Signatário do documento">Signatário do documento</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2676,6 +2684,50 @@ CCBs sejam enviadas, permanecerá nesse status.</p>
   <strong>Atenção</strong><br>
   Para obter o <code>security_id</code> será necessário <a href="#listar-ccbs">consultar pela CCB</a> no respectivo endpoint.
 </aside>
+<h1 id='documentos'>Documentos</h1>
+<p>Recursos utilizados para gerenciar arquivos em PDF.</p>
+<h2 id='obter-um-documento-pela-key'>Obter um documento pela key</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/documents/bykey/:key <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">394193</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0aa3e5bc-3a88-4873-b680-8ec7ecea585e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validated"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-07-24T10:53:54.295-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-07-24T11:02:44.586-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://securities-app.s3.amazonaws.com/"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint obtêm um documento e pela key.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/documents/bykey/:key</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>uuid</td>
+<td>Chave do documento</td>
+</tr>
+</tbody></table>
 <h1 id='signatario-do-documento'>Signatário do documento</h1>
 <p>Endpoint utilizado para adicionar um ou mais signatários a um documento que deverá ser assinado.</p>
 <h2 id='listar-signatarios-do-documento'>Listar signatários do documento</h2>
