@@ -14,6 +14,7 @@ includes:
   - cessao
   - lote
   - lote_titulo
+  - documentos
   - documento_signatario
 
 search: true
