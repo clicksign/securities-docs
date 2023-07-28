@@ -137,9 +137,9 @@ Esse endpoint adiciona uma CCB no lote
 
 ### Parâmetros da requisição
 
-| Parâmetro     | Obrigatório | Tipo    | Descrição |
-|---------------| ----------- | ------- | --------- |
-| security_data | sim         | integer | ID da CCB |
+| Parâmetro     | Obrigatório | Tipo  | Descrição        |
+|---------------| ----------- |-------|------------------|
+| security_data | sim         | jsonb | metadados da CCB |
 
 OBS: O parâmetro `security_data` deve conter o attributo `number` com o número da CCB.
 
