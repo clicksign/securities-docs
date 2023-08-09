@@ -1474,3 +1474,195 @@ Não será permitido enviar uma Duplicata que já esteja no lote.
   <strong>Atenção</strong><br>
   Diferentemente do lote de CCBs, as Duplicatas são geradas após a adição no lote, utilizando o modelo indicado no arranjo.
 </aside>
+
+### Documentos
+
+Recursos utilizados para gerenciar arquivos em PDF.
+
+#### Obter um documento pela key
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/v1/documents/bykey/:key \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+    "document": {
+        "id": 394193,
+        "key": "0aa3e5bc-3a88-4873-b680-8ec7ecea585e",
+        "status": "validated",
+        "created_at": "2023-07-24T10:53:54.295-03:00",
+        "updated_at": "2023-07-24T11:02:44.586-03:00",
+        "file": {
+            "url": "https://securities-app.s3.amazonaws.com/"
+        }
+    }
+}
+```
+
+Esse endpoint obtêm um documento e pela key.
+
+`GET https://app.securities.com.br/api/v1/documents/bykey/:key`
+
+| Parâmetro | Tipo    | Descrição |
+| --------- | ------- | --------- |
+| key      | uuid | Chave do documento |
+
+### Signatário do documento
+
+Endpoint utilizado para adicionar um ou mais signatários a um documento que deverá ser assinado.
+
+#### Listar signatários do documento
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/v1/lists \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "lists": [
+    {
+      "id": 113,
+      "signer_id": 18,
+      "document_id": 43,
+      "key": "2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b",
+      "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
+      "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
+      "signed": false,
+      "sign_as": "sign",
+      "created_at": "2022-10-26T15:53:18.825-03:00",
+      "updated_at": "2022-10-26T15:55:51.010-03:00",
+      "url": "https://app.securities.com.br/api/v1/lists/113"
+    }
+  ],
+  "page_infos": {
+    "total_pages": 3,
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": null,
+    "first_page?": true,
+    "last_page?": false
+  }
+}
+```
+
+Esse endpoint lista todos signatários de um documento e vice-versa
+
+`GET https://app.securities.com.br/api/v1/lists`
+
+| Parâmetro | Tipo    | Descrição |
+| --------- | ------- | --------- |
+| page      | integer | Paginação |
+
+#### Obter signatário do documento
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/v1/lists/:id \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "list": {
+    "id": 113,
+    "signer_id": 18,
+    "document_id": 43,
+    "key": "2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b",
+    "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
+    "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
+    "signed": false,
+    "sign_as": "sign",
+    "created_at": "2022-10-26T15:53:18.825-03:00",
+    "updated_at": "2022-10-26T15:55:51.010-03:00"
+  }
+}
+```
+
+Esse endpoint obtém todos signatários de um documento e vice-versa
+
+`GET https://app.securities.com.br/api/v1/lists/:id`
+
+#### Adicionar signatários no documento
+
+> Request:
+
+```shell
+curl -X POST https://app.securities.com.br/api/v1/lists \
+     -H "Authorization: Bearer $TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{
+          "list": {
+            "signer_id": 1,
+            "document_id": 2,
+            "sign_as": "sign",
+            "group": null,
+            "message": null,
+            "refusable": false
+          }
+        }'
+```
+
+> Response:
+
+```shell
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "list": {
+    "id": 113,
+    "signer_id": 18,
+    "document_id": 43,
+    "key": "2dd1f865-2154-4f7c-8b3b-9bcbcbcbac9b",
+    "batch_key": "14fb4ce9-f28e-4954-a884-ad125931181b",
+    "request_signature_key": "c1243577-73f5-4071-9ba4-59d5a2f13ee7",
+    "sign_as": "sign",
+    "created_at": "2022-10-26T15:53:18.825-03:00",
+    "updated_at": "2022-10-26T15:55:51.010-03:00"
+  }
+}
+```
+
+Esse endpoint associa o signatário a um documento e vice-versa
+
+`POST https://app.securities.com.br/api/v1/lists`
+
+| Parâmetro   | Obrigatório | Tipo    | Descrição                                                                                    |
+| ----------- | ----------- |---------|:---------------------------------------------------------------------------------------------|
+| signer_id   | sim         | integer | ID do signatário                                                                             |
+| document_id | sim         | string  | ID do documento                                                                              |
+| sign_as     | não         | string  | Assinar como: sign (padrão), party, witness, contractor...                                   |
+| group       | não         | integer | Determina o grupo que o signatário deve ser vinculado.Deve ser número, inteiro e maior que 0 |
+| message     | não         | string  | Mensagem que será enviada no body do e-mail de solicitação de assinatura aos signatários.    |
+| refusable   | não         | boolean | Determina se o signatário pode recusar ou não a assinatura do documento.                     |
