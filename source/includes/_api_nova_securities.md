@@ -1,10 +1,14 @@
-# Proposta
+# API Nova Securities
+
+## Registro de CCBs
+
+### Proposta
 
 A proposta é o documento que representa a CCB antes dela ser assinada pelo tomador. Enquanto o tomador não assina o documento, ele ainda não se tornou uma CCB para ser cedida, então esse documento é uma Proposta de se tornar uma CCB.
 
 A proposta conterá todos os dados de uma CCB, seguindo o modelo preconizado entre originador e fundo, entretanto, o que o diferencia de uma CCB é o fato de ainda não estar assinado pelo tomador.
 
-## Listar propostas
+#### Listar propostas
 
 > Request:
 
@@ -47,17 +51,13 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint lista todas as propostas
 
-### HTTP Request
-
 `GET https://app.securities.com.br/api/v1/proposals`
-
-### Parâmetros de consulta
 
 | Parâmetro | Tipo    | Descrição |
 | --------- | ------- | --------- |
 | page      | integer | Paginação |
 
-## Obter proposta
+#### Obter proposta
 
 > Request:
 
@@ -129,11 +129,9 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint obtem todos os dados de uma proposta
 
-### HTTP Request
-
 `GET https://app.securities.com.br/api/v1/proposals/:id`
 
-## Criar proposta
+#### Criar proposta
 
 > Request:
 
@@ -244,11 +242,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint cria uma proposta
 
-### HTTP Request
-
 `POST https://app.securities.com.br/api/v1/proposals`
-
-### Parâmetros da requisição
 
 | Parâmetro       | Obrigatório | Tipo    | Descrição                               |
 | --------------- | ----------- | ------- | --------------------------------------- |
@@ -258,3 +252,5 @@ Esse endpoint cria uma proposta
 | installments    | sim         | integer | Quantidade de parcelas                  |
 | template_key    | sim         | string  | Chave do template no assinador          |
 | document_data   | sim         | json    | Dados do documento para compor o título |
+
+## Cessão de títulos

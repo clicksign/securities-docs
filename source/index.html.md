@@ -7,16 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 includes:
   - informativos
   - migracao_antiga_securities
-  - proposta
-  - signatario
-  - titulo
-  - arranjo
-  - cessao
-  - lote
-  - lote_titulo
-  - lote_duplicata
-  - documentos
-  - documento_signatario
+  - api_nova_securities
 
 search: true
 
