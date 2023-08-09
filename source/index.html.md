@@ -5,8 +5,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - Shell
 
 includes:
-  - introducao
-  - api_legada
+  - informativos
+  - migracao_antiga_securities
   - proposta
   - signatario
   - titulo
