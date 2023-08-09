@@ -78,11 +78,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint cria uma proposta
 
-**HTTP Request**
-
 `POST https://app.securities.com.br/api/legacy/proposals`
-
-**Parâmetros da requisição**
 
 | Parâmetro     | Obrigatório | Tipo   | Descrição                               |
 | ------------- | ----------- | ------ | --------------------------------------- |
@@ -128,11 +124,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint obtém todos os dados de uma CCB
 
-**HTTP Request**
-
 `GET https://app.securities.com.br/api/legacy/securities/:id`
-
-**Parâmetros da requisição**
 
 | Parâmetro | Obrigatório | Tipo    | Descrição               |
 | --------- | ----------- | ------- | ----------------------- |
@@ -171,11 +163,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint obtém todos os dados de lote de CCB
 
-**HTTP Request**
-
 `GET https://app.securities.com.br/api/legacy/assignments/:id`
-
-**Parâmetros da requisição**
 
 | Parâmetro | Obrigatório | Tipo    | Descrição                          |
 | --------- | ----------- | ------- | ---------------------------------- |
@@ -218,11 +206,7 @@ Esse endpoint cancela um lote de cessão de CCBs
 O cancelamento é permitido até 2 dias após a cessão
 </aside>
 
-**HTTP Request**
-
 `POST https://app.securities.com.br/api/legacy/assignments/:id/cancel`
-
-**Parâmetros da requisição**
 
 | Parâmetro | Obrigatório | Tipo    | Descrição                          |
 | --------- | ----------- | ------- | ---------------------------------- |
@@ -290,11 +274,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint cria um signatário
 
-**HTTP Request**
-
 `POST https://app.securities.com.br/api/legacy/signers`
-
-**Parâmetros da requisição**
 
 | Parâmetro                 | Obrigatório | Tipo    | Descrição                                                     |
 | ------------------------- | ----------- | ------- | ------------------------------------------------------------- |
@@ -355,11 +335,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint Vincula um signatário a um documento
 
-**HTTP Request**
-
 `POST https://app.securities.com.br/api/legacy/signers/:signer_id/lists`
-
-**Parâmetros da requisição**
 
 | Parâmetro   | Obrigatório | Tipo    | Descrição                                                                                                                                                                |
 | ----------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -403,11 +379,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint cria um processo de cessão
 
-**HTTP Request**
-
 `POST https://app.securities.com.br/api/legacy/assignments`
-
-**Parâmetros da requisição**
 
 | Parâmetro        | Obrigatório | Tipo    | Descrição                                    |
 |------------------| ----------- | ------- |----------------------------------------------|
@@ -451,11 +423,7 @@ Content-Type: application/json; charset=utf-8
 
 Esse endpoint Executa um processo de cessão
 
-**HTTP Request**
-
 `POST https://app.securities.com.br/api/legacy/contracts`
-
-**Parâmetros da requisição**
 
 | Parâmetro | Obrigatório | Tipo    | Descrição                |
 | --------- | ----------- | ------- | ------------------------ |
