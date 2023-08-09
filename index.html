@@ -457,6 +457,20 @@
               </ul>
           </li>
           <li>
+            <a href="#duplicatas-em-lote" class="toc-h1 toc-link" data-title="Duplicatas em Lote">Duplicatas em Lote</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#listar-duplicatas-do-lote" class="toc-h2 toc-link" data-title="Listar Duplicatas do lote">Listar Duplicatas do lote</a>
+                  </li>
+                  <li>
+                    <a href="#obter-uma-duplicata-do-lote" class="toc-h2 toc-link" data-title="Obter uma Duplicata do lote">Obter uma Duplicata do lote</a>
+                  </li>
+                  <li>
+                    <a href="#adicionar-duplicata-no-lote" class="toc-h2 toc-link" data-title="Adicionar Duplicata no lote">Adicionar Duplicata no lote</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#documentos" class="toc-h1 toc-link" data-title="Documentos">Documentos</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2536,7 +2550,7 @@ títulos sejam enviados, permanecerá nesse status.</p>
   Não será permitido enviar uma quantidade de títulos maior que <code>batch.quantity</code>.
 </aside>
 <h1 id='ccb-em-lote'>CCB em Lote</h1>
-<p>Endpoint utilizado para vincular a CCB a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.</p>
+<p>Endpoints utilizados para vincular CCBs a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.</p>
 <h2 id='listar-ccbs-do-lote'>Listar CCBs do lote</h2>
 <blockquote>
 <p>Request:</p>
@@ -2668,7 +2682,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </tr>
 </tbody></table>
 
-<p>OBS: O parâmetro <code>security_data</code> deve conter o attributo <code>number</code> com o número da CCB.</p>
+<p>OBS: O parâmetro <code>security_data</code> deve conter o atributo <code>number</code> com o número da CCB.</p>
 <h3 id='validacoes'>Validações</h3>
 <p>Não será permitido enviar uma CCB se não for criada uma cessão associada ao lote.</p>
 
@@ -2683,6 +2697,159 @@ CCBs sejam enviadas, permanecerá nesse status.</p>
 <aside class="warning">
   <strong>Atenção</strong><br>
   Para obter o <code>security_id</code> será necessário <a href="#listar-ccbs">consultar pela CCB</a> no respectivo endpoint.
+</aside>
+<h1 id='duplicatas-em-lote'>Duplicatas em Lote</h1>
+<p>Endpoints utilizados para vincular Duplicatas a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.</p>
+<h2 id='listar-duplicatas-do-lote'>Listar Duplicatas do lote</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"security_batches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/batches/1/duplicates/security_batches/1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"page_infos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page?"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint lista todas as Duplicatas do lote</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches</code></p>
+<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Paginação</td>
+</tr>
+</tbody></table>
+<h2 id='obter-uma-duplicata-do-lote'>Obter uma Duplicata do lote</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches/:id <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"security_batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint obtém todos os dados de uma Duplicata de um lote</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches/:id</code></p>
+<h2 id='adicionar-duplicata-no-lote'>Adicionar Duplicata no lote</h2>
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'{
+          "security_batch": {
+            "security_data": {
+              "number": "123456",
+              "issuer_full_name": "Fulano",
+              "issuer_document": "54194131000186",
+              "total_value": 12554.42,
+              "invoice": "551000125"
+            }
+          }
+        }'</span>
+</code></pre></div>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 201 Created
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"security_batch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"security_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"batch_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.705-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-06T16:46:40.889-03:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Esse endpoint adiciona uma Duplicata no lote</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches</code></p>
+<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>security_data</td>
+<td>sim</td>
+<td>jsonb</td>
+<td>metadados da Duplicata</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+  <strong>Atenção</strong><br>
+  O parâmetro <code>security_data</code> deve conter os atributos <code>number</code>, <code>issuer_full_name</code>, <code>issuer_document</code>, <code>total_value</code> e <code>invoice</code> que são obrigatórios para o documento da Duplicata.
+</aside>
+<h3 id='validacoes'>Validações</h3>
+<p>Não será permitido enviar uma Duplicata se não for criada uma cessão associada ao lote.</p>
+
+<p>Enquanto <code>quantity</code> não for equivalente a quantidade total de Duplicatas do lote, o processamento não será finalizado,
+o status iniciará em <code>pending</code>, irá para <code>checking</code> após adicionar a primeira Duplicata no lote e, até que todas as
+Duplicatas sejam enviadas, permanecerá nesse status.</p>
+
+<p>Não será permitido enviar uma quantidade de Duplicatas maior que <code>quantity</code>.</p>
+
+<p>Não será permitido enviar uma Duplicata que já esteja no lote.</p>
+
+<aside class="warning">
+  <strong>Atenção</strong><br>
+  Diferentemente do lote de CCBs, as Duplicatas são geradas após a adição no lote, utilizando o modelo indicado no arranjo.
 </aside>
 <h1 id='documentos'>Documentos</h1>
 <p>Recursos utilizados para gerenciar arquivos em PDF.</p>
