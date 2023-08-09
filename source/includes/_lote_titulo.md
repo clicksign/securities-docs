@@ -1,6 +1,6 @@
 # CCB em Lote
 
-Endpoint utilizado para vincular a CCB a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.
+Endpoints utilizados para vincular CCBs a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.
 
 ## Listar CCBs do lote
 
@@ -141,7 +141,7 @@ Esse endpoint adiciona uma CCB no lote
 |---------------| ----------- |-------|------------------|
 | security_data | sim         | jsonb | metadados da CCB |
 
-OBS: O parâmetro `security_data` deve conter o attributo `number` com o número da CCB.
+OBS: O parâmetro `security_data` deve conter o atributo `number` com o número da CCB.
 
 ### Validações
 
