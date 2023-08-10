@@ -286,9 +286,9 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-76c2d25e.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-75a391e4.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-3a8b8cd1.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-b12a2749.js"></script>
+      <script src="javascripts/all-14685d4f.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -315,19 +315,24 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introducao" class="toc-h1 toc-link" data-title="Introdução">Introdução</a>
+            <a href="#informativos" class="toc-h1 toc-link" data-title="Informativos">Informativos</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#introducao" class="toc-h2 toc-link" data-title="Introdução">Introdução</a>
+                  </li>
+                  <li>
+                    <a href="#visao-geral" class="toc-h2 toc-link" data-title="Visão geral">Visão geral</a>
+                  </li>
+                  <li>
+                    <a href="#codigos-de-status" class="toc-h2 toc-link" data-title="Códigos de status">Códigos de status</a>
+                  </li>
+                  <li>
+                    <a href="#token-de-acesso" class="toc-h2 toc-link" data-title="Token de Acesso">Token de Acesso</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#visao-geral" class="toc-h1 toc-link" data-title="Visão geral">Visão geral</a>
-          </li>
-          <li>
-            <a href="#codigos-de-status" class="toc-h1 toc-link" data-title="Códigos de status">Códigos de status</a>
-          </li>
-          <li>
-            <a href="#token-de-acesso" class="toc-h1 toc-link" data-title="Token de Acesso">Token de Acesso</a>
-          </li>
-          <li>
-            <a href="#api-legada" class="toc-h1 toc-link" data-title="API Legada">API Legada</a>
+            <a href="#migracao-da-antiga-securities" class="toc-h1 toc-link" data-title="Migração da Antiga Securities">Migração da Antiga Securities</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#mudancas-importantes-nas-integracoes" class="toc-h2 toc-link" data-title="Mudanças importantes nas integrações">Mudanças importantes nas integrações</a>
@@ -359,136 +364,151 @@
               </ul>
           </li>
           <li>
-            <a href="#proposta" class="toc-h1 toc-link" data-title="Proposta">Proposta</a>
+            <a href="#api-nova-securities" class="toc-h1 toc-link" data-title="API Nova Securities">API Nova Securities</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#listar-propostas" class="toc-h2 toc-link" data-title="Listar propostas">Listar propostas</a>
+                    <a href="#registro-de-ccbs" class="toc-h2 toc-link" data-title="Registro de CCBs">Registro de CCBs</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#proposta" class="toc-h3 toc-link" data-title="Proposta">Proposta</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-propostas" class="toc-h4 toc-link" data-title="Listar propostas">Listar propostas</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-proposta" class="toc-h4 toc-link" data-title="Obter proposta">Obter proposta</a>
+                                  </li>
+                                  <li>
+                                    <a href="#criar-proposta" class="toc-h4 toc-link" data-title="Criar proposta">Criar proposta</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#signatario" class="toc-h3 toc-link" data-title="Signatário">Signatário</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-signatarios" class="toc-h4 toc-link" data-title="Listar signatários">Listar signatários</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-signatario" class="toc-h4 toc-link" data-title="Obter signatário">Obter signatário</a>
+                                  </li>
+                                  <li>
+                                    <a href="#criar-signatario" class="toc-h4 toc-link" data-title="Criar signatário">Criar signatário</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#ccb" class="toc-h3 toc-link" data-title="CCB">CCB</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#atencao" class="toc-h4 toc-link" data-title="ATENCÃO">ATENCÃO</a>
+                                  </li>
+                                  <li>
+                                    <a href="#listar-ccbs" class="toc-h4 toc-link" data-title="Listar CCBs">Listar CCBs</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-ccb" class="toc-h4 toc-link" data-title="Obter CCB">Obter CCB</a>
+                                  </li>
+                                  <li>
+                                    <a href="#criar-ccb-ja-assinada-para-cessao" class="toc-h4 toc-link" data-title="Criar CCB já assinada para Cessão">Criar CCB já assinada para Cessão</a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#obter-proposta" class="toc-h2 toc-link" data-title="Obter proposta">Obter proposta</a>
-                  </li>
-                  <li>
-                    <a href="#criar-proposta" class="toc-h2 toc-link" data-title="Criar proposta">Criar proposta</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#signatario" class="toc-h1 toc-link" data-title="Signatário">Signatário</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-signatarios" class="toc-h2 toc-link" data-title="Listar signatários">Listar signatários</a>
-                  </li>
-                  <li>
-                    <a href="#obter-signatario" class="toc-h2 toc-link" data-title="Obter signatário">Obter signatário</a>
-                  </li>
-                  <li>
-                    <a href="#criar-signatario" class="toc-h2 toc-link" data-title="Criar signatário">Criar signatário</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#ccb" class="toc-h1 toc-link" data-title="CCB">CCB</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#atencao" class="toc-h2 toc-link" data-title="ATENCÃO">ATENCÃO</a>
-                  </li>
-                  <li>
-                    <a href="#listar-ccbs" class="toc-h2 toc-link" data-title="Listar CCBs">Listar CCBs</a>
-                  </li>
-                  <li>
-                    <a href="#obter-ccb" class="toc-h2 toc-link" data-title="Obter CCB">Obter CCB</a>
-                  </li>
-                  <li>
-                    <a href="#criar-ccb-ja-assinada-para-cessao" class="toc-h2 toc-link" data-title="Criar CCB já assinada para Cessão">Criar CCB já assinada para Cessão</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#arranjo" class="toc-h1 toc-link" data-title="Arranjo">Arranjo</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-arranjos" class="toc-h2 toc-link" data-title="Listar Arranjos">Listar Arranjos</a>
-                  </li>
-                  <li>
-                    <a href="#obter-arranjo" class="toc-h2 toc-link" data-title="Obter Arranjo">Obter Arranjo</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#termos-de-cessao" class="toc-h1 toc-link" data-title="Termos de Cessão">Termos de Cessão</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-termos-de-cessao" class="toc-h2 toc-link" data-title="Listar termos de cessão">Listar termos de cessão</a>
-                  </li>
-                  <li>
-                    <a href="#obter-contrato-de-cessao" class="toc-h2 toc-link" data-title="Obter contrato de cessão">Obter contrato de cessão</a>
-                  </li>
-                  <li>
-                    <a href="#criar-termo-de-cessao" class="toc-h2 toc-link" data-title="Criar termo de cessão">Criar termo de cessão</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#lote" class="toc-h1 toc-link" data-title="Lote">Lote</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-lotes" class="toc-h2 toc-link" data-title="Listar lotes">Listar lotes</a>
-                  </li>
-                  <li>
-                    <a href="#obter-um-lote" class="toc-h2 toc-link" data-title="Obter um lote">Obter um lote</a>
-                  </li>
-                  <li>
-                    <a href="#criar-lote" class="toc-h2 toc-link" data-title="Criar lote">Criar lote</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#ccb-em-lote" class="toc-h1 toc-link" data-title="CCB em Lote">CCB em Lote</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-ccbs-do-lote" class="toc-h2 toc-link" data-title="Listar CCBs do lote">Listar CCBs do lote</a>
-                  </li>
-                  <li>
-                    <a href="#obter-uma-ccb-do-lote" class="toc-h2 toc-link" data-title="Obter uma CCB do lote">Obter uma CCB do lote</a>
-                  </li>
-                  <li>
-                    <a href="#adicionar-ccb-no-lote" class="toc-h2 toc-link" data-title="Adicionar CCB no lote">Adicionar CCB no lote</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#duplicatas-em-lote" class="toc-h1 toc-link" data-title="Duplicatas em Lote">Duplicatas em Lote</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-duplicatas-do-lote" class="toc-h2 toc-link" data-title="Listar Duplicatas do lote">Listar Duplicatas do lote</a>
-                  </li>
-                  <li>
-                    <a href="#obter-uma-duplicata-do-lote" class="toc-h2 toc-link" data-title="Obter uma Duplicata do lote">Obter uma Duplicata do lote</a>
-                  </li>
-                  <li>
-                    <a href="#adicionar-duplicata-no-lote" class="toc-h2 toc-link" data-title="Adicionar Duplicata no lote">Adicionar Duplicata no lote</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#documentos" class="toc-h1 toc-link" data-title="Documentos">Documentos</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#obter-um-documento-pela-key" class="toc-h2 toc-link" data-title="Obter um documento pela key">Obter um documento pela key</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#signatario-do-documento" class="toc-h1 toc-link" data-title="Signatário do documento">Signatário do documento</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#listar-signatarios-do-documento" class="toc-h2 toc-link" data-title="Listar signatários do documento">Listar signatários do documento</a>
-                  </li>
-                  <li>
-                    <a href="#obter-signatario-do-documento" class="toc-h2 toc-link" data-title="Obter signatário do documento">Obter signatário do documento</a>
-                  </li>
-                  <li>
-                    <a href="#adicionar-signatarios-no-documento" class="toc-h2 toc-link" data-title="Adicionar signatários no documento">Adicionar signatários no documento</a>
+                    <a href="#cessao-de-titulos" class="toc-h2 toc-link" data-title="Cessão de títulos">Cessão de títulos</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#arranjo" class="toc-h3 toc-link" data-title="Arranjo">Arranjo</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-arranjos" class="toc-h4 toc-link" data-title="Listar Arranjos">Listar Arranjos</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-arranjo" class="toc-h4 toc-link" data-title="Obter Arranjo">Obter Arranjo</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#termos-de-cessao" class="toc-h3 toc-link" data-title="Termos de Cessão">Termos de Cessão</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-termos-de-cessao" class="toc-h4 toc-link" data-title="Listar termos de cessão">Listar termos de cessão</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-contrato-de-cessao" class="toc-h4 toc-link" data-title="Obter contrato de cessão">Obter contrato de cessão</a>
+                                  </li>
+                                  <li>
+                                    <a href="#criar-termo-de-cessao" class="toc-h4 toc-link" data-title="Criar termo de cessão">Criar termo de cessão</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#lote" class="toc-h3 toc-link" data-title="Lote">Lote</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-lotes" class="toc-h4 toc-link" data-title="Listar lotes">Listar lotes</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-um-lote" class="toc-h4 toc-link" data-title="Obter um lote">Obter um lote</a>
+                                  </li>
+                                  <li>
+                                    <a href="#criar-lote" class="toc-h4 toc-link" data-title="Criar lote">Criar lote</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#ccb-em-lote" class="toc-h3 toc-link" data-title="CCB em Lote">CCB em Lote</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-ccbs-do-lote" class="toc-h4 toc-link" data-title="Listar CCBs do lote">Listar CCBs do lote</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-uma-ccb-do-lote" class="toc-h4 toc-link" data-title="Obter uma CCB do lote">Obter uma CCB do lote</a>
+                                  </li>
+                                  <li>
+                                    <a href="#adicionar-ccb-no-lote" class="toc-h4 toc-link" data-title="Adicionar CCB no lote">Adicionar CCB no lote</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#duplicata-em-lote" class="toc-h3 toc-link" data-title="Duplicata em Lote">Duplicata em Lote</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-duplicatas-do-lote" class="toc-h4 toc-link" data-title="Listar Duplicatas do lote">Listar Duplicatas do lote</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-uma-duplicata-do-lote" class="toc-h4 toc-link" data-title="Obter uma Duplicata do lote">Obter uma Duplicata do lote</a>
+                                  </li>
+                                  <li>
+                                    <a href="#adicionar-duplicata-no-lote" class="toc-h4 toc-link" data-title="Adicionar Duplicata no lote">Adicionar Duplicata no lote</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#documentos" class="toc-h3 toc-link" data-title="Documentos">Documentos</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#obter-um-documento-pela-key" class="toc-h4 toc-link" data-title="Obter um documento pela key">Obter um documento pela key</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                            <a href="#signatario-do-documento" class="toc-h3 toc-link" data-title="Signatário do documento">Signatário do documento</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#listar-signatarios-do-documento" class="toc-h4 toc-link" data-title="Listar signatários do documento">Listar signatários do documento</a>
+                                  </li>
+                                  <li>
+                                    <a href="#obter-signatario-do-documento" class="toc-h4 toc-link" data-title="Obter signatário do documento">Obter signatário do documento</a>
+                                  </li>
+                                  <li>
+                                    <a href="#adicionar-signatarios-no-documento" class="toc-h4 toc-link" data-title="Adicionar signatários no documento">Adicionar signatários no documento</a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -497,11 +517,11 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introducao'>Introdução</h1>
+        <h1 id='informativos'>Informativos</h1><h2 id='introducao'>Introdução</h2>
 <p>A Clicksign Securities é uma plataforma que permite gerar, endossar e assinar eletronicamente Cédulas de Crédito Bancário (CCB).</p>
 
 <p>Disponibilizamos essa API com o intuito de fornecer acesso aos recursos do produto Clicksign Securities, por meio da arquitetura REST. É possível fazer uso dos recursos do nosso sistema fora do nosso ambiente UI, e com isso, contextualizar melhor as funcionalidades dentro da sua necessidade.</p>
-<h1 id='visao-geral'>Visão geral</h1>
+<h2 id='visao-geral'>Visão geral</h2>
 <p>O objetivo desta documentação é orientar o desenvolvedor sobre como integrar com a SECURITIES-API, descrevendo as funcionalidades, os métodos a serem utilizados, listando informações a serem enviadas e recebidas, e provendo exemplos.</p>
 
 <p>O mecanismo de integração com o SECURITIES-API é simples, de modo que apenas conhecimentos intermediários em linguagem de programação para Web, requisições HTTP/HTTPS e manipulação de arquivos JSON são necessários para integrar com a SECURITIES-API.</p>
@@ -513,7 +533,7 @@
 <p><strong>Ambiente Produção:</strong> <a href="https://app.securities.com.br/api">https://app.securities.com.br/api</a></p>
 
 <p><strong>Ambiente Homologação:</strong> <a href="https://app-sandbox.securities.com.br/api">https://app-sandbox.securities.com.br/api</a></p>
-<h1 id='codigos-de-status'>Códigos de status</h1>
+<h2 id='codigos-de-status'>Códigos de status</h2>
 <p>Na API da Clicksign Securities, os status de retorno das requisições devem ser esperados conforme especificado nas situações abaixo:</p>
 
 <table><thead>
@@ -579,11 +599,11 @@
 <td>No momento estamos offline para manutenção no sistema, tente mais tarde</td>
 </tr>
 </tbody></table>
-<h1 id='token-de-acesso'>Token de Acesso</h1>
+<h2 id='token-de-acesso'>Token de Acesso</h2>
 <p>Para obter o token de acesso às nossas APIs, solicite pelo e-mail <a href="mailto:suporte@securities.com.br">suporte@securities.com.br</a>.</p>
 
 <aside class="notice">O token de acesso é liberado somente para contas cadastradas na Securities</aside>
-<h1 id='api-legada'>API Legada</h1>
+<h1 id='migracao-da-antiga-securities'>Migração da Antiga Securities</h1>
 <p>Trata-se de uma API transitória, para que nossos atuais clientes Clicksign Securities possam se planejar para refazer a conexão de API atual, mesmo assim, usufruindo da nova plataforma Clicksign Securities com suas novas features, melhor performance e maior escalabilidade.</p>
 
 <p>Para os clientes atuais, essa API de compatibilidade vai funcionar como uma ponte para conectá-lo da API legada (atual deste cliente) até a Nova Clicksign Securities, realizando a conversão dos formatos que os dados são enviados para o formato que a Nova Securities espera receber.</p>
@@ -591,7 +611,7 @@
 <p>Para novos clientes, a conexão com a nova Securities deve se dar pela criação da conexão da Nova API. Para os atuais clientes, o uso da API de compatibilidade será uma aceleração para usufruir do novo produto, sem maiores esforços de desenvolvimento inicial.</p>
 
 <p>É importante ressaltar que novas features serão lançadas a partir de abril/2023 apenas para a nova API, o que nos leva a reforçar que após conectar a API de compatibilidade com esforço mínimo, o planejamento para conectar-se com a nova API é essencial para garantir que todos terão acesso aos lançamentos futuros.</p>
-<h3 id='mudancas-importantes-nas-integracoes'>Mudanças importantes nas integrações</h3>
+<h2 id='mudancas-importantes-nas-integracoes'>Mudanças importantes nas integrações</h2>
 <p>Para os clientes que vierem do Securities Legado, provavelmente, os documentos de CCBs estão sendo criados diretamente na plataforma de assinatura da Clicksign através das API fornecidas pela plataforma de assinatura e não pela API do sistema de securitização.</p>
 
 <p>No novo Securities será diferente, disponibilizamos algumas APIs de compatibilidade para a criação das CCBs, dessa forma, toda a comunicação via API deverá ser com o novo sistema. Essa mudança foi feita porque todas as informações sobre os documentos, bem como as assinaturas pendentes e realizadas e o arquivo PDF estarão disponíveis nas novas APIs do novo Securities, portanto, não será necessário acessar a interface gráfica da plataforma de assinatura da Clicksign para localizar os documentos das CCBs, endossos referenciado ou dos termos de cessão.</p>
@@ -652,9 +672,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria uma proposta</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/legacy/proposals</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -708,9 +728,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de uma CCB</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/legacy/securities/:id</code></p>
-<h3 id='parametros-da-requisicao-2'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -752,9 +772,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de lote de CCB</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/legacy/assignments/:id</code></p>
-<h3 id='parametros-da-requisicao-3'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -800,9 +820,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <aside class="notice">
 O cancelamento é permitido até 2 dias após a cessão
 </aside>
-<h3 id='http-request-4'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/legacy/assignments/:id/cancel</code></p>
-<h3 id='parametros-da-requisicao-4'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -873,9 +893,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um signatário</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/legacy/signers</code></p>
-<h3 id='parametros-da-requisicao-5'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1004,9 +1024,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint Vincula um signatário a um documento</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/legacy/signers/:signer_id/lists</code></p>
-<h3 id='parametros-da-requisicao-6'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1068,9 +1088,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um processo de cessão</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/legacy/assignments</code></p>
-<h3 id='parametros-da-requisicao-7'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1147,9 +1167,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint Executa um processo de cessão</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/legacy/contracts</code></p>
-<h3 id='parametros-da-requisicao-8'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1171,11 +1191,11 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Array de contratos</td>
 </tr>
 </tbody></table>
-<h1 id='proposta'>Proposta</h1>
+<h1 id='api-nova-securities'>API Nova Securities</h1><h2 id='registro-de-ccbs'>Registro de CCBs</h2><h3 id='proposta'>Proposta</h3>
 <p>A proposta é o documento que representa a CCB antes dela ser assinada pelo tomador. Enquanto o tomador não assina o documento, ele ainda não se tornou uma CCB para ser cedida, então esse documento é uma Proposta de se tornar uma CCB.</p>
 
 <p>A proposta conterá todos os dados de uma CCB, seguindo o modelo preconizado entre originador e fundo, entretanto, o que o diferencia de uma CCB é o fato de ainda não estar assinado pelo tomador.</p>
-<h2 id='listar-propostas'>Listar propostas</h2>
+<h4 id='listar-propostas'>Listar propostas</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1211,9 +1231,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todas as propostas</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/proposals</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1227,7 +1247,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-proposta'>Obter proposta</h2>
+<h4 id='obter-proposta'>Obter proposta</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1292,9 +1312,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de uma proposta</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/proposals/:id</code></p>
-<h2 id='criar-proposta'>Criar proposta</h2>
+<h4 id='criar-proposta'>Criar proposta</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1398,9 +1418,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria uma proposta</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/proposals</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1446,9 +1466,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Dados do documento para compor o título</td>
 </tr>
 </tbody></table>
-<h1 id='signatario'>Signatário</h1>
+<h3 id='signatario'>Signatário</h3>
 <p>Os signatários são aqueles que irão assinar os documentos envolvidos no processo de securitização, desde o registro de uma proposta, sendo o signatário o tomador, até a cessão de uma ou mais CCBs num lote, sendo assinadas pelo originador do crédito e fundo de investimento, como signatários.</p>
-<h2 id='listar-signatarios'>Listar signatários</h2>
+<h4 id='listar-signatarios'>Listar signatários</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1497,7 +1517,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os signatários</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p>Todos os signatários</p>
 
 <p><code>GET https://app.securities.com.br/api/v1/signers</code></p>
@@ -1505,7 +1525,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <p><br>Signatários por documento</p>
 
 <p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1519,7 +1539,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-signatario'>Obter signatário</h2>
+<h4 id='obter-signatario'>Obter signatário</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1557,7 +1577,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de um signatário. É possível obter o signatário pelo <code>:id</code> ou pela <code>:key</code></p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p>Obter signatário</p>
 
 <p><code>GET https://app.securities.com.br/api/v1/signers/:id</code><br>
@@ -1567,7 +1587,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 
 <p><code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers/:id</code><br>
 <code>GET https://app.securities.com.br/api/v1/documents/:document_id/signers/bykey/:key</code></p>
-<h2 id='criar-signatario'>Criar signatário</h2>
+<h4 id='criar-signatario'>Criar signatário</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1575,18 +1595,18 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      <span class="nt">-d</span> <span class="s1">'{
-        "signer": {
-          "email": "fulano@example.com",
-          "auth": "email",
-          "full_name": "Marcos Zumba",
-          "has_documentation": true,
-          "documentation": "123.321.123-40",
-          "birthday": "1983-03-31",
-          "phone_number": "11999999999",
-          "sign_as": "sign",
-          "communicate_by": "email"
-        }
-      }'</span>
+          "signer": {
+            "email": "fulano@example.com",
+            "auth": "email",
+            "full_name": "Marcos Zumba",
+            "has_documentation": true,
+            "documentation": "123.321.123-40",
+            "birthday": "1983-03-31",
+            "phone_number": "11999999999",
+            "sign_as": "sign",
+            "communicate_by": "email"
+          }
+        }'</span>
 </code></pre></div>
 <blockquote>
 <p>Response:</p>
@@ -1617,7 +1637,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um signatário</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p>Criar signatário avulso</p>
 
 <p><code>POST https://app.securities.com.br/api/v1/signers</code></p>
@@ -1668,7 +1688,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1711,7 +1731,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>phone_number</td>
 <td>sim</td>
 <td>string</td>
-<td>Numero de telefone</td>
+<td>Número de telefone</td>
 </tr>
 <tr>
 <td>auth</td>
@@ -1762,17 +1782,17 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Define a solicitação de biometria facial como ponto de autenticação para o signatário.</td>
 </tr>
 </tbody></table>
-<h1 id='ccb'>CCB</h1>
+<h3 id='ccb'>CCB</h3>
 <p>CCB é a Cédula de crédito bancário: A Cédula de Crédito Bancário é título de crédito emitido por emissor-devedor em favor de instituição financeira, representando promessa de pagamento em dinheiro, decorrente de operação de crédito, de qualquer modalidade. Sobre a regulação da CCB, vide o art. 26 da Lei 10.931/2004.</p>
 
 <p>Em outras palavras, a CCB é o que representará um crédito tomado e que foi assinado pelo tomador para que possa ser negociado como um título no mercado financeiro.</p>
-<h3 id='atencao'>ATENCÃO</h3>
-<p>Foram atualizadas a rotas das CCBs:</p>
+<h4 id='atencao'>ATENCÃO</h4>
+<p>Foram atualizadas as rotas das CCBs:</p>
 
 <p>Antes: <code>/api/v1/securities</code></p>
 
 <p>Agora: <code>/api/v1/bank_credit_notes</code></p>
-<h2 id='listar-ccbs'>Listar CCBs</h2>
+<h4 id='listar-ccbs'>Listar CCBs</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1808,9 +1828,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todas as CCBs</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/bank_credit_notes</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -1829,7 +1849,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-ccb'>Obter CCB</h2>
+<h4 id='obter-ccb'>Obter CCB</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1866,9 +1886,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de uma CCB</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/bank_credit_notes/:number</code></p>
-<h2 id='criar-ccb-ja-assinada-para-cessao'>Criar CCB já assinada para Cessão</h2>
+<h4 id='criar-ccb-ja-assinada-para-cessao'>Criar CCB já assinada para Cessão</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -1922,9 +1942,9 @@ Este endpoint tem como funcionalidade a recepção de CCBs que serão endossadas
 
 Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities para então também ser cedida com nossos produtos, agora ou no momento oportuno de movimentação do estoque de títulos, consulte nossa API de Proposta (título antes de se tornar uma CCB assinada pelo tomador).
 </aside>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/bank_credit_notes</code></p>
-<h3 id='parametros'>Parâmetros</h3>
+
 <p>Essa requisição deve ser um <code>multipart/form-data</code> com os seguintes parâmetros:</p>
 
 <table><thead>
@@ -1975,8 +1995,10 @@ Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities par
 <td>Serialização do json com os dados do documento para compor a CCB</td>
 </tr>
 </tbody></table>
-<h3 id='assinadores-suportados'>Assinadores suportados</h3>
-<p>Lista de assinadores suportados no momento:</p>
+
+<ul>
+<li>Lista de assinadores suportados no momento:</li>
+</ul>
 
 <table><thead>
 <tr>
@@ -2121,9 +2143,9 @@ Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities par
 <td>Fast4Sign</td>
 </tr>
 </tbody></table>
-<h1 id='arranjo'>Arranjo</h1>
+<h2 id='cessao-de-titulos'>Cessão de títulos</h2><h3 id='arranjo'>Arranjo</h3>
 <p>Partes envolvidas no processo de compra e venda de uma operação financeira. São os stakeholders da operação de oferta e aceite de CCBs, que vão originar, enviar para assinatura do tomador e por fim, vender esses títulos aos fundos. Juntos, essas partes formam um arranjo que fazem negociações entre si e possuem contas de originação e destino dentro desse grupo.</p>
-<h2 id='listar-arranjos'>Listar Arranjos</h2>
+<h4 id='listar-arranjos'>Listar Arranjos</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2156,9 +2178,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os Arranjos nos quais a conta é cessionária</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/arrangements</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2172,7 +2194,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-arranjo'>Obter Arranjo</h2>
+<h4 id='obter-arranjo'>Obter Arranjo</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2216,13 +2238,13 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de um Arranjo</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/arrangements/:id</code></p>
-<h1 id='termos-de-cessao'>Termos de Cessão</h1>
+<h3 id='termos-de-cessao'>Termos de Cessão</h3>
 <p>O termo de cessão é o instrumento através do qual se opera a transmissão de direitos sobre determinado bem. Por meio dela, o vendedor, conhecido como cedente, repassa ao comprador, denominado cessionário, os direitos sobre o bem objeto da Cessão.</p>
 
 <p>O termo de cessão é o documento que transcreve de forma resumida a operação que está sendo cedida naquele momento, com o resumo das CCBs que estão em operação no lote.</p>
-<h2 id='listar-termos-de-cessao'>Listar termos de cessão</h2>
+<h4 id='listar-termos-de-cessao'>Listar termos de cessão</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2251,9 +2273,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os termos de cessão</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/assignments</code></p>
-<h2 id='obter-contrato-de-cessao'>Obter contrato de cessão</h2>
+<h4 id='obter-contrato-de-cessao'>Obter contrato de cessão</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2303,9 +2325,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um termo de cessão</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/assignments/:id</code></p>
-<h2 id='criar-termo-de-cessao'>Criar termo de cessão</h2>
+<h4 id='criar-termo-de-cessao'>Criar termo de cessão</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2352,9 +2374,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um termo de cessão</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/assignments</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2394,13 +2416,15 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>ID do Lote de CCBs</td>
 </tr>
 </tbody></table>
-<h3 id='validacoes'>Validações</h3>
+
+<p><strong>Validações</strong></p>
+
 <p>O valor inserido em <code>full_amount</code> não é validado, ou seja, se inserir um valor diferente da soma dos valores dos títulos
 poderá ter divergências. O motivo da não validação é porque o valor negociado pode ser menor que o valor da soma dos títulos,
 sendo assim, não há com que comparar os valores inseridos, sendo esperado, em alguns casos, alguma divergência.</p>
-<h1 id='lote'>Lote</h1>
+<h3 id='lote'>Lote</h3>
 <p>O Lote de cessão é o conjunto de CCBs que estão agrupadas para a mesma finalidade: Serem cedidas numa negociação entre cedente e cessionário.</p>
-<h2 id='listar-lotes'>Listar lotes</h2>
+<h4 id='listar-lotes'>Listar lotes</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2438,9 +2462,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos os lotes</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/batches</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2454,7 +2478,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-um-lote'>Obter um lote</h2>
+<h4 id='obter-um-lote'>Obter um lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2481,9 +2505,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de um lote</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/batches/:id</code></p>
-<h2 id='criar-lote'>Criar lote</h2>
+<h4 id='criar-lote'>Criar lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2517,9 +2541,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint cria um lote</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/batches</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2541,7 +2565,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Número do lote</td>
 </tr>
 </tbody></table>
-<h3 id='validacoes'>Validações</h3>
+
+<p><strong>Validações</strong></p>
+
 <p>Enquanto <code>quantity</code> não for equivalente a quantidade total de títulos do lote, o processamento não será finalizado,
 o status iniciará em <code>pending</code>, irá para <code>checking</code> após adicionar o primeiro título no lote e, até que todos os
 títulos sejam enviados, permanecerá nesse status.</p>
@@ -2549,9 +2575,9 @@ títulos sejam enviados, permanecerá nesse status.</p>
 <aside class="warning">
   Não será permitido enviar uma quantidade de títulos maior que <code>batch.quantity</code>.
 </aside>
-<h1 id='ccb-em-lote'>CCB em Lote</h1>
+<h3 id='ccb-em-lote'>CCB em Lote</h3>
 <p>Endpoints utilizados para vincular CCBs a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.</p>
-<h2 id='listar-ccbs-do-lote'>Listar CCBs do lote</h2>
+<h4 id='listar-ccbs-do-lote'>Listar CCBs do lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2586,9 +2612,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todas as CCBs do lote</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2602,7 +2628,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-uma-ccb-do-lote'>Obter uma CCB do lote</h2>
+<h4 id='obter-uma-ccb-do-lote'>Obter uma CCB do lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2626,9 +2652,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtem todos os dados de uma CCB de um lote</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/security_batches/:id</code></p>
-<h2 id='adicionar-ccb-no-lote'>Adicionar CCB no lote</h2>
+<h4 id='adicionar-ccb-no-lote'>Adicionar CCB no lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2663,9 +2689,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint adiciona uma CCB no lote</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/batches/:batch_id/security_batches</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2683,7 +2709,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </tbody></table>
 
 <p>OBS: O parâmetro <code>security_data</code> deve conter o atributo <code>number</code> com o número da CCB.</p>
-<h3 id='validacoes'>Validações</h3>
+
+<p><strong>Validações</strong></p>
+
 <p>Não será permitido enviar uma CCB se não for criada uma cessão associada ao lote.</p>
 
 <p>Enquanto <code>quantity</code> não for equivalente a quantidade total de CCBs do lote, o processamento não será finalizado,
@@ -2698,9 +2726,9 @@ CCBs sejam enviadas, permanecerá nesse status.</p>
   <strong>Atenção</strong><br>
   Para obter o <code>security_id</code> será necessário <a href="#listar-ccbs">consultar pela CCB</a> no respectivo endpoint.
 </aside>
-<h1 id='duplicatas-em-lote'>Duplicatas em Lote</h1>
+<h3 id='duplicata-em-lote'>Duplicata em Lote</h3>
 <p>Endpoints utilizados para vincular Duplicatas a um Lote específico, permitindo futuras consultas de lastro da operação por completo, considerando seu ciclo de vida.</p>
-<h2 id='listar-duplicatas-do-lote'>Listar Duplicatas do lote</h2>
+<h4 id='listar-duplicatas-do-lote'>Listar Duplicatas do lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2735,9 +2763,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todas as Duplicatas do lote</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2751,7 +2779,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-uma-duplicata-do-lote'>Obter uma Duplicata do lote</h2>
+<h4 id='obter-uma-duplicata-do-lote'>Obter uma Duplicata do lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2775,9 +2803,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos os dados de uma Duplicata de um lote</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches/:id</code></p>
-<h2 id='adicionar-duplicata-no-lote'>Adicionar Duplicata no lote</h2>
+<h4 id='adicionar-duplicata-no-lote'>Adicionar Duplicata no lote</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2813,9 +2841,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint adiciona uma Duplicata no lote</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/batches/:batch_id/duplicates/security_batches</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2836,7 +2864,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   <strong>Atenção</strong><br>
   O parâmetro <code>security_data</code> deve conter os atributos <code>number</code>, <code>issuer_full_name</code>, <code>issuer_document</code>, <code>total_value</code> e <code>invoice</code> que são obrigatórios para o documento da Duplicata.
 </aside>
-<h3 id='validacoes'>Validações</h3>
+
+<p><strong>Validações</strong></p>
+
 <p>Não será permitido enviar uma Duplicata se não for criada uma cessão associada ao lote.</p>
 
 <p>Enquanto <code>quantity</code> não for equivalente a quantidade total de Duplicatas do lote, o processamento não será finalizado,
@@ -2851,9 +2881,9 @@ Duplicatas sejam enviadas, permanecerá nesse status.</p>
   <strong>Atenção</strong><br>
   Diferentemente do lote de CCBs, as Duplicatas são geradas após a adição no lote, utilizando o modelo indicado no arranjo.
 </aside>
-<h1 id='documentos'>Documentos</h1>
+<h3 id='documentos'>Documentos</h3>
 <p>Recursos utilizados para gerenciar arquivos em PDF.</p>
-<h2 id='obter-um-documento-pela-key'>Obter um documento pela key</h2>
+<h4 id='obter-um-documento-pela-key'>Obter um documento pela key</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2879,9 +2909,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtêm um documento e pela key.</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/documents/bykey/:key</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2895,9 +2925,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Chave do documento</td>
 </tr>
 </tbody></table>
-<h1 id='signatario-do-documento'>Signatário do documento</h1>
+<h3 id='signatario-do-documento'>Signatário do documento</h3>
 <p>Endpoint utilizado para adicionar um ou mais signatários a um documento que deverá ser assinado.</p>
-<h2 id='listar-signatarios-do-documento'>Listar signatários do documento</h2>
+<h4 id='listar-signatarios-do-documento'>Listar signatários do documento</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2936,9 +2966,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint lista todos signatários de um documento e vice-versa</p>
-<h3 id='http-request'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/lists</code></p>
-<h3 id='parametros-de-consulta'>Parâmetros de consulta</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
@@ -2952,7 +2982,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Paginação</td>
 </tr>
 </tbody></table>
-<h2 id='obter-signatario-do-documento'>Obter signatário do documento</h2>
+<h4 id='obter-signatario-do-documento'>Obter signatário do documento</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -2980,9 +3010,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint obtém todos signatários de um documento e vice-versa</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+
 <p><code>GET https://app.securities.com.br/api/v1/lists/:id</code></p>
-<h2 id='adicionar-signatarios-no-documento'>Adicionar signatários no documento</h2>
+<h4 id='adicionar-signatarios-no-documento'>Adicionar signatários no documento</h4>
 <blockquote>
 <p>Request:</p>
 </blockquote>
@@ -3020,9 +3050,9 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Esse endpoint associa o signatário a um documento e vice-versa</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+
 <p><code>POST https://app.securities.com.br/api/v1/lists</code></p>
-<h3 id='parametros-da-requisicao'>Parâmetros da requisição</h3>
+
 <table><thead>
 <tr>
 <th>Parâmetro</th>
