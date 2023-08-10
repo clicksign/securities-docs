@@ -5,18 +5,9 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - Shell
 
 includes:
-  - introducao
-  - api_legada
-  - proposta
-  - signatario
-  - titulo
-  - arranjo
-  - cessao
-  - lote
-  - lote_titulo
-  - lote_duplicata
-  - documentos
-  - documento_signatario
+  - informativos
+  - migracao_antiga_securities
+  - api_nova_securities
 
 search: true
 
