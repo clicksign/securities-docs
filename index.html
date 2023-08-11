@@ -1853,7 +1853,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/bank_credit_notes/:number <span class="se">\</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://app.securities.com.br/api/v1/bank_credit_notes/:id <span class="se">\</span>
      <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <blockquote>
@@ -1881,13 +1881,14 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
         </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/bank_credit_notes/123456"</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/bank_credit_notes/2"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtém todos os dados de uma CCB</p>
+<p>Esse endpoint obtém todos os dados de uma CCB. É possível obter a CCB pelo <code>:id</code> ou pelo <code>:number</code></p>
 
-<p><code>GET https://app.securities.com.br/api/v1/bank_credit_notes/:number</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/bank_credit_notes/:id</code><br>
+<code>GET https://app.securities.com.br/api/v1/bank_credit_notes/bynumber/:number</code></p>
 <h4 id='criar-ccb-ja-assinada-para-cessao'>Criar CCB já assinada para Cessão</h4>
 <blockquote>
 <p>Request:</p>
