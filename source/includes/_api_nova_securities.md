@@ -584,7 +584,7 @@ Esse endpoint lista todas as CCBs
 > Request:
 
 ```shell
-curl -X GET https://app.securities.com.br/api/v1/bank_credit_notes/:number \
+curl -X GET https://app.securities.com.br/api/v1/bank_credit_notes/:id \
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -616,14 +616,15 @@ Content-Type: application/json; charset=utf-8
         "file": null
       }
     ],
-    "url": "https://app.securities.com.br/api/v1/bank_credit_notes/123456"
+    "url": "https://app.securities.com.br/api/v1/bank_credit_notes/2"
   }
 }
 ```
 
-Esse endpoint obtém todos os dados de uma CCB
+Esse endpoint obtém todos os dados de uma CCB. É possível obter a CCB pelo `:id` ou pelo `:number`
 
-`GET https://app.securities.com.br/api/v1/bank_credit_notes/:number`
+`GET https://app.securities.com.br/api/v1/bank_credit_notes/:id`<br>
+`GET https://app.securities.com.br/api/v1/bank_credit_notes/bynumber/:number`
 
 #### Criar CCB já assinada para Cessão
 
