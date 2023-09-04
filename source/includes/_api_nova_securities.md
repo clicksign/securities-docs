@@ -506,7 +506,7 @@ Content-Type: application/json; charset=utf-8
 | birthday          | condicional | string  | Data de nascimento                                            |
 | email             | condicional | string  | E-mail                                                        |
 | phone_number      | sim         | string  | Número de telefone                                            |
-| auth              | sim         | string  | Tipo de autenticação: "email", "api" ou "tokenless"           |
+| auth              | sim         | string  | Tipo de autenticação: "email", "api" ou "tokenless", "icp_brasil" (Certificado digital)          |
 | communicate_by    | sim         | string  | Por onde será notificado: "email"                             |
 | sign_as           | sim         | string  | Assinar como: sign, party, witness, contractor, contractee... |
 | selfie_enabled    | não         | boolean (default false)  | Assinar como: sign, party, witness, contractor, contractee... |
@@ -1009,7 +1009,7 @@ Esse endpoint cria um termo de cessão
 |----------------| ----------- | ------- |--------------------------------------------------|
 | arrangement_id | sim         | integer | ID do Arranjo da cessão                          |
 | number         | sim         | string  | Número do termo de cessão                        |
-| issue_date     | sim         | boolean | Data de emissão                                  |
+| issue_date     | sim         | date (YYYY-MM-DD)   | Data de emissão                                  |
 | full_amount    | sim         | float   | Valor do termo (soma de todos os títulos)        |
 | batch_id       | sim         | integer | ID do Lote de CCBs                               |
 
