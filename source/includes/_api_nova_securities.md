@@ -507,7 +507,7 @@ Content-Type: application/json; charset=utf-8
 | birthday          | condicional | string  | Data de nascimento                                            |
 | email             | condicional | string  | E-mail                                                        |
 | phone_number      | sim         | string  | Número de telefone                                            |
-| auth              | sim         | string  | Tipo de autenticação: "email", "api" ou "tokenless"           |
+| auth              | sim         | string  | Tipo de autenticação: "email", "api" ou "tokenless", "icp_brasil" (Certificado digital)          |
 | communicate_by    | sim         | string  | Por onde será notificado: "email"                             |
 | sign_as           | sim         | string  | Assinar como: sign, party, witness, contractor, contractee... |
 | selfie_enabled    | não         | boolean (default false)  | Assinar como: sign, party, witness, contractor, contractee... |
@@ -1010,7 +1010,7 @@ Esse endpoint cria um termo de cessão
 |----------------| ----------- | ------- |--------------------------------------------------|
 | arrangement_id | sim         | integer | ID do Arranjo da cessão                          |
 | number         | sim         | string  | Número do termo de cessão                        |
-| issue_date     | sim         | boolean | Data de emissão                                  |
+| issue_date     | sim         | date (YYYY-MM-DD)   | Data de emissão                                  |
 | full_amount    | sim         | float   | Valor do termo (soma de todos os títulos)        |
 | batch_id       | sim         | integer | ID do Lote de CCBs                               |
 
@@ -1320,6 +1320,109 @@ Não será permitido enviar uma CCB que já esteja no lote.
   <strong>Atenção</strong><br>
   Para obter o <code>security_id</code> será necessário <a href="#listar-ccbs">consultar pela CCB</a> no respectivo endpoint.
 </aside>
+
+### Duplicatas
+
+A duplicata é um título de crédito que representa uma venda a prazo. Ela é emitida pelo vendedor e entregue ao comprador
+como comprovante de que existe uma dívida a ser paga. Com a duplicata, o vendedor terá a certeza de que receberá o valor da venda
+
+#### Listar Duplicatas
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/v1/duplicates \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "duplicates": [
+    {
+      "id": 2,
+      "number": "123456",
+      "issuer_full_name": "Hugo Fonseca",
+      "issuer_document": "630.427.604-48",
+      "total_value": 9999.99,
+      "invoice": "99999",
+      "created_at": "2022-09-15T15:27:00.691-03:00",
+      "updated_at": "2022-09-15T15:27:00.691-03:00",
+      "url": "https://app.securities.com.br/api/v1/duplicates/2"
+    }
+  ],
+  "page_infos": {
+    "total_pages": 3,
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": null,
+    "first_page?": true,
+    "last_page?": false
+  }
+}
+```
+
+Esse endpoint lista todas as Duplicatas
+
+`GET https://app.securities.com.br/api/v1/duplicates`
+
+| Parâmetro | Tipo    | Descrição           |
+| --------- | ------- |---------------------|
+| number    | string  | Número da Duplicata |
+| page      | integer | Paginação           |
+
+#### Obter Duplicata
+
+> Request:
+
+```shell
+curl -X GET https://app.securities.com.br/api/v1/duplicates/:id \
+     -H "Authorization: Bearer $TOKEN"
+```
+
+> Response:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+```json
+{
+  "duplicate": {
+    "id": 2,
+    "number": "123456",
+    "issuer_full_name": "Hugo Fonseca",
+    "issuer_document": "630.427.604-48",
+    "total_value": 9999.99,
+    "invoice": "99999",
+    "created_at": "2022-09-15T15:27:00.691-03:00",
+    "updated_at": "2022-09-15T15:27:00.691-03:00",
+    "documents": [
+      {
+        "id": 23,
+        "key": "fadef9ce-0f28-4792-bb3f-6d0bd5c6a055",
+        "status": "created",
+        "created_at": "2022-10-27T09:44:50.800-03:00",
+        "updated_at": "2022-10-27T09:46:45.968-03:00",
+        "file": null
+      }
+    ],
+    "url": "https://app.securities.com.br/api/v1/duplicates/2"
+  }
+}
+```
+
+Esse endpoint obtém todos os dados de uma Duplicata. É possível obter a CCB pelo `:id` ou pelo `:number`
+
+`GET https://app.securities.com.br/api/v1/duplicates/:id`<br>
+`GET https://app.securities.com.br/api/v1/duplicates/bynumber/:number`
 
 ### Duplicata em Lote
 
