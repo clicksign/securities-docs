@@ -1322,9 +1322,10 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtem todos os dados de uma proposta</p>
+<p>Esse endpoint obtem todos os dados de uma proposta. É possível obter a CCB pelo <code>:id</code> ou pelo <code>:number</code></p>
 
-<p><code>GET https://app.securities.com.br/api/v1/proposals/:id</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/proposals/:id</code>
+<code>GET https://app.securities.com.br/api/v1/proposals/bynumber/:number</code></p>
 <h4 id='criar-proposta'>Criar proposta</h4>
 <blockquote>
 <p>Request:</p>
