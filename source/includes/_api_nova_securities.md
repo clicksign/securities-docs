@@ -127,9 +127,10 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtem todos os dados de uma proposta
+Esse endpoint obtem todos os dados de uma proposta. É possível obter a CCB pelo `:id` ou pelo `:number`
 
 `GET https://app.securities.com.br/api/v1/proposals/:id`
+`GET https://app.securities.com.br/api/v1/proposals/bynumber/:number`
 
 #### Criar proposta
 
