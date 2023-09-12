@@ -1767,7 +1767,7 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>selfie_enabled</td>
 <td>não</td>
 <td>boolean (default false)</td>
-<td>Assinar como: sign, party, witness, contractor, contractee...</td>
+<td>Define a solicitação de selfie dinâmica como ponto de autenticação para o signatário.</td>
 </tr>
 <tr>
 <td>handwritten_enabled</td>
@@ -1794,6 +1794,10 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
 <td>Define a solicitação de biometria facial como ponto de autenticação para o signatário.</td>
 </tr>
 </tbody></table>
+
+<aside class="warning">
+  Os pontos de autenticação opcionais <b>selfie_enabled</b>, <b>handwritten_enabled</b>, <b>official_document_enabled</b>, <b>liveness_enabled</b> e <b>facial_biometrics_enabled</b> não são válidos se o signatário for assinar com certificado digital (auth = <i>'icp_brasil'</i>)
+</aside>
 <h3 id='ccb'>CCB</h3>
 <p>CCB é a Cédula de crédito bancário: A Cédula de Crédito Bancário é título de crédito emitido por emissor-devedor em favor de instituição financeira, representando promessa de pagamento em dinheiro, decorrente de operação de crédito, de qualquer modalidade. Sobre a regulação da CCB, vide o art. 26 da Lei 10.931/2004.</p>
 
@@ -2154,6 +2158,10 @@ Caso o objetivo seja de criar uma CCB, registrando-a na Clicksign Securities par
 <tr>
 <td>fast4sign</td>
 <td>Fast4Sign</td>
+</tr>
+<tr>
+<td>bancomaster</td>
+<td>Banco Master</td>
 </tr>
 </tbody></table>
 <h2 id='cessao-de-titulos'>Cessão de títulos</h2><h3 id='arranjo'>Arranjo</h3>
