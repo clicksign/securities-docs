@@ -510,11 +510,15 @@ Content-Type: application/json; charset=utf-8
 | auth              | sim         | string  | Tipo de autenticação: "email", "api" ou "tokenless", "icp_brasil" (Certificado digital)          |
 | communicate_by    | sim         | string  | Por onde será notificado: "email"                             |
 | sign_as           | sim         | string  | Assinar como: sign, party, witness, contractor, contractee... |
-| selfie_enabled    | não         | boolean (default false)  | Assinar como: sign, party, witness, contractor, contractee... |
+| selfie_enabled    | não         | boolean (default false)  | Define a solicitação de selfie dinâmica como ponto de autenticação para o signatário. |
 | handwritten_enabled       | não         | boolean (default false)  | Define a solicitação de assinatura manuscrita como ponto de autenticação para o signatário. |
 | official_document_enabled | não         | boolean (default false)  | Define a solicitação da foto (frente e verso) do documento oficial como ponto de autenticação para o signatário. |
 | liveness_enabled          | não         | boolean (default false)  | Define a solicitação de selfie dinâmica como ponto de autenticação para o signatário. |
 | facial_biometrics_enabled | não         | boolean (default false)  | Define a solicitação de biometria facial como ponto de autenticação para o signatário. |
+
+<aside class="warning">
+  Os pontos de autenticação opcionais <b>selfie_enabled</b>, <b>handwritten_enabled</b>, <b>official_document_enabled</b>, <b>liveness_enabled</b> e <b>facial_biometrics_enabled</b> não são válidos se o signatário for assinar com certificado digital (auth = <i>'icp_brasil'</i>)
+</aside>
 
 ### CCB
 
@@ -741,6 +745,7 @@ Essa requisição deve ser um `multipart/form-data` com os seguintes parâmetros
 |digicert | Digicert |
 |qcertifica | Q Certifica |
 |fast4sign | Fast4Sign |
+|bancomaster | Banco Master |
 
 ## Cessão de títulos
 
