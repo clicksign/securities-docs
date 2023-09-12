@@ -2337,9 +2337,10 @@ Content-Type: application/json<span class="p">;</span> <span class="nv">charset<
   </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.securities.com.br/api/v1/assignments/1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Esse endpoint obtem todos os dados de um termo de cessão</p>
+<p>Esse endpoint obtem todos os dados de um termo de cessão. É possível obter um termo pelo <code>:id</code> ou pelo <code>:number</code></p>
 
-<p><code>GET https://app.securities.com.br/api/v1/assignments/:id</code></p>
+<p><code>GET https://app.securities.com.br/api/v1/assignments/:id</code><br>
+<code>GET https://app.securities.com.br/api/v1/assignments/bynumber/:number</code></p>
 <h4 id='criar-termo-de-cessao'>Criar termo de cessão</h4>
 <blockquote>
 <p>Request:</p>
