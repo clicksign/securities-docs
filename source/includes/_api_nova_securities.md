@@ -946,9 +946,10 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-Esse endpoint obtem todos os dados de um termo de cessão
+Esse endpoint obtem todos os dados de um termo de cessão. É possível obter um termo pelo `:id` ou pelo `:number`
 
-`GET https://app.securities.com.br/api/v1/assignments/:id`
+`GET https://app.securities.com.br/api/v1/assignments/:id`<br>
+`GET https://app.securities.com.br/api/v1/assignments/bynumber/:number`
 
 #### Criar termo de cessão
 
