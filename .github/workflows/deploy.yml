@@ -11,14 +11,18 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      ruby-version: 2.6
+      ruby-version: [3.1.2]
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ env.ruby-version }}
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler: "Gemfile.lock"
+        bundler-cache: true
+      env:
+        BUNDLE_PATH: vendor/bundle
 
     - uses: actions/cache@v2
       with:
@@ -27,12 +31,6 @@ jobs:
         restore-keys: |
           gems-${{ runner.os }}-${{ env.ruby-version }}-
           gems-${{ runner.os }}-
-
-    - run: bundle config set deployment 'true'
-    - name: bundle install
-      run: |
-        bundle config path vendor/bundle
-        bundle install --jobs 4 --retry 3
 
     - run: bundle exec middleman build
 
