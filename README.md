@@ -1,1 +1,1 @@
-clicksign.github.io/securities-docs/
+https://clicksign.github.io/securities-docs/
